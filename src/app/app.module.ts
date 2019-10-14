@@ -29,12 +29,8 @@ import { HistorialVentaComponent } from './components/venta/historial-venta/hist
 import { HomeComponent } from './components/home/home.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { QrComponent } from './components/general/qr/qr.component';
-import { HistorialComponent } from './components/general/historial/historial.component';
 import { FaqGComponent } from './components/general/faq-g/faq-g.component';
 import { NotasGComponent } from './components/general/notas-g/notas-g.component';
-import { InventarioProduccionGComponent } from './components/general/inventario-produccion-g/inventario-produccion-g.component';
-import { InventarioInsumosGComponent } from './components/general/inventario-insumos-g/inventario-insumos-g.component';
 import { UsuarioComponent } from './components/general/usuario/usuario.component';
 import { RegistroComponent } from './components/general/registro/registro.component';
 import { Page404Component } from './components/page404/page404.component';
@@ -76,12 +72,8 @@ import { NotaService } from './components/general/notas-g/nota.service';
     HomeComponent,
     ModalComponent,
     NavbarComponent,
-    QrComponent,
-    HistorialComponent,
     FaqGComponent,
     NotasGComponent,
-    InventarioProduccionGComponent,
-    InventarioInsumosGComponent,
     UsuarioComponent,
     RegistroComponent,
     Page404Component,
