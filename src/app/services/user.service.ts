@@ -4,6 +4,6 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
   constructor(protected http: HttpClient) { }
   getUsers() {
-    return this.http.get('http://localhost/aseo.php');
+    return this.http.get('http://localhost/usuarios.php');
   }
 }
