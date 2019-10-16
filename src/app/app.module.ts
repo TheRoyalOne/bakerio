@@ -6,16 +6,11 @@ import { UserService } from './services/user.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HistorialCompletoComponent } from './components/admin/historial-completo/historial-completo.component';
-import { FAQComponent } from './components/admin/faq/faq.component';
 import { NotasComponent } from './components/admin/notas/notas.component';
 import { AyudaComponent } from './components/admin/ayuda/ayuda.component';
 import { PlantillasComponent } from './components/admin/plantillas/plantillas.component';
 import { UsuariosComponent } from './components/admin/usuarios/usuarios.component';
-import { RecetarioProduccionComponent } from './components/Produccion/recetario-produccion/recetario-produccion.component';
-import { RecetarioEypComponent } from './components/Empaquetados-preparados/recetario-eyp/recetario-eyp.component';
-import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { FaqGComponent } from './components/general/faq-g/faq-g.component';
 import { NotasGComponent } from './components/general/notas-g/notas-g.component';
 import { UsuarioComponent } from './components/general/usuario/usuario.component';
 import { RegistroComponent } from './components/general/registro/registro.component';
@@ -43,10 +38,7 @@ import { GraficasComponent } from './components/admin/graficas/graficas.componen
 import { GananciasComponent } from './components/admin/ganancias/ganancias.component';
 import { PreElaboradosComponent } from './components/admin/inventario/pre-elaborados/pre-elaborados.component';
 import { PedidosPendientesComponent } from './components/u_ad_ven_env_emp_pre/pedidos-pendientes/pedidos-pendientes.component';
-import { PedidosEntregadosComponent } from './components/envio/pedidos-entregados/pedidos-entregados.component';
 import { RutaComponent } from './components/envio/ruta/ruta.component';
-import { CajaComponent } from './components/ventas/caja/caja.component';
-import { PedidoComponent } from './components/u_ad_ven/pedido/pedido.component';
 import { HistorialPersonalComponent } from './components/u_ad_ven/historial-personal/historial-personal.component';
 import { ProduccionComponent } from './components/u_ad_ven/inventario/produccion/produccion.component';
 import { InsumosComponent } from './components/u_ad_ven/inventario/insumos/insumos.component';
@@ -59,31 +51,38 @@ import { CuentaComponent } from './components/externo/cuenta/cuenta.component';
 import { ReciboComponent } from './components/externo/recibo/recibo.component';
 import { HistorialApartadosComponent } from './components/externo/historial-apartados/historial-apartados.component';
 import { HistorialComprasComponent } from './components/externo/historial-compras/historial-compras.component';
+import { CajasComponent } from './components/ventas/cajas/cajas.component';
+import { MermaComponent } from './components/u_prod_emp_ven/merma/merma.component';
+import { PedidooComponent } from './components/externo/pedidoo/pedidoo.component';
+import { SalesComponent } from './components/u_ad_ven/inventario/sales/sales.component';
+import { EnviosComponent } from './components/envio/envios/envios.component';
+import { CajaaComponent } from './components/u_ad_ven/cajaa/cajaa.component';
+import { RecetarioComponent } from './components/u_ad_pro_emp_pre/recetario/recetario.component';
+import { PedidossComponent } from './components/u_ad_ven/pedidoss/pedidoss.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HistorialCompletoComponent,
-    FAQComponent,
+    PedidossComponent,
     NotasComponent,
     AyudaComponent,
     PlantillasComponent,
     UsuariosComponent,
-    RecetarioProduccionComponent,
-    RecetarioEypComponent,
-    HomeComponent,
     NavbarComponent,
-    FaqGComponent,
     NotasGComponent,
     UsuarioComponent,
     RegistroComponent,
     Page404Component,
+    EnviosComponent,
     LoginComponent,
     HistorialComponent,
     NotificacionesComponent,
     PlanLaboralComponent,
     RecetasComponent,
+    CajaaComponent,
     RecetarioAComponent,
+    RecetarioComponent,
     RecetasAComponent,
     IngresosComponent,
     GastosComponent,
@@ -93,10 +92,7 @@ import { HistorialComprasComponent } from './components/externo/historial-compra
     GananciasComponent,
     PreElaboradosComponent,
     PedidosPendientesComponent,
-    PedidosEntregadosComponent,
     RutaComponent,
-    CajaComponent,
-    PedidoComponent,
     HistorialPersonalComponent,
     ProduccionComponent,
     InsumosComponent,
@@ -108,7 +104,12 @@ import { HistorialComprasComponent } from './components/externo/historial-compra
     CuentaComponent,
     ReciboComponent,
     HistorialApartadosComponent,
-    HistorialComprasComponent
+    HistorialComprasComponent,
+    CajasComponent,
+    MermaComponent,
+    PedidooComponent,
+    SalesComponent,
+    EnviosComponent
   ],
   imports: [
     BrowserModule,
