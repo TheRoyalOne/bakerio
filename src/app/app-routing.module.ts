@@ -91,8 +91,8 @@ const routes: Routes = [
 {path: 'uav/orders', component: PedidossComponent},
 {path: 'uavee/pending', component: PedidosPendientesComponent},
 {path: 'upev/loss', component: MermaComponent},
-{path: 'uv/', component: PlanLaboralComponent},
-{path: 'sales/', component: CajasComponent},
+{path: 'uv', component: PlanLaboralComponent},
+{path: 'sales', component: CajasComponent},
 {path: '**', component: Page404Component }
 ];
 
