@@ -57,11 +57,14 @@ import { PedidooComponent } from './components/externo/pedidoo/pedidoo.component
 import { SalesComponent } from './components/u_ad_ven/inventario/sales/sales.component';
 import { EnviosComponent } from './components/envio/envios/envios.component';
 import { CajaaComponent } from './components/u_ad_ven/cajaa/cajaa.component';
+import { RecetarioComponent } from './components/u_ad_pro_emp_pre/recetario/recetario.component';
+import { PedidossComponent } from './components/u_ad_ven/pedidoss/pedidoss.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HistorialCompletoComponent,
+    PedidossComponent,
     NotasComponent,
     AyudaComponent,
     PlantillasComponent,
@@ -79,6 +82,7 @@ import { CajaaComponent } from './components/u_ad_ven/cajaa/cajaa.component';
     RecetasComponent,
     CajaaComponent,
     RecetarioAComponent,
+    RecetarioComponent,
     RecetasAComponent,
     IngresosComponent,
     GastosComponent,
