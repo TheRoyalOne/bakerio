@@ -2,19 +2,20 @@ body {
     position: absolute;
     top: 60px;
     left: 450px;
-    background: #eee;
+    background: rgba(76, 175, 80, 0.0)/* Green background with 30% opacity */
 }
 
+
+/*html {
+    background-image: linear-gradient(to right, red, yellow);
+}*/
+
 #frm {
-    border-radius: 5px;
-    margin: 100px auto;
-    background: white;
+    border-radius: 15px;
     padding: 50px;
 }
 
 #btn {
-    color: #fff;
-    background: #ffffff;
     padding: 5px;
     margin-left: 69%;
 }

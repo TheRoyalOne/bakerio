@@ -1,12 +1,16 @@
+<html>
 <app-navbar></app-navbar>
 <router-outlet></router-outlet>
 <div *ngFor='let user of users'>
-    <h2>{{ user.NOMBRE | uppercase }}</h2>
-    <h2>{{ user.CATEGORIA | uppercase }}</h2>
-    <h2>{{ user.EXISTENCIAS }}</h2>
-    <h2>{{ user.UNIDAD | uppercase }}</h2>
-    <h2>{{ user.CATEGORIA | uppercase }}</h2>
-    <h2>{{ user.CADUCIDAD }}</h2>
-    <h2>{{ user.CODIGO }}</h2>
-    <img [src]="user.URL">
+    <h2>{{ "ID: " }}{{ user.ID }}</h2>
+    <h2>{{ "PRODUCTO: " }}{{ user.NOMBRE | uppercase }}</h2>
+    <h2>{{ "EXTRA INFO: " }}{{ user.EXTRA | uppercase }}</h2>
+    <h2>{{ "PRECIO " }}{{ "$" }}{{ user.PRECIO }}</h2>
+    <h2>{{ "CATEGORIA: " }}{{ user.TIPO | uppercase }}</h2>
+    <h2>{{ "CADUCIDAD: " }}{{ user.CADUCIDAD | uppercase }}</h2>
+    <h2>{{ "EXISTENCIAS: " }}{{ user.EXISTENCIAS }}</h2>
+    <h2>{{ "MINIMO DEL PRODUCTO: " }}{{ user.MINIMO }}</h2>
+    <h2>{{ "UNIDAD: " }}{{ user.UNIDAD | uppercase }}</h2>
 </div>
+
+</html>

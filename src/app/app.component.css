@@ -1,3 +1,14 @@
 div {
-    margin-top: 60px;
+    margin-top: 50px;
+}
+
+html {
+    background: rgba(240, 161, 127, 1);
+    background: -moz-linear-gradient(left, rgba(240, 161, 127, 1) 0%, rgba(240, 161, 127, 1) 0%, rgba(245, 245, 245, 1) 99%, rgba(255, 255, 255, 1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(240, 161, 127, 1)), color-stop(0%, rgba(240, 161, 127, 1)), color-stop(99%, rgba(245, 245, 245, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
+    background: -webkit-linear-gradient(left, rgba(240, 161, 127, 1) 0%, rgba(240, 161, 127, 1) 0%, rgba(245, 245, 245, 1) 99%, rgba(255, 255, 255, 1) 100%);
+    background: -o-linear-gradient(left, rgba(240, 161, 127, 1) 0%, rgba(240, 161, 127, 1) 0%, rgba(245, 245, 245, 1) 99%, rgba(255, 255, 255, 1) 100%);
+    background: -ms-linear-gradient(left, rgba(240, 161, 127, 1) 0%, rgba(240, 161, 127, 1) 0%, rgba(245, 245, 245, 1) 99%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to right, rgba(240, 161, 127, 1) 0%, rgba(240, 161, 127, 1) 0%, rgba(245, 245, 245, 1) 99%, rgba(255, 255, 255, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f0a17f', endColorstr='#ffffff', GradientType=1);
 }
