@@ -59,6 +59,7 @@ import { EnviosComponent } from './components/envio/envios/envios.component';
 import { CajaaComponent } from './components/u_ad_ven/cajaa/cajaa.component';
 import { RecetarioComponent } from './components/u_ad_pro_emp_pre/recetario/recetario.component';
 import { PedidossComponent } from './components/u_ad_ven/pedidoss/pedidoss.component';
+import { RegistroaComponent } from './components/admin/registroa/registroa.component';
 
 @NgModule({
   declarations: [
@@ -109,6 +110,7 @@ import { PedidossComponent } from './components/u_ad_ven/pedidoss/pedidoss.compo
     MermaComponent,
     PedidooComponent,
     SalesComponent,
+    RegistroaComponent,
     EnviosComponent
   ],
   imports: [

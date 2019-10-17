@@ -1,0 +1,19 @@
+.nav-item {
+    font-style: oblique;
+    font-size: 20px;
+}
+
+#dato {
+    color: black;
+}
+
+#don {
+    font-style: oblique;
+    font-size: 20px;
+    color: black;
+}
+
+.navig {
+    margin-left: 50%;
+    margin-right: 0%;
+}

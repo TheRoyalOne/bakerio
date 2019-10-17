@@ -4,6 +4,6 @@ import { HttpClient } from '@angular/common/http';
 export class LoginService {
   constructor(protected http: HttpClient) { }
   getProds() {
-    return this.http.get('http://localhost/test.php');
+    return this.http.get('http://localhost/imagen.php');
   }
 }

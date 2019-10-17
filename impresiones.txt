@@ -1,0 +1,31 @@
+Inventario Imp
+
+<div *ngFor='let user of users'>
+    <h2>{{ "ID: " }}{{ user.ID }}</h2>
+    <h2>{{ "PRODUCTO: " }}{{ user.NOMBRE | uppercase }}</h2>
+    <h2>{{ "EXTRA INFO: " }}{{ user.EXTRA | uppercase }}</h2>
+    <h2>{{ "PRECIO " }}{{ "$" }}{{ user.PRECIO }}</h2>
+    <h2>{{ "CATEGORIA: " }}{{ user.TIPO | uppercase }}</h2>
+    <h2>{{ "CADUCIDAD: " }}{{ user.CADUCIDAD | uppercase }}</h2>
+    <h2>{{ "EXISTENCIAS: " }}{{ user.EXISTENCIAS }}</h2>
+    <h2>{{ "MINIMO DEL PRODUCTO: " }}{{ user.MINIMO }}</h2>
+    <h2>{{ "UNIDAD: " }}{{ user.UNIDAD | uppercase }}</h2>
+</div>
+
+Notas
+
+<div *ngFor='let list of notas'>
+    <h2>{{"Numero de nota: "}}{{ list.ID}}</h2>
+    <h2>{{ list.CONTENIDO | uppercase }}</h2>
+    <h2>{{ list.FECHA}}</h2>
+    <h2>{{"Usuario: "}}{{ list.NOMBRE}}{{" "}}{{ list.APELLIDO}}</h2>
+</div>
+
+Proveedores
+
+
+<div *ngFor='let prod of prods'>
+    <h2>{{ "ID: " }}{{ prod.ID | uppercase }}</h2>
+    <h2>{{ "Nombre: " }}{{ prod.NOMBRE | uppercase }}</h2>
+    <h2>{{ "Producto: " }}{{ prod.PRODUCTO| uppercase }}</h2>
+</div>
