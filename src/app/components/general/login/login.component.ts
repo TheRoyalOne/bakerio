@@ -7,21 +7,9 @@ import { LoginService } from './login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  prods: any[] = [];
-  constructor(
-    protected prodService: LoginService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.prodService.getProds()
-    .subscribe(
-      (data) => { // Successs
-        // tslint:disable-next-line:no-string-literal
-        this.prods = data['results'];
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
 }
 
 }

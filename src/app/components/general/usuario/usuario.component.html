@@ -1,0 +1,10 @@
+<div class="container">
+    <div *ngFor='let user of usuarios'>
+        <h2>{{ "ID: " }}{{ user.ID }}</h2>
+        <h2>{{ "NOMBRE: " }}{{ user.NOMBRE | uppercase }}</h2>
+        <h2>{{ "CORREO: " }}{{ user.CORREO | uppercase }}</h2>
+        <h2>{{ "CORREO " }}{{ "$" }}{{ user.CORREO }}</h2>
+        <h2>{{ "NACIMIENTO: " }}{{ user.NACIMIENTO}}</h2>
+        <h2>{{ "DOMICILIO: " }}{{ user.DOMICILIO | uppercase }}</h2>
+    </div>
+</div>

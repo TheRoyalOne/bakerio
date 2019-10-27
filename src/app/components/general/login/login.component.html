@@ -1,25 +1,26 @@
-<div class="page">
-    <div *ngFor='let prod of prods'>
-        <img [src]="prod.URL"></div>
+<div class="container-fluid">
     <div id="dato">
-        <p>
+        <img class="logo" src="/assets/images/Logo1.png" alt="logo" align="center">
+        <div id="dato">
             <label for="dato">Inicio de Sesión</label>
-        </p>
+        </div>
     </div>
-    <div id="frm">
+</div>
+<div id="frm">
+    <div id="usuario" class="container">
         <div id="efe">
             <p>
                 <label for="username">Usuario:</label>
             </p>
         </div>
         <p>
-            <input type="text" id="user" name="user" placeholder="Nombre de Usuario"></p>
+            <input type="text" id="user" name="user" placeholder="Nombre de Usuario">
+        </p>
         <p>
             <label for="password">Contraseña:</label>
         </p>
-        <p>
-            <input type="password" id="pass" name="pass" placeholder="Contraseña de Usuario"></p>
-        <div class="boton">
-            <button type="submit" class="boton btn-sm btn-boton">Ingresar</button>
-        </div>
+        <div id="contra">
+            <input type="password" id="pass" name="pass" placeholder="Contraseña de Usuario"></div>
     </div>
+    <button type="submit" class="boton btn-sm btn-boton">Ingresar</button>
+</div>

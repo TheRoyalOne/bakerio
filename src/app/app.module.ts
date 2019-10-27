@@ -18,6 +18,10 @@ import { Page404Component } from './components/page404/page404.component';
 import { LoginComponent } from './components/general/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { NotaService } from './components/general/notas-g/nota.service';
 import { HistorialComponent } from './components/general/historial/historial.component';
@@ -56,6 +60,8 @@ import { CajaaComponent } from './components/u_ad_ven/cajaa/cajaa.component';
 import { RecetarioComponent } from './components/u_ad_pro_emp_pre/recetario/recetario.component';
 import { PedidossComponent } from './components/u_ad_ven/pedidoss/pedidoss.component';
 import { RegistroaComponent } from './components/admin/registroa/registroa.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { UsuarioService } from './components/general/usuario/usuario.service';
 
 @NgModule({
   declarations: [
@@ -115,9 +121,10 @@ import { RegistroaComponent } from './components/admin/registroa/registroa.compo
     FormsModule,
     AngularFireDatabaseModule,
     AngularFireStorageModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSliderModule
   ],
-  providers: [UserService, LoginService, NotaService],
+  providers: [UserService, LoginService, NotaService, UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

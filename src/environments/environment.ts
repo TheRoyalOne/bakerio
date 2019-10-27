@@ -4,15 +4,16 @@
 
 export const environment = {
   production: false,
-firebaseConfig: {
-    apiKey: 'AIzaSyDAyATQBrHQsldUdr-8MQDXjKa9inMWpdA',
-    authDomain: 'bakery-o.firebaseapp.com',
-    databaseURL: 'https://bakery-o.firebaseio.com',
-    projectId: 'bakery-o',
-    storageBucket: 'bakery-o.appspot.com',
-    messagingSenderId: '59937272039',
-    appId: '1:59937272039:web:a47b68e7c632c233'
-}
+  firebaseConfig: {
+    apiKey: 'AIzaSyAuGOKa59UdXUNW4kwPusa-u2Jb-O5jS9o',
+    authDomain: 'baker-io-pem.firebaseapp.com',
+    databaseURL: 'https://baker-io-pem.firebaseio.com',
+    projectId: 'baker-io-pem',
+    storageBucket: 'baker-io-pem.appspot.com',
+    messagingSenderId: '788051152613',
+    appId: '1:788051152613:web:8ac9fd5ee02d43eea50e0c',
+    measurementId: 'G-0E130SZS91'
+  }
 };
 
 /*

@@ -1,6 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Fascinate+Inline&display=swap");
 .nav-item {
-    font-style: oblique;
-    font-size: 20px;
+    font-family: 'Lobster', cursive;
+    font-size: 24px;
 }
 
 #dato {
@@ -8,8 +9,8 @@
 }
 
 #don {
-    font-style: oblique;
-    font-size: 20px;
+    font-family: 'Lobster', cursive;
+    font-size: 24px;
     color: black;
 }
 

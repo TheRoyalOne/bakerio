@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Lobster&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap");
 body {
     height: 100%;
 }
@@ -7,9 +9,9 @@ nav-bar {
 }
 
 #dato {
-    margin-left: 505px;
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
     font-size: 26px;
-    margin-top: 30px;
 }
 
 .boton {
@@ -27,7 +29,6 @@ nav-bar {
 }
 
 #frm {
-    margin-top: 20px;
     margin-left: 200px;
     margin-right: 1850px;
     background: rgba(76, 175, 80, 0.0);
@@ -39,15 +40,9 @@ nav-bar {
     margin-left: 150px;
     margin-right: 150px;
     margin-bottom: 10px;
-    margin-top: 30px;
-}
-
-div {
-    margin-top: 50px;
+    font-family: 'Indie Flower ', cursive;
 }
 
 img {
     font-size: 26px;
-    margin-left: 480px;
-    margin-top: 70px;
 }

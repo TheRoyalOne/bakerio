@@ -77,7 +77,7 @@ const routes: Routes = [
 {path: 'notes', component: NotasGComponent },
 {path: 'notifications', component: NotificacionesComponent },
 {path: 'register', component: RegistroComponent },
-{path: 'profile', component: UsuarioComponent },
+{path: 'profiles', component: UsuarioComponent },
 {path: 'uapep/recetary', component: RecetarioComponent },
 {path: 'uapep/admin/recetary', component: RecetarioAComponent },
 {path: 'uapep/recipe', component: RecetasComponent },

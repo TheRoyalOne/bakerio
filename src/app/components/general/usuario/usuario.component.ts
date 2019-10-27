@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../../services/auth.service';
+import { UsuarioService } from './usuario.service';
 
 @Component({
   selector: 'app-usuario',
@@ -7,10 +7,21 @@ import { AuthService } from '../../../services/auth.service';
   styleUrls: ['./usuario.component.css']
 })
 export class UsuarioComponent implements OnInit {
-
-  constructor() { }
+  usuarios: any[] = [];
+  constructor(
+    protected usuarioService: UsuarioService) { }
 
   ngOnInit() {
+    this.usuarioService.getUsers()
+    .subscribe(
+      (data) => { // Successs
+        // tslint:disable-next-line:no-string-literal
+        this.usuarios = data['results'];
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 
 }
