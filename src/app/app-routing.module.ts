@@ -12,7 +12,6 @@ import { PerdidasComponent } from './components/admin/perdidas/perdidas.componen
 import { PlantillasComponent } from './components/admin/plantillas/plantillas.component';
 import { UsuariosComponent } from './components/admin/usuarios/usuarios.component';
 import { RutaComponent } from './components/envio/ruta/ruta.component';
-import { CreacionCuentaMayoreoComponent } from './components/externo/creacion-cuenta-mayoreo/creacion-cuenta-mayoreo.component';
 import { CreacionCuentaMenudeoComponent } from './components/externo/creacion-cuenta-menudeo/creacion-cuenta-menudeo.component';
 import { CuentaComponent } from './components/externo/cuenta/cuenta.component';
 import { HistorialApartadosComponent } from './components/externo/historial-apartados/historial-apartados.component';
@@ -45,7 +44,8 @@ import { SalesComponent } from './components/u_ad_ven/inventario/sales/sales.com
 import { VentasComponent } from './components/admin/ventas/ventas.component';
 import { EnviosComponent } from './components/envio/envios/envios.component';
 import { CajaaComponent } from './components/u_ad_ven/cajaa/cajaa.component';
-
+import { AiudaComponent } from './components/general/aiuda/aiuda.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
 {path: '', component: LoginComponent },
@@ -59,7 +59,7 @@ const routes: Routes = [
 {path: 'admin/notes', component: NotasComponent }, // Proteger.
 {path: 'admin/losses', component: PerdidasComponent },
 {path: 'admin/templates', component: PlantillasComponent }, // Proteger.
-{path: 'admin/slaves', component: UsuariosComponent },
+{path: 'admin/slaves', component: UsuariosComponent/* , canActivate: [AuthGuard]*/},
 {path: 'admin/sales', component: VentasComponent },
 {path: 'envio/shippings', component: EnviosComponent },
 {path: 'envio/route', component: RutaComponent },
@@ -72,12 +72,13 @@ const routes: Routes = [
 {path: 'ext/principal', component: PrincipalComponent },
 {path: 'ext/products', component: ProductosComponent },
 {path: 'ext/receipt', component: ReciboComponent },
-{path: 'history', component: HistorialComponent },
+{path: 'user/history', component: HistorialComponent },
 {path: 'login', component: LoginComponent, pathMatch: 'full'},
-{path: 'notes', component: NotasGComponent },
-{path: 'notifications', component: NotificacionesComponent },
-{path: 'register', component: RegistroComponent },
-{path: 'profiles', component: UsuarioComponent },
+{path: 'user/notes', component: NotasGComponent },
+{path: '911', component: AiudaComponent, canActivate: [AuthGuard]},
+{path: 'user/notifications', component: NotificacionesComponent },
+{path: 'user/register', component: RegistroComponent },
+{path: 'user/profile', component: UsuarioComponent,  canActivate: [AuthGuard] },
 {path: 'uapep/recetary', component: RecetarioComponent },
 {path: 'uapep/admin/recetary', component: RecetarioAComponent },
 {path: 'uapep/recipe', component: RecetasComponent },

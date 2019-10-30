@@ -4,10 +4,10 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioService {
+export class UsuariosService {
+
   constructor(protected http: HttpClient) {}
   getUsers() {
-    return this.http.get('http://localhost/usuario.php');
+    return this.http.get('https://thejuanandonly.000webhostapp.com/bakerio/PHPs/usuarios.php');
   }
 }
-

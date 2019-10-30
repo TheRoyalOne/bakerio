@@ -7,20 +7,22 @@
     </div>
 </div>
 <div id="frm">
-    <div id="usuario" class="container">
-        <div id="efe">
+    <form (submit)="loginUser($event)">
+        <div id="usuario" class="container">
+            <div id="efe">
+                <p>
+                    <label for="username">Usuario:</label>
+                </p>
+            </div>
             <p>
-                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="user" placeholder="Nombre de Usuario">
             </p>
+            <p>
+                <label for="password">Contraseña:</label>
+            </p>
+            <div id="contra">
+                <input type="password" id="password" name="pass" placeholder="Contraseña de Usuario"></div>
         </div>
-        <p>
-            <input type="text" id="user" name="user" placeholder="Nombre de Usuario">
-        </p>
-        <p>
-            <label for="password">Contraseña:</label>
-        </p>
-        <div id="contra">
-            <input type="password" id="pass" name="pass" placeholder="Contraseña de Usuario"></div>
-    </div>
-    <button type="submit" class="boton btn-sm btn-boton">Ingresar</button>
+        <button type="submit" class="boton btn-sm btn-boton">Ingresar</button>
+    </form>
 </div>

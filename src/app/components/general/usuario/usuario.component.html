@@ -1,10 +1,22 @@
 <div class="container">
     <div *ngFor='let user of usuarios'>
-        <h2>{{ "ID: " }}{{ user.ID }}</h2>
-        <h2>{{ "NOMBRE: " }}{{ user.NOMBRE | uppercase }}</h2>
-        <h2>{{ "CORREO: " }}{{ user.CORREO | uppercase }}</h2>
-        <h2>{{ "CORREO " }}{{ "$" }}{{ user.CORREO }}</h2>
-        <h2>{{ "NACIMIENTO: " }}{{ user.NACIMIENTO}}</h2>
-        <h2>{{ "DOMICILIO: " }}{{ user.DOMICILIO | uppercase }}</h2>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar><img [src]="user.FOTO"></div>
+                <mat-card-title class="usuario">{{ "USUARIO: " }}{{ user.NOMBRE | uppercase }}</mat-card-title>
+            </mat-card-header>
+            <div class="contenido">
+                <mat-card-content>
+                    <h2>{{ "PUESTO DE USUARIO: " }}{{ user.TIPO | uppercase }}</h2>
+                    <h2>{{ "CORREO: " }}{{ user.CORREO | uppercase }}</h2>
+                    <h2>{{ "NACIMIENTO: " }}{{ user.NACIMIENTO}}</h2>
+                    <h2>{{ "DOMICILIO: " }}{{ user.DOMICILIO | uppercase }}</h2>
+                </mat-card-content>
+            </div>
+            <mat-card-actions>
+                <button mat-button class="mat-button"><a class="nav-link" routerLink="/history"><span>HISTORIAL</span></a></button>
+                <button mat-button class="mat-button"><a class="nav-link" routerLink="/uv"><span>PLAN LABORAL </span></a></button>
+            </mat-card-actions>
+        </mat-card>
     </div>
 </div>

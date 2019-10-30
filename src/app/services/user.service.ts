@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable()
 export class UserService {
-  constructor(protected http: HttpClient) { }
+  public headers = new HttpHeaders();
+  constructor(protected http: HttpClient) {
+    this.headers.set('Content-Type', 'application/json; charset=utf-8');
+    this.headers.set('Content-Type', 'Cookie');
+    this.headers.set('Allow-Credentials', 'true');
+    this.headers.set('Content-Type', 'Authorization'); }
   getUsers() {
-    // return this.http.get('http://localhost/usuarios.php');
+    return this.http.get('http://localhost/usuario.php'), {headers: this.headers, withCredentials: true};
   }
 }

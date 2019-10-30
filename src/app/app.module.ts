@@ -20,7 +20,6 @@ import { FormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { NotaService } from './components/general/notas-g/nota.service';
@@ -61,8 +60,14 @@ import { RecetarioComponent } from './components/u_ad_pro_emp_pre/recetario/rece
 import { PedidossComponent } from './components/u_ad_ven/pedidoss/pedidoss.component';
 import { RegistroaComponent } from './components/admin/registroa/registroa.component';
 import { MatSliderModule } from '@angular/material/slider';
+import {MatCardModule} from '@angular/material/card';
 import { UsuarioService } from './components/general/usuario/usuario.service';
-
+import { UsuariosService } from './components/admin/usuarios/usuarios.service';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
+import { AiudaComponent } from './components/general/aiuda/aiuda.component';
+import { AiudaService } from './components/general/aiuda/aiuda.service';
+import { DataService } from './components/general/usuario/data.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,6 +75,7 @@ import { UsuarioService } from './components/general/usuario/usuario.service';
     PedidossComponent,
     NotasComponent,
     AyudaComponent,
+    AiudaComponent,
     PlantillasComponent,
     UsuariosComponent,
     NavbarComponent,
@@ -113,7 +119,8 @@ import { UsuarioService } from './components/general/usuario/usuario.service';
     PedidooComponent,
     SalesComponent,
     RegistroaComponent,
-    EnviosComponent
+    EnviosComponent,
+    AiudaComponent
   ],
   imports: [
     BrowserModule,
@@ -122,9 +129,11 @@ import { UsuarioService } from './components/general/usuario/usuario.service';
     AngularFireDatabaseModule,
     AngularFireStorageModule,
     HttpClientModule,
-    MatSliderModule
+    MatSliderModule,
+    MatCardModule
   ],
-  providers: [UserService, LoginService, NotaService, UsuarioService],
+  providers: [UserService, LoginService, NotaService, UsuarioService, DataService,
+     UsuariosService, AuthService, UserService, AiudaService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
