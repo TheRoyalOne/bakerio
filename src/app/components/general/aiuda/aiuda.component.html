@@ -1,1 +1,6 @@
-<p>aiuda works!</p>
+<div class="container">
+    <div *ngFor='let list of consejos'>
+        <h2>{{"Numero de Consejo: "}}{{ list.ID}}</h2>
+        <h2>{{ list.CONTENIDO | uppercase }}</h2>
+    </div>
+</div>

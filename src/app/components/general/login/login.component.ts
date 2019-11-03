@@ -21,11 +21,9 @@ loginUser(event: { preventDefault: () => void; target: any; }) {
   this.Auth.getUserDetails(username, password).subscribe(data => {
     if (data.success) {
         this.router.navigate(['user/profile']);
-        this.Auth.setLoggedIn(true);
+        this.Auth.setLoggedIn(false);
     } else {
       window.alert(data.message);
-      this.router.navigate(['user/profile']);
-      this.Auth.setLoggedIn(false);
     }
   });
   console.log(username, password);

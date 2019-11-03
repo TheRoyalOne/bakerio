@@ -11,7 +11,7 @@ interface myData {
 @Injectable()
 export class AuthService {
   public headers = new HttpHeaders();
-  public loggedInStatus = false;
+  private loggedInStatus = false;
 
   constructor(private http: HttpClient) {
   this.headers.set('Content-Type', 'application/json; charset=utf-8');
@@ -25,7 +25,7 @@ export class AuthService {
   }
 
  get isLoggedIn() {
-   return this.loggedInStatus;
+  return this.loggedInStatus;
   }
   getUserDetails(username, password) {
     return this.http.post<myData>('http://localhost/login.php', {

@@ -23,11 +23,12 @@ font-family: 'Zilla Slab Highlight', cursive;
 font-family: 'Aclonica', sans-serif;
 */
 
-div {
-    margin-top: 50px;
-}
-
 body,
 html {
     height: 100%;
+    width: 100%;
+}
+
+router-outlet {
+    margin-left: 50%;
 }

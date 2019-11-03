@@ -14,6 +14,12 @@ export class UsuarioComponent implements OnInit {
     protected usuarioService: UsuarioService, private data: DataService) { }
 
   ngOnInit() {
+    this.data.getSomeData().subscribe(data => {
+      this.message = data.message;
+      if (!data.success) {
+        localStorage.removeItem('loggedIn');
+      }
+    });
     this.usuarioService.getUsers()
     .subscribe(
       (data) => { // Successs

@@ -46,6 +46,7 @@ import { EnviosComponent } from './components/envio/envios/envios.component';
 import { CajaaComponent } from './components/u_ad_ven/cajaa/cajaa.component';
 import { AiudaComponent } from './components/general/aiuda/aiuda.component';
 import { AuthGuard } from './guards/auth.guard';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
 {path: '', component: LoginComponent },
@@ -75,7 +76,7 @@ const routes: Routes = [
 {path: 'user/history', component: HistorialComponent },
 {path: 'login', component: LoginComponent, pathMatch: 'full'},
 {path: 'user/notes', component: NotasGComponent },
-{path: '911', component: AiudaComponent, canActivate: [AuthGuard]},
+{path: '911', component: AiudaComponent},
 {path: 'user/notifications', component: NotificacionesComponent },
 {path: 'user/register', component: RegistroComponent },
 {path: 'user/profile', component: UsuarioComponent,  canActivate: [AuthGuard] },
@@ -94,6 +95,7 @@ const routes: Routes = [
 {path: 'upev/loss', component: MermaComponent},
 {path: 'uv', component: PlanLaboralComponent},
 {path: 'sales', component: CajasComponent},
+{path: 'logout', component: LogoutComponent},
 {path: '**', component: Page404Component }
 ];
 

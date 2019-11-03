@@ -10,7 +10,6 @@ import { NotasComponent } from './components/admin/notas/notas.component';
 import { AyudaComponent } from './components/admin/ayuda/ayuda.component';
 import { PlantillasComponent } from './components/admin/plantillas/plantillas.component';
 import { UsuariosComponent } from './components/admin/usuarios/usuarios.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotasGComponent } from './components/general/notas-g/notas-g.component';
 import { UsuarioComponent } from './components/general/usuario/usuario.component';
 import { RegistroComponent } from './components/general/registro/registro.component';
@@ -68,6 +67,16 @@ import { AuthGuard } from './guards/auth.guard';
 import { AiudaComponent } from './components/general/aiuda/aiuda.component';
 import { AiudaService } from './components/general/aiuda/aiuda.service';
 import { DataService } from './components/general/usuario/data.service';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import { SideComponent } from './side/side.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FullprodService } from './components/externo/principal/fullprod.service';
+import { LogoutComponent } from './logout/logout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,7 +87,6 @@ import { DataService } from './components/general/usuario/data.service';
     AiudaComponent,
     PlantillasComponent,
     UsuariosComponent,
-    NavbarComponent,
     NotasGComponent,
     UsuarioComponent,
     RegistroComponent,
@@ -120,7 +128,9 @@ import { DataService } from './components/general/usuario/data.service';
     SalesComponent,
     RegistroaComponent,
     EnviosComponent,
-    AiudaComponent
+    AiudaComponent,
+    SideComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -130,10 +140,17 @@ import { DataService } from './components/general/usuario/data.service';
     AngularFireStorageModule,
     HttpClientModule,
     MatSliderModule,
-    MatCardModule
+    MatCardModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule,
+    LayoutModule,
+    MatButtonModule,
+    BrowserAnimationsModule
   ],
   providers: [UserService, LoginService, NotaService, UsuarioService, DataService,
-     UsuariosService, AuthService, UserService, AiudaService, AuthGuard],
+     UsuariosService, AuthService, UserService, AiudaService, AuthGuard, FullprodService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
