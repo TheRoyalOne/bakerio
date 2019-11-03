@@ -2,6 +2,7 @@
     <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
         <mat-toolbar>Opciones</mat-toolbar>
         <mat-nav-list>
+            <a mat-list-item href="user/profile">Inicio</a>
             <a mat-list-item href="user/register">Registrarse</a>
             <a mat-list-item href="ext/principal">Productos</a>
             <a mat-list-item href="logout">Cerrar sesion</a>
