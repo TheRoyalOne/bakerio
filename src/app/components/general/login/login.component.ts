@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
 loginUser(event: { preventDefault: () => void; target: any; }) {
   event.preventDefault();
   const target = event.target;
-  const username = target.querySelector('#username').value;
-  const password = target.querySelector('#password').value;
+  const username = target.querySelector('#user').value;
+  const password = target.querySelector('#pass').value;
   this.Auth.getUserDetails(username, password).subscribe(data => {
     if (data.success) {
         this.router.navigate(['user/profile']);

@@ -1,52 +1,69 @@
-<div class="page">
-    <div id="frm">
-        <p>
-            <label for="ID">Registro:</label>
-        </p>
-        <p>
-            <input type="text" id="id" name="id"></p>
-        <p>
-            <label for="Nombre">Nombre:</label>
-        </p>
-        <p>
-            <input type="text" id="nom" name="nombre"></p>
-        <p>
+<div class="container">
+    <div class="page">
+        <div id="frm">
+            <h1>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="ID" id="id" name="id">
+                </mat-form-field>
+            </h1>
+            <h1>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Nombre" id="nom" name="nombre">
+                </mat-form-field>
+            </h1>
+            <h1>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Apellido(s)" id="apex" name="apellidos">
+                </mat-form-field>
+            </h1>
+            <h1>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Correo" id="correo" name="correo">
+                </mat-form-field>
+            </h1>
+            <h1>
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker" placeholder="Fecha de Nacimiento">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </h1>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Domicilio" id="domicilio" name="domicilio">
+            </mat-form-field>
+            <h1>
+                <mat-form-field>
+                    <mat-label>Horario</mat-label>
+                    <select matNativeControl required>
+                                        <option value="Matutino">8:00am-2:00pm</option>
+                                        <option value="Vespertino">4:00pm-9:00pm</option>
+                                      </select>
+                </mat-form-field>
+            </h1>
+            <div id="drop"></div>
+            <h1>
+                <mat-form-field>
+                    <mat-label>Cuenta</mat-label>
+                    <select matNativeControl required>
+                                        <option value="Menudeo">Menudeo</option>
+                                        <option value="Mayoreo">Mayoreo</option>
+                                      </select>
+                </mat-form-field>
+            </h1>
             <p>
-                <label for="Apellido">Apellido:</label>
-            </p>
-            <p>
-                <input type="text" id="ape" name="apellido"></p>
-            <p>
-                <p>
-                    <label for="Correo">Correo:</label>
-                </p>
-                <p>
-                    <input type="text" id="corr" name="correo"></p>
-                <p>
-                    <p>
-                        <label for="Nacimiento">Fecha de Nacimiento:</label>
-                    </p>
-                    <p>
-                        <input type="text" id="fec" name="fechaDeNacimiento"></p>
-                    <p>
-                        <p>
-                            <label for="Domicilio">Domicilio:</label>
-                        </p>
-                        <p>
-                            <input type="text" id="dom" name="domicilio"></p>
-                        <p>
-                            <label for="Horario">Horario:</label>
-                        </p>
-                        <p>
-                            <input type="text" id="hor" name="horario"></p>
-                        <p>
-                            <p>
-                                <label for="password">Contraseña:</label>
-                            </p>
-                            <p>
-                                <input type="password" id="pass" name="pass"></p>
-                            <button>
-                    <input type="submit" value="Login">
+                <h1>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Contrasena" id="pass" name="password" type="password">
+                    </mat-form-field>
+                </h1>
+                <h1>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Imagen" id="imagen" name="imagen">
+                    </mat-form-field>
+                </h1>
+                <button>
+                    <input type="submit" value="Registrarse">
                 </button>
+        </div>
     </div>
 </div>

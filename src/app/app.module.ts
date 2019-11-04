@@ -77,6 +77,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FullprodService } from './components/externo/principal/fullprod.service';
 import { LogoutComponent } from './logout/logout.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -147,10 +152,15 @@ import { LogoutComponent } from './logout/logout.component';
     MatListModule,
     LayoutModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [UserService, LoginService, NotaService, UsuarioService, DataService,
-     UsuariosService, AuthService, UserService, AiudaService, AuthGuard, FullprodService],
+     UsuariosService, AuthService, UserService, AiudaService, AuthGuard, FullprodService, MatNativeDateModule, MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

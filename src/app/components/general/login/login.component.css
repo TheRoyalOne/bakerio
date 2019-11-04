@@ -18,6 +18,20 @@ nav-bar {
     margin-right: 4px;
 }
 
+
+/* When the input is not focused */
+
+md-input-container label {
+    color: red;
+}
+
+
+/* When the input is focused */
+
+md-input-container.md-input-focused label {
+    color: blue;
+}
+
 .btn-boton,
 .btn-boton:hover,
 .btn-boton:active {
@@ -26,12 +40,35 @@ nav-bar {
     border-radius: 20%
 }
 
+mat-label {
+    color: black;
+    font-family: 'Indie Flower ', cursive;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: purple !important;
+}
+
+ ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: purple !important;
+}
+
+ ::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: purple !important;
+    ;
+}
+
+input {
+    font-family: 'Cabin', sans-serif;
+}
+
 #frm {
-    margin-left: 200px;
-    margin-right: 1850px;
+    margin-top: 25px;
     background: rgba(76, 175, 80, 0.0);
     /* Green background with 30% opacity */
-    background: white;
     background: white;
     text-align: center;
     border: #E86145 4px solid;
@@ -43,4 +80,10 @@ nav-bar {
 
 img {
     font-size: 26px;
+}
+
+h1 {
+    color: black;
+    font-size: 20px;
+    font-family: 'Indie Flower ', cursive;
 }

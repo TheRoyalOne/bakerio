@@ -4,10 +4,9 @@ body {
 
 #frm {
     margin-top: 60px;
-    margin-left: 490px;
     background: rgba(76, 175, 80, 0.0);
     /* Green background with 30% opacity */
-    background: white;
+    background: none;
 }
 
 div {
@@ -17,4 +16,33 @@ div {
 img {
     margin-left: 470px;
     margin-top: 30px;
+}
+
+mat-form-field {
+    font-family: 'Indie Flower ', cursive;
+    color: black;
+}
+
+input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1;
+    /* Firefox */
+}
+
+mat-label {
+    font-family: 'Stoke', serif;
+    font-size: 20px;
+    color: black;
+}
+
+#frm {
+    font-family: 'Stoke', serif;
+    font-size: 20px;
+}
+
+h1 {
+    color: black;
+    font-size: 20px;
+    font-family: 'Permanent Marker', cursive;
 }

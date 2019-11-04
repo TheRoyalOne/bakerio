@@ -7,10 +7,12 @@
             </mat-card-header>
             <div class="contenido">
                 <mat-card-content>
-                    <h2>{{ "PUESTO DE USUARIO: " }}{{ user.TIPO | uppercase }}</h2>
-                    <h2>{{ "CORREO: " }}{{ user.CORREO | uppercase }}</h2>
+                    <h2>{{ "PUESTO DE USUARIO: " }}{{ user.TIPO}}</h2>
+                    <h2>{{ "CORREO: " }}{{ user.CORREO }}</h2>
                     <h2>{{ "NACIMIENTO: " }}{{ user.NACIMIENTO}}</h2>
-                    <h2>{{ "DOMICILIO: " }}{{ user.DOMICILIO | uppercase }}</h2>
+                    <h2>{{ "DOMICILIO: " }}{{ user.DOMICILIO}}</h2>
+                    <h2>{{ "TURNO: " }}{{ user.HORARIO}}</h2>
+                    <h2>{{ "ENTRADA: " }}{{ user.ENTRADA}}{{ " SALIDA: " }}{{ user.SALIDA}}</h2>
                 </mat-card-content>
             </div>
             <mat-card-actions>
