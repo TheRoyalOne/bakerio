@@ -2,7 +2,7 @@ export class User {
     'id': number;
     'name': string;
     'username': string;
-    'email': string;
+    'correo': string;
     'address': {
       'street': string;
       'suite': string;

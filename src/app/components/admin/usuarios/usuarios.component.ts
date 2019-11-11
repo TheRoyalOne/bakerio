@@ -23,6 +23,8 @@ export class UsuariosComponent implements OnInit {
       }
     );
   }
-
+  obtenerCosa(id) {
+    console.log(id);
+  }
 }
 

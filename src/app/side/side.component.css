@@ -30,3 +30,7 @@ a {
 #logo {
     margin-bottom: 12px;
 }
+
+mat-sidenav-container {
+    overflow: hidden;
+}

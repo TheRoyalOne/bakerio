@@ -27,6 +27,15 @@ body,
 html {
     height: 100%;
     width: 100%;
+    display: none;
+}
+
+@media print {
+    html,
+    body {
+        display: none;
+        /* hide whole page */
+    }
 }
 
 router-outlet {

@@ -1,15 +1,14 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDatepickerModule, MatDatepickerInputEvent } from '@angular/material/datepicker';
-import { RegisterService } from './register.service';
 import {  HttpClient, HttpHeaders } from '@angular/common/http';
+import { RegistersService } from './registers.service';
 @Component({
-  selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  selector: 'app-registers',
+  templateUrl: './registers.component.html',
+  styleUrls: ['./registers.component.css']
 })
-
-export class RegistroComponent implements OnInit {
+export class RegistersComponent implements OnInit {
   public headers = new HttpHeaders();
   articulos = null;
   id: number;
@@ -41,8 +40,8 @@ export class RegistroComponent implements OnInit {
           empresa: null
   };
 
-  constructor(private router: Router, private userService: RegisterService, protected http: HttpClient,
-              private articulosServicio: RegisterService) { }
+  constructor(private router: Router, protected http: HttpClient,
+              private articulosServicio: RegistersService) { }
 
   ngOnInit() {
     this.recuperarTodos();

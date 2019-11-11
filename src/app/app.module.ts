@@ -82,6 +82,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { RegisterService } from './components/general/registro/register.service';
+import { RegisteraService } from './components/admin/registroa/registera.service';
+import { RegistersComponent } from './components/admin/registers/registers.component';
+import { RegistersService } from './components/admin/registers/registers.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -135,7 +139,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     EnviosComponent,
     AiudaComponent,
     SideComponent,
-    LogoutComponent
+    LogoutComponent,
+    RegistersComponent
   ],
   imports: [
     BrowserModule,
@@ -159,7 +164,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDatepickerModule,
     MatNativeDateModule
   ],
-  providers: [UserService, LoginService, NotaService, UsuarioService, DataService,
+  providers: [UserService, LoginService, NotaService, UsuarioService, DataService, RegisterService, RegisteraService, RegistersService,
      UsuariosService, AuthService, UserService, AiudaService, AuthGuard, FullprodService, MatNativeDateModule, MatDatepickerModule],
   bootstrap: [AppComponent]
 })

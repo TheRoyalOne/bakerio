@@ -47,6 +47,9 @@ import { CajaaComponent } from './components/u_ad_ven/cajaa/cajaa.component';
 import { AiudaComponent } from './components/general/aiuda/aiuda.component';
 import { AuthGuard } from './guards/auth.guard';
 import { LogoutComponent } from './logout/logout.component';
+import { RegistroaComponent } from './components/admin/registroa/registroa.component';
+import { RegistersService } from './components/admin/registers/registers.service';
+import { RegistersComponent } from './components/admin/registers/registers.component';
 
 const routes: Routes = [
 {path: '', component: LoginComponent },
@@ -61,6 +64,8 @@ const routes: Routes = [
 {path: 'admin/losses', component: PerdidasComponent,  canActivate: [AuthGuard]  },
 {path: 'admin/templates', component: PlantillasComponent ,  canActivate: [AuthGuard] }, // Proteger.
 {path: 'admin/slaves', component: UsuariosComponent,  canActivate: [AuthGuard] },
+{path: 'admin/register/mayo', component: RegistroaComponent,  canActivate: [AuthGuard] },
+{path: 'admin/register/slaves', component: RegistersComponent,  canActivate: [AuthGuard] },
 {path: 'admin/sales', component: VentasComponent ,  canActivate: [AuthGuard] },
 {path: 'envio/shippings', component: EnviosComponent ,  canActivate: [AuthGuard] },
 {path: 'envio/route', component: RutaComponent ,  canActivate: [AuthGuard] },
@@ -78,7 +83,7 @@ const routes: Routes = [
 {path: 'user/notes', component: NotasGComponent ,  canActivate: [AuthGuard] },
 {path: '911', component: AiudaComponent},
 {path: 'user/notifications', component: NotificacionesComponent ,  canActivate: [AuthGuard] },
-{path: 'user/register', component: RegistroComponent,  canActivate: [AuthGuard]  },
+{path: 'admin/register/menudo', component: RegistroComponent},
 {path: 'user/profile', component: UsuarioComponent,  canActivate: [AuthGuard] },
 {path: 'uapep/recetary', component: RecetarioComponent ,  canActivate: [AuthGuard] },
 {path: 'uapep/admin/recetary', component: RecetarioAComponent,  canActivate: [AuthGuard]  },
