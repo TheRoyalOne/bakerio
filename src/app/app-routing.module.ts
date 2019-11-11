@@ -50,6 +50,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { RegistroaComponent } from './components/admin/registroa/registroa.component';
 import { RegistersService } from './components/admin/registers/registers.service';
 import { RegistersComponent } from './components/admin/registers/registers.component';
+import { CreacionCuentaMayoreoComponent } from './components/externo/creacion-cuenta-mayoreo/creacion-cuenta-mayoreo.component';
 
 const routes: Routes = [
 {path: '', component: LoginComponent },
@@ -70,9 +71,9 @@ const routes: Routes = [
 {path: 'envio/shippings', component: EnviosComponent ,  canActivate: [AuthGuard] },
 {path: 'envio/route', component: RutaComponent ,  canActivate: [AuthGuard] },
 {path: 'ext/createmen', component: CreacionCuentaMenudeoComponent },
-{path: 'ext/createmay', component: CreacionCuentaMenudeoComponent },
+{path: 'ext/createmay', component: CreacionCuentaMayoreoComponent },
 {path: 'ext/account', component: CuentaComponent ,  canActivate: [AuthGuard] },
-{path: 'ext/apart', component: HistorialApartadosComponent },
+{path: 'ext/apart', component: HistorialApartadosComponent, canActivate: [AuthGuard]},
 {path: 'ext/purchases', component: HistorialComprasComponent ,  canActivate: [AuthGuard] },
 {path: 'ext/order', component: PedidooComponent ,  canActivate: [AuthGuard] },
 {path: 'ext/principal', component: PrincipalComponent },

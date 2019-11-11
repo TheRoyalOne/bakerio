@@ -1,1 +1,96 @@
-<p>creacion-cuenta-mayoreo works!</p>
+<div class="container">
+    <div class="page">
+        <div>
+            <h1>Administración de Clientes de Mayoreo</h1>
+            <ng-template #sinarticulos>
+                <p>No hay articulos.</p>
+            </ng-template>
+            <div>
+                <div id="theForm">
+                    <form #f="ngForm">
+                        <div class="form-group">
+                            <h1>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>ID </mat-label>
+                                    <input matInput placeholder="ID" id="id" name="id" [(ngModel)]="art.id" #userId="ngModel" required pattern="[0-9][0-9]" #trackId="ngModel">
+                                </mat-form-field>
+                                <p class="alert" *ngIf="!trackId.valid && trackId.touched || !trackId.touched">El id es de a gusa</p>
+                            </h1>
+                            <h1>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Nombre </mat-label>
+                                    <input matInput placeholder="Nombre" id="nombre" name="nombre" [(ngModel)]="art.user" required pattern="^[a-zA-Z]+$" #trackName="ngModel">
+                                </mat-form-field>
+                                <p class="alert" *ngIf="!trackName.valid && trackName.touched || !trackName.touched">El nombre es de a gusa</p>
+                            </h1>
+                            <h1>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Apellidos </mat-label>
+                                    <input matInput placeholder="Apellido(s)" id="apex" name="apellidos" [(ngModel)]="art.apex" required pattern="^[a-zA-Z]+$" #trackapex="ngModel">
+                                </mat-form-field>
+                                <p class="alert" *ngIf="!trackapex.valid && trackapex.touched || !trackapex.touched">El apellido es de a gusa</p>
+                            </h1>
+                            <h1>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Fecha de Nacimiento </mat-label>
+                                    <input matInput placeholder="Mes:Día:Año" id="nacimiento" seleccion="nacimiento" name="nacimiento" type="date" [(ngModel)]="art.nacimiento" #tracknacimiento="ngModel">
+                                </mat-form-field>
+                                <p class="alert" *ngIf="!tracknacimiento.valid && tracknacimiento.touched || !tracknacimiento.touched">La fecha de nacimiento es de a gusa</p>
+                            </h1>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Domicilio </mat-label>
+                                <input matInput placeholder="Domicilio" id="domicilio" name="domicilio" [(ngModel)]="art.domicilio" required #trackdomicilio="ngModel">
+                            </mat-form-field>
+                            <p class="alert" *ngIf="!trackdomicilio.valid && trackdomicilio.touched || !trackdomicilio.touched">El domicilio es de a gusa</p>
+                            <h1>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Correo </mat-label>
+                                    <input matInput placeholder="Correo" id="correo" name="correo" type="email" [(ngModel)]="art.correo" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{3,}" required #trackmail="ngModel">
+                                </mat-form-field>
+                                <p class="alert" *ngIf="!trackmail.valid && trackmail.touched || !trackmail.touched">El correo es de a gusa para usuarios de mayoreo</p>
+                            </h1>
+                            <p>
+                                <h1>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Contrasena </mat-label>
+                                        <input matInput placeholder="Contrasena" id="password" name="password" type="password" [(ngModel)]="art.password" required #trackpassword="ngModel">
+                                    </mat-form-field>
+                                    <p class="alert" *ngIf="!trackpassword.valid && trackpassword.touched || !trackpassword.touched">La contrasena es de a gusa</p>
+                                </h1>
+                                <h1>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Celular </mat-label>
+                                        <input matInput placeholder="Celular" id="celular" name="celular" type="number" [(ngModel)]="art.celular" required #trackcel="ngModel">
+                                    </mat-form-field>
+                                    <p class="alert" *ngIf="!trackcel.valid && trackcel.touched || !trackcel.touched">El celular es de a gusa</p>
+                                </h1>
+                                <h1>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Empresa </mat-label>
+                                        <input matInput placeholder="Nombre" id="empresa" name="empresa" type="text" [(ngModel)]="art.empresa" required #trackempresa="ngModel">
+                                    </mat-form-field>
+                                    <p class="alert" *ngIf="!trackempresa.valid && trackempresa.touched || !trackempresa.touched">El nombre de empresa es exclusivo para clientes de Mayoreo</p>
+                                </h1>
+                                <h1>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Telefono </mat-label>
+                                        <input matInput placeholder="Telefono" id="telefono" name="telefono" type="number" [(ngModel)]="art.telefono" required #tracktelefono="ngModel">
+                                    </mat-form-field>
+                                    <p class="alert" *ngIf="!tracktelefono.valid && tracktelefono.touched || !tracktelefono.touched">El telefono es de agusa</p>
+                                </h1>
+                                <h1>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Imagen </mat-label>
+                                        <input matInput placeholder="Imagen" id="foto" name="imagen" [(ngModel)]="art.foto" type="text" required #trackfoto="ngModel">
+                                    </mat-form-field>
+                                    <p class="alert" *ngIf="!trackfoto.valid && trackfoto.touched || !trackfoto.touched">La foto es de a gusa</p>
+                                </h1>Campos llenados correctamente: {{f.valid}}
+                                <button (click)="alta()" [disabled]="!f.form.valid">Registrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
