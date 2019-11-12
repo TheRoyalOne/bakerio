@@ -8,6 +8,6 @@ export class AiudaService {
 
   constructor(protected http: HttpClient) { }
   getHelp() {
-    return this.http.get('http://localhost/notas.php');
+    return this.http.get('http://localhost/notas.php', { withCredentials: true});
   }
 }

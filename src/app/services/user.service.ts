@@ -5,6 +5,6 @@ export class UserService {
   public headers = new HttpHeaders();
   constructor(protected http: HttpClient) {}
   getUsers() {
-    return this.http.get('http://localhost/usuario.php'), { withCredentials: false};
+    return this.http.get('http://localhost/usuario.php', { withCredentials: true});
   }
 }

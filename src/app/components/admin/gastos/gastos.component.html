@@ -1,1 +1,109 @@
-<p>gastos works!</p>
+<div class="container">
+    <div class="page">
+        <div>
+            <h1>Administración de Gastos Fijos</h1>
+            <table border="1" *ngIf="hayRegistros(); else sinarticulos">
+                <tr>
+                    <td>ID</td>
+                    <td>Nombre</td>
+                    <td>Costo</td>
+                    <td>Existencias</td>
+                    <td>Unidad</td>
+                    <td>Descripcion</td>
+                    <td>FK_Caducidad</td>
+                    <td>Imagen</td>
+                    <td>Borrar</td>
+                </tr>
+                <tr *ngFor="let art of articulos">
+                    <td>{{art.ID}}</td>
+                    <td>{{art.Nombre}}</td>
+                    <td>{{art.Costo}}</td>
+                    <td>{{art.Existencias}}</td>
+                    <td>{{art.Unidad}}</td>
+                    <td>{{art.Extra}}</td>
+                    <td>{{art.FK_FechaCaducidad}}</td>
+                    <td>{{art.Imagen}}</td>
+                    <td><button (click)="baja(art.ID)">Eliminar</button></td>
+                </tr>
+            </table>
+            <ng-template #sinarticulos>
+                <p>No hay articulos.</p>
+            </ng-template>
+            <div>
+                <div id="theForm">
+                    <form #f="ngForm">
+                        <div class="form-group">
+                            <h1>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>ID </mat-label>
+                                    <input matInput placeholder="ID" id="id" name="id" type="number" [(ngModel)]="art.id" #userId="ngModel" required #trackId="ngModel">
+                                </mat-form-field>
+                                <p class="alert" *ngIf="!trackId.valid && trackId.touched || !trackId.touched">El id es de a gusa</p>
+                            </h1>
+                            <h1>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Nombre </mat-label>
+                                    <input matInput placeholder="Nombre" id="nombre" name="nombre" [(ngModel)]="art.nombre" required #trackName="ngModel">
+                                </mat-form-field>
+                                <p class="alert" *ngIf="!trackName.valid && trackName.touched || !trackName.touched">El nombre es de a gusa</p>
+                            </h1>
+                            <h1>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Descripcion </mat-label>
+                                    <input matInput placeholder="Descripcion" id="descripcion" name="descripcion" type="text" [(ngModel)]="art.extra" required #trackExtra="ngModel">
+                                </mat-form-field>
+                                <p class="alert " *ngIf="!trackExtra.valid && trackExtra.touched || !trackExtra.touched ">El extra es de a gusa</p>
+                            </h1>
+                            <h1>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Costo </mat-label>
+                                    <input matInput placeholder="Costo" id="nombre" name="costo" type="number" [(ngModel)]="art.costo" required pattern="^[1-9]+$" #trackCosto="ngModel">
+                                </mat-form-field>
+                                <p class="alert " *ngIf="!trackCosto.valid && trackCosto.touched || !trackCosto.touched ">El costo es de a gusa</p>
+                            </h1>
+                            <h1>
+                                <mat-form-field class="example-full-width ">
+                                    <mat-label>Existencias </mat-label>
+                                    <input matInput placeholder="Existencias" id="existencias" type="number" name="existencias" [(ngModel)]="art.existencia" required #trackExistencia="ngModel">
+                                </mat-form-field>
+                                <p class="alert " *ngIf="!trackExistencia.valid && trackExistencia.touched || !trackExistencia.touched ">La existencia es de a gusa</p>
+                            </h1>
+                            <h1>
+                                <mat-form-field class="example-full-width ">
+                                    <mat-label>Minimo </mat-label>
+                                    <input matInput placeholder="Minimo" id="minimo" type="number" name="minimo" [(ngModel)]="art.minimo" required #trackMinimo="ngModel">
+                                </mat-form-field>
+                                <p class="alert " *ngIf="!trackMinimo.valid && trackMinimo.touched || !trackMinimo.touched ">La unidad es de a gusa</p>
+                            </h1>
+                            <h1>
+                                <mat-form-field class="example-full-width ">
+                                    <mat-label>Unidad </mat-label>
+                                    <input matInput placeholder="Unidad" id="unidad" name="unidad" [(ngModel)]="art.unidad" required #trackUnidad="ngModel">
+                                </mat-form-field>
+                                <p class="alert " *ngIf="!trackUnidad.valid && trackUnidad.touched || !trackUnidad.touched ">La unidad es de a gusa</p>
+                            </h1>
+                            <h1>
+                                <mat-form-field class="example-full-width ">
+                                    <mat-label>FK_Caducidad </mat-label>
+                                    <input matInput placeholder="Caducidad" type="number" id="caducidad" name="caducidad" [(ngModel)]="art.caducidad" required #trackCaducidad="ngModel">
+                                </mat-form-field>
+                                <p class="alert " *ngIf="!trackCaducidad.valid && trackCaducidad.touched || !trackCaducidad.touched ">La Caducidad es de a gusa</p>
+                            </h1>
+                            <h1>
+                                <mat-form-field class="example-full-width ">
+                                    <mat-label>Imagen </mat-label>
+                                    <input matInput placeholder="Imagen " id="imagen " name="imagen " type="text " [(ngModel)]="art.imagen " required #trackImagen="ngModel">
+                                </mat-form-field>
+                                <p class="alert " *ngIf="!trackImagen.valid && trackImagen.touched || !trackImagen.touched ">La imagen es de a gusa para usuarios de mayoreo</p>
+                            </h1>Campos llenados correctamente: {{f.valid}}
+                            <button (click)="alta() " [disabled]="!f.form.valid " type="submit">Registrar</button>
+                        </div>
+                    </form>
+                </div>
+                <p>
+                    <button (click)="modificacion() " [disabled]="!f.form.valid " type="submit">Modificar</button></p>
+            </div>
+        </div>
+
+    </div>
+</div>
