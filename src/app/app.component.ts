@@ -15,10 +15,12 @@ export class AppComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
   }
+  public start: string;
+  public finish: string;
 
-  constructor(
-    protected userService: UserService
-  ) {
+  public constructor() {
+      this.start = "37.7397,-121.4252";
+      this.finish = "37.6819,-121.7680";
   }
   ngOnInit() {
 }

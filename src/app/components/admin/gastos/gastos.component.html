@@ -59,7 +59,7 @@
                                     <mat-label>Costo </mat-label>
                                     <input matInput placeholder="Costo" id="nombre" name="costo" type="number" [(ngModel)]="art.costo" required pattern="^[1-9]+$" #trackCosto="ngModel">
                                 </mat-form-field>
-                                <p class="alert " *ngIf="!trackCosto.valid && trackCosto.touched || !trackCosto.touched ">El costo es de a gusa</p>
+                                <p class="alert " *ngIf="!trackCosto.valid && trackCosto.touched || !trackCosto.touched ">El costo debe ser mayor a 0</p>
                             </h1>
                             <h1>
                                 <mat-form-field class="example-full-width ">

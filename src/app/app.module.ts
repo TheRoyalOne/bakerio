@@ -86,6 +86,11 @@ import { RegisterService } from './components/general/registro/register.service'
 import { RegisteraService } from './components/admin/registroa/registera.service';
 import { RegistersComponent } from './components/admin/registers/registers.component';
 import { RegistersService } from './components/admin/registers/registers.service';
+import { AgmCoreModule } from '@agm/core';            // @agm/core
+import { AgmDirectionModule } from 'agm-direction';   // agm-direction AIzaSyCEcqcY8SlTqiJxGeVf1SjdcgEj4j0eCi0
+import { map } from 'rxjs/operators';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MyDialogComponent } from './side/my-dialog/my-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -140,7 +145,8 @@ import { RegistersService } from './components/admin/registers/registers.service
     AiudaComponent,
     SideComponent,
     LogoutComponent,
-    RegistersComponent
+    RegistersComponent,
+    MyDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -162,10 +168,19 @@ import { RegistersService } from './components/admin/registers/registers.service
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatDialogModule,
+    AgmCoreModule.forRoot({ // @agm/core
+      apiKey: 'AIzaSyCEcqcY8SlTqiJxGeVf1SjdcgEj4j0eCi0',
+    }),
+    AgmDirectionModule,     // agm-direction
+  ],
+  entryComponents: [
+    MyDialogComponent
   ],
   providers: [UserService, LoginService, NotaService, UsuarioService, DataService, RegisterService, RegisteraService, RegistersService,
-     UsuariosService, AuthService, UserService, AiudaService, AuthGuard, FullprodService, MatNativeDateModule, MatDatepickerModule],
+     UsuariosService, AuthService, UserService, AiudaService, AuthGuard, FullprodService, MatNativeDateModule, MatDatepickerModule,
+    MatDialogModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

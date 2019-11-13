@@ -27,6 +27,12 @@ export class AuthService {
  get isLoggedIn() {
   return this.loggedInStatus;
   }
+  entrada() {
+    return this.http.get('http://localhost/entrada.php', {headers: this.headers, withCredentials: true});
+  }
+  salida() {
+      return this.http.get('http://localhost/salida.php', {headers: this.headers, withCredentials: true});
+  }
   getUserDetails(username, password) {
     return this.http.post<myData>('http://localhost/login.php', {
       username,

@@ -21,12 +21,20 @@ loginUser(event: { preventDefault: () => void; target: any; }) {
   this.Auth.getUserDetails(username, password).subscribe(data => {
     if (data.success) {
         this.router.navigate(['user/profile']);
-        this.Auth.setLoggedIn(true);
+        this.entrada();
     } else {
       window.alert(data.message);
     }
   });
   console.log(username, password);
 }
-
+entrada() {
+  this.Auth.entrada().subscribe(datos => {
+    // tslint:disable-next-line:no-string-literal
+    if (datos['resultado'] === 'OK') {
+      // tslint:disable-next-line:no-string-literal
+      alert(datos['mensaje']);
+    }
+  });
+}
 }
