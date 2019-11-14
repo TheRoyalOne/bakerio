@@ -23,7 +23,6 @@ export class SideComponent {
   openDialog(): void {
     const dialogRef = this.dialog.open(MyDialogComponent, {
       data: {
-      myVar: "MY VAR"
       }
     });
 

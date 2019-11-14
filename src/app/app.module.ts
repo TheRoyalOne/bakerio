@@ -91,6 +91,9 @@ import { AgmDirectionModule } from 'agm-direction';   // agm-direction AIzaSyCEc
 import { map } from 'rxjs/operators';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MyDialogComponent } from './side/my-dialog/my-dialog.component';
+import { ComentarioComponent } from './components/externo/principal/comentario/comentario.component';
+import { CompraComponent } from './components/externo/principal/compra/compra.component';
+import { ApartadoComponent } from './components/externo/principal/apartado/apartado.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -146,7 +149,10 @@ import { MyDialogComponent } from './side/my-dialog/my-dialog.component';
     SideComponent,
     LogoutComponent,
     RegistersComponent,
-    MyDialogComponent
+    MyDialogComponent,
+    ComentarioComponent,
+    CompraComponent,
+    ApartadoComponent
   ],
   imports: [
     BrowserModule,
@@ -176,7 +182,10 @@ import { MyDialogComponent } from './side/my-dialog/my-dialog.component';
     AgmDirectionModule,     // agm-direction
   ],
   entryComponents: [
-    MyDialogComponent
+    MyDialogComponent,
+    ComentarioComponent,
+    CompraComponent,
+    ApartadoComponent
   ],
   providers: [UserService, LoginService, NotaService, UsuarioService, DataService, RegisterService, RegisteraService, RegistersService,
      UsuariosService, AuthService, UserService, AiudaService, AuthGuard, FullprodService, MatNativeDateModule, MatDatepickerModule,

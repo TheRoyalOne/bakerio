@@ -1,10 +1,8 @@
-<p>notas works!</p>
-<p>notas works!</p>
-<p>notas works!</p>
-<p>notas works!</p>
-<p>notas works!</p>
-<p>notas works!</p>
-<p>notas works!</p>
-<p>notas works!</p>
-<p>notas works!</p>
-<p>notas works!</p>
+<div class="container">
+    <div *ngFor='let list of notas'>
+        <h2>{{"Numero de nota: "}}{{ list.ID}}</h2>
+        <h2>{{ list.CONTENIDO | uppercase }}</h2>
+        <h2>{{ list.FECHA}}</h2>
+        <h2>{{"Usuario: "}}{{ list.NOMBRE}}{{" "}}{{ list.APELLIDO}}</h2>
+    </div>
+</div>

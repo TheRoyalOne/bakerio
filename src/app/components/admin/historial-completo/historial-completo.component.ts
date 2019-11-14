@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HistorialService } from '../../general/historial/historial.service';
 
 @Component({
   selector: 'app-historial-completo',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./historial-completo.component.css']
 })
 export class HistorialCompletoComponent implements OnInit {
-
-  constructor() { }
+  usuarios: any[] = [];
+  constructor(private historial: HistorialService) { }
 
   ngOnInit() {
+    this.historial.historialfull()
+    .subscribe(
+      (data) => { // Successs
+        // tslint:disable-next-line:no-string-literal
+        this.usuarios = data['results'];
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 
 }

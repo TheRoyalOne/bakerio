@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FullprodService } from './fullprod.service';
-
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { ComentarioComponent } from './comentario/comentario.component';
+import { CompraComponent } from './compra/compra.component';
+import { ApartadoComponent } from './apartado/apartado.component';
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
@@ -8,9 +14,52 @@ import { FullprodService } from './fullprod.service';
 })
 export class PrincipalComponent implements OnInit {
   productos: any[] = [];
+  precio: number;
+  prec: number;
+  art = {
+    prod: null,
+    fecha: null,
+    precio: null,
+    prec: null
+  };
   constructor(
-    protected principe: FullprodService) { }
-
+    protected principe: FullprodService, public dialog: MatDialog) { }
+    openDialog(): void {
+      const dialogRef = this.dialog.open(ComentarioComponent, {
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+        console.log(result);
+      });
+    }
+    openPurchase(codigo, costo): void {
+      console.log(codigo);
+      console.log(costo);
+      this.precio = costo;
+      const dialogRef = this.dialog.open(CompraComponent, {
+        data: {
+          precio: this.precio
+        }
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+        console.log(result);
+      });
+    }
+    openStock(codigo, costo): void {
+      console.log(codigo);
+      console.log(costo);
+      this.prec = costo;
+      const dialogRef = this.dialog.open(ApartadoComponent, {
+        data: {
+          prec: this.prec
+        }
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+        console.log(result);
+      });
+    }
   ngOnInit() {
     this.principe.getProd()
     .subscribe(

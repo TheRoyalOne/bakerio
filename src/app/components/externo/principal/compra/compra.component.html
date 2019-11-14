@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Nueva Compra</h1>
+<div mat-dialog-content>
+    <p>Selecciona la cantidad deseada del producto</p>
+    <div id="theForm">
+        <form #f="ngForm">
+            <div class="form-group">
+                <mat-form-field>
+                    <input matInput placeholder="Cantidad" id="cantidad" type="number" name="cantidad" [(ngModel)]="art.prod" required #dataId="ngModel">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Fecha de entrega" id="fecha" type="date" name="fecha" [(ngModel)]="art.fecha" required #fechaID="ngModel">
+                </mat-form-field>
+                <p class="alert" *ngIf="!dataId.valid && !fechaID.valid">El contenido es de a gusa</p>
+            </div>
+            {{data.precio}}
+        </form>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button (click)="purchase(data.precio,art.prod)" [disabled]="!f.form.valid ">Comprar</button>
+        <button mat-button mat-dialog-close>Cancelar</button>
+    </div>

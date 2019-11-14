@@ -7,4 +7,7 @@ export class NotaService {
   getNotas() {
     return this.http.get('http://localhost/notas.php', { withCredentials: true});
   }
+  getNotasfull() {
+    return this.http.get('http://localhost/notasfull.php', { withCredentials: true});
+  }
 }
