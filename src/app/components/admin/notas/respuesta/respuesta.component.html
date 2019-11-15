@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Respuesta</h1>
+<div mat-dialog-content>
+    <p>Ingrese una respuesta para la nota</p>
+    <div id="theForm">
+        <form #f="ngForm">
+            <div class="form-group">
+                <mat-form-field>
+                    <input matInput placeholder="Respuesta" id="contenido" type="text" name="contenido" [(ngModel)]="art.conte" required #dataId="ngModel">
+                </mat-form-field>
+                <p class="alert" *ngIf="!dataId.valid && !dataId.valid">El contenido es de a gusa</p>
+            </div>
+            {{data.precio}}
+        </form>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button (click)="responder(data.nota,art.conte)" [disabled]="!f.form.valid ">Responder</button>
+        <button mat-button mat-dialog-close>Cancelar</button>
+    </div>

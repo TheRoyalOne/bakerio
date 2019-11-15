@@ -10,4 +10,7 @@ export class NotaService {
   getNotasfull() {
     return this.http.get('http://localhost/notasfull.php', { withCredentials: true});
   }
+  respuesta(nota) {
+    return this.http.post('http://localhost/respuesta.php', JSON.stringify(nota), { withCredentials: true});
+  }
 }

@@ -14,6 +14,6 @@ export class RegistromayoService {
   this.headers.set('Content-Type', 'Authorization');
    }
   alta(articulo) {
-    return this.http.post('http://localhost/alta.php', JSON.stringify(articulo));
+    return this.http.post('http://localhost:/alta.php', JSON.stringify(articulo));
   }
 }

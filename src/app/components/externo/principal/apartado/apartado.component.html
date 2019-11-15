@@ -5,10 +5,10 @@
         <form #f="ngForm">
             <div class="form-group">
                 <mat-form-field>
-                    <input matInput placeholder="{{data.prec}}" id="cantidad" type="number" name="cantidad" [(ngModel)]="art.prod" required #dataId="ngModel">
+                    <input matInput placeholder="Cantidad de Productos" id="cantidad" type="number" name="cantidad" [(ngModel)]="art.prod" required #dataId="ngModel">
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="{{data.prec}}" id="fecha" type="date" name="fecha" min="2019-11-14" max="2019-11-15" [(ngModel)]="art.fecha" required #fechaID="ngModel">
+                    <input matInput placeholder="{{data.prec}}" id="fecha" type="date" name="fecha" min="{{this.dia}}" max="{{this.semana}}" [(ngModel)]="art.fecha" required #fechaID="ngModel">
                 </mat-form-field>
                 <p class="alert" *ngIf="!dataId.valid && !fechaID.valid">El contenido es de a gusa</p>
             </div>
@@ -16,6 +16,6 @@
         </form>
     </div>
     <div mat-dialog-actions>
-        <button mat-raised-button (click)="alta(data.prec,art.prod)" [disabled]="!f.form.valid ">Apartar</button>
+        <button mat-raised-button (click)="alta(data.prec,art.prod,data.producto)" [disabled]="!f.form.valid ">Apartar</button>
         <button mat-button mat-dialog-close>Cancelar</button>
     </div>

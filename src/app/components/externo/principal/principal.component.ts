@@ -16,6 +16,7 @@ export class PrincipalComponent implements OnInit {
   productos: any[] = [];
   precio: number;
   prec: number;
+  producto: number;
   art = {
     prod: null,
     fecha: null,
@@ -36,9 +37,11 @@ export class PrincipalComponent implements OnInit {
       console.log(codigo);
       console.log(costo);
       this.precio = costo;
+      this.producto = codigo;
       const dialogRef = this.dialog.open(CompraComponent, {
         data: {
-          precio: this.precio
+          precio: this.precio,
+          producto: this.producto
         }
       });
       dialogRef.afterClosed().subscribe(result => {
@@ -50,9 +53,11 @@ export class PrincipalComponent implements OnInit {
       console.log(codigo);
       console.log(costo);
       this.prec = costo;
+      this.producto = codigo;
       const dialogRef = this.dialog.open(ApartadoComponent, {
         data: {
-          prec: this.prec
+          prec: this.prec,
+          producto: this.producto
         }
       });
       dialogRef.afterClosed().subscribe(result => {

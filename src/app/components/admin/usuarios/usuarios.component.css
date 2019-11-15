@@ -8,7 +8,8 @@ font-family: 'Shadows Into Light', cursive;*/
 
 .example-card {
     margin-top: 10%;
-    background-image: url("https://thejuanandonly.000webhostapp.com/bakerio/Imagenes/Usuarios/card.jpg");
+    margin-left: 10%;
+    background-image: url("/assets/images/card.jpg");
 }
 
 img {

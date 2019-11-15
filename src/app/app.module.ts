@@ -94,6 +94,11 @@ import { MyDialogComponent } from './side/my-dialog/my-dialog.component';
 import { ComentarioComponent } from './components/externo/principal/comentario/comentario.component';
 import { CompraComponent } from './components/externo/principal/compra/compra.component';
 import { ApartadoComponent } from './components/externo/principal/apartado/apartado.component';
+import { DatePipe } from '@angular/common';
+import { AsyncPipe } from '../../node_modules/@angular/common';
+import { MessagingService } from './services/messaging.service';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { RespuestaComponent } from './components/admin/notas/respuesta/respuesta.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -152,7 +157,8 @@ import { ApartadoComponent } from './components/externo/principal/apartado/apart
     MyDialogComponent,
     ComentarioComponent,
     CompraComponent,
-    ApartadoComponent
+    ApartadoComponent,
+    RespuestaComponent
   ],
   imports: [
     BrowserModule,
@@ -179,17 +185,21 @@ import { ApartadoComponent } from './components/externo/principal/apartado/apart
     AgmCoreModule.forRoot({ // @agm/core
       apiKey: 'AIzaSyCEcqcY8SlTqiJxGeVf1SjdcgEj4j0eCi0',
     }),
-    AgmDirectionModule,     // agm-direction
+    AgmDirectionModule,
+    BrowserModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
   entryComponents: [
     MyDialogComponent,
     ComentarioComponent,
     CompraComponent,
-    ApartadoComponent
+    ApartadoComponent,
+    RespuestaComponent
   ],
   providers: [UserService, LoginService, NotaService, UsuarioService, DataService, RegisterService, RegisteraService, RegistersService,
      UsuariosService, AuthService, UserService, AiudaService, AuthGuard, FullprodService, MatNativeDateModule, MatDatepickerModule,
-    MatDialogModule],
+    MatDialogModule, DatePipe, AsyncPipe, MessagingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
