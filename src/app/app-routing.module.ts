@@ -51,7 +51,9 @@ import { RegistroaComponent } from './components/admin/registroa/registroa.compo
 import { RegistersService } from './components/admin/registers/registers.service';
 import { RegistersComponent } from './components/admin/registers/registers.component';
 import { CreacionCuentaMayoreoComponent } from './components/externo/creacion-cuenta-mayoreo/creacion-cuenta-mayoreo.component';
-
+import { PreparadosComponent } from './components/admin/plantillas/preparados/preparados.component';
+import { EnvioComponent } from './components/admin/plantillas/envio/envio.component';
+import { ProductionComponent } from './components/admin/plantillas/production/production.component';
 const routes: Routes = [
 {path: '', component: LoginComponent },
 {path: 'admin/help', component: AyudaComponent,  canActivate: [AuthGuard] }, // Proteger.
@@ -64,6 +66,9 @@ const routes: Routes = [
 {path: 'admin/notes', component: NotasComponent,  canActivate: [AuthGuard]  }, // Proteger.
 {path: 'admin/losses', component: PerdidasComponent,  canActivate: [AuthGuard]  },
 {path: 'admin/templates', component: PlantillasComponent ,  canActivate: [AuthGuard] }, // Proteger.
+{path: 'admin/templates/prod', component: ProductionComponent ,  canActivate: [AuthGuard] }, // Proteger.
+{path: 'admin/templates/prep', component: PreparadosComponent ,  canActivate: [AuthGuard] }, // Proteger.
+{path: 'admin/templates/envios', component: EnvioComponent ,  canActivate: [AuthGuard] }, // Proteger.
 {path: 'admin/slaves', component: UsuariosComponent,  canActivate: [AuthGuard] },
 {path: 'admin/register/mayo', component: RegistroaComponent,  canActivate: [AuthGuard] },
 {path: 'admin/register/slaves', component: RegistersComponent,  canActivate: [AuthGuard] },

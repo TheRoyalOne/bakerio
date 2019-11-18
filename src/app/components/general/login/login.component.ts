@@ -22,6 +22,7 @@ loginUser(event: { preventDefault: () => void; target: any; }) {
     if (data.success) {
         this.router.navigate(['user/profile']);
         this.entrada();
+        this.asignacion();
     } else {
       window.alert(data.message);
     }
@@ -30,6 +31,16 @@ loginUser(event: { preventDefault: () => void; target: any; }) {
 }
 entrada() {
   this.Auth.entrada().subscribe(datos => {
+    // tslint:disable-next-line:no-string-literal
+    if (datos['resultado'] === 'OK') {
+      // tslint:disable-next-line:no-string-literal
+      alert(datos['mensaje']);
+    }
+  });
+}
+
+asignacion() {
+  this.Auth.asignacion().subscribe(datos => {
     // tslint:disable-next-line:no-string-literal
     if (datos['resultado'] === 'OK') {
       // tslint:disable-next-line:no-string-literal

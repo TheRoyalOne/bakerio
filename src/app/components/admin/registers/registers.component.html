@@ -51,7 +51,7 @@
                             <h1>
                                 <mat-form-field class="example-full-width">
                                     <mat-label>Nombre </mat-label>
-                                    <input matInput placeholder="Nombre" id="nombre" name="nombre" [(ngModel)]="art.user" required pattern="^[a-zA-Z]+$" #trackName="ngModel">
+                                    <input matInput placeholder="Nombre" id="nombre" name="nombre" [(ngModel)]="art.user" required #trackName="ngModel">
                                 </mat-form-field>
                                 <p class="alert" *ngIf="!trackName.valid && trackName.touched || !trackName.touched">El nombre es de a gusa</p>
                             </h1>

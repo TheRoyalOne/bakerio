@@ -39,4 +39,7 @@ export class AuthService {
       password
     }, {headers: this.headers, withCredentials: true});
   }
+  asignacion() {
+    return this.http.get('http://localhost/asignacionPlan.php', {withCredentials: true});
+  }
 }

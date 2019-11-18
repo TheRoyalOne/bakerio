@@ -99,6 +99,11 @@ import { AsyncPipe } from '../../node_modules/@angular/common';
 import { MessagingService } from './services/messaging.service';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { RespuestaComponent } from './components/admin/notas/respuesta/respuesta.component';
+import { PreparadosComponent } from './components/admin/plantillas/preparados/preparados.component';
+import { EnvioComponent } from './components/admin/plantillas/envio/envio.component';
+import { ProductionComponent } from './components/admin/plantillas/production/production.component';
+import { PlanComponent } from './components/admin/plantillas/preparados/plan/plan.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -149,7 +154,7 @@ import { RespuestaComponent } from './components/admin/notas/respuesta/respuesta
     PedidooComponent,
     SalesComponent,
     RegistroaComponent,
-    EnviosComponent,
+    EnvioComponent,
     AiudaComponent,
     SideComponent,
     LogoutComponent,
@@ -158,7 +163,11 @@ import { RespuestaComponent } from './components/admin/notas/respuesta/respuesta
     ComentarioComponent,
     CompraComponent,
     ApartadoComponent,
-    RespuestaComponent
+    RespuestaComponent,
+    PreparadosComponent,
+    PlantillasComponent,
+    ProductionComponent,
+    PlanComponent
   ],
   imports: [
     BrowserModule,
@@ -189,13 +198,15 @@ import { RespuestaComponent } from './components/admin/notas/respuesta/respuesta
     BrowserModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    MatAutocompleteModule
   ],
   entryComponents: [
     MyDialogComponent,
     ComentarioComponent,
     CompraComponent,
     ApartadoComponent,
-    RespuestaComponent
+    RespuestaComponent,
+    PlanComponent
   ],
   providers: [UserService, LoginService, NotaService, UsuarioService, DataService, RegisterService, RegisteraService, RegistersService,
      UsuariosService, AuthService, UserService, AiudaService, AuthGuard, FullprodService, MatNativeDateModule, MatDatepickerModule,
