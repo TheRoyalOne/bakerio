@@ -18,7 +18,7 @@ export class HistorialCompletoComponent implements OnInit {
         this.usuarios = data['results'];
       },
       (error) => {
-        console.error(error);
+        console.log(error);
       }
     );
   }

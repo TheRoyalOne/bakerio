@@ -104,6 +104,7 @@ import { EnvioComponent } from './components/admin/plantillas/envio/envio.compon
 import { ProductionComponent } from './components/admin/plantillas/production/production.component';
 import { PlanComponent } from './components/admin/plantillas/preparados/plan/plan.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { HistorialventasComponent } from './components/general/historialventas/historialventas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -167,7 +168,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     PreparadosComponent,
     PlantillasComponent,
     ProductionComponent,
-    PlanComponent
+    PlanComponent,
+    HistorialventasComponent
   ],
   imports: [
     BrowserModule,

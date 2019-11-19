@@ -54,6 +54,7 @@ import { CreacionCuentaMayoreoComponent } from './components/externo/creacion-cu
 import { PreparadosComponent } from './components/admin/plantillas/preparados/preparados.component';
 import { EnvioComponent } from './components/admin/plantillas/envio/envio.component';
 import { ProductionComponent } from './components/admin/plantillas/production/production.component';
+import { HistorialventasComponent } from './components/general/historialventas/historialventas.component';
 const routes: Routes = [
 {path: '', component: LoginComponent },
 {path: 'admin/help', component: AyudaComponent,  canActivate: [AuthGuard] }, // Proteger.
@@ -89,6 +90,7 @@ const routes: Routes = [
 {path: 'user/notes', component: NotasGComponent ,  canActivate: [AuthGuard] },
 {path: '911', component: AiudaComponent},
 {path: 'user/notifications', component: NotificacionesComponent ,  canActivate: [AuthGuard] },
+{path: 'user/historysale', component: HistorialventasComponent,  canActivate: [AuthGuard] },
 {path: 'admin/register/menudo', component: RegistroComponent},
 {path: 'user/profile', component: UsuarioComponent,  canActivate: [AuthGuard] },
 {path: 'uapep/recetary', component: RecetarioComponent ,  canActivate: [AuthGuard] },

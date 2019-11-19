@@ -25,6 +25,7 @@ export class CompraComponent implements OnInit {
   semana: string;
   can: number;
   art = {
+    desc: null,
     prod: null,
     fecha: null,
     obj: null,
@@ -49,7 +50,8 @@ export class CompraComponent implements OnInit {
   ngOnInit() {
   }
   purchase(dato, cant, pan) {
-    this.total = cant * dato;
+    this.total = (cant * dato)*(this.art.desc/100);
+    console.log(this.total);
     this.art.costo = this.total;
     this.art.obj = pan;
     this.art.can = cant;

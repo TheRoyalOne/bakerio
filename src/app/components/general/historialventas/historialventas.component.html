@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="page">
+        <div>
+            <h1>Administración de Plantillas</h1>
+            <table border="1" *ngIf="hayRegistros(); else sinarticulos">
+                <tr>
+                    <td>ID</td>
+                    <td>Estado</td>
+                    <td>Fecha Creación</td>
+                    <td>Fecha Entrega</td>
+                    <td>Total</td>
+                    <td>Fk_usuario</td>
+                    <td>Direccion</td>
+                    <td>Borrar</td>
+                    <td>Selección</td>
+                </tr>
+                <tr *ngFor="let art of articulos">
+                    <td>{{art.ID}}</td>
+                    <td>{{art.Estado}}</td>
+                    <td>{{art.Fechacreacion}}</td>
+                    <td>{{art.Fechaentrega}}</td>
+                    <td>{{art.Total}}</td>
+                    <td>{{art.Fk_usuario}}</td>
+                    <td>{{art.direccion}}</td>
+                    <td><button mat-raised-button (click)="bajas(art.ID)">Eliminar</button></td>
+                    <td><button mat-raised-button (click)="seleccionars(art.ID)">Seleccionar</button></td>
+                </tr>
+            </table>
+            <ng-template #sinarticulos>
+                <p>No hay articulos.</p>
+            </ng-template>
+            <div>
+                <div id="theForm">
+                    <form #f="ngForm">
+                        <div class="form-group">
+                            <h1>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Total </mat-label>
+                                    <input matInput placeholder="Total" id="total" type="number" min="1" name="total" [(ngModel)]="art.total" required #trackName="ngModel">
+                                </mat-form-field>
+                                <p class="alert" *ngIf="!trackName.valid && trackName.touched || !trackName.touched">El nombre es de a gusa</p>
+                            </h1>
+                            <h1>
+                            </h1>Campos llenados correctamente: {{f.valid}}
+                        </div>
+                    </form>
+                </div>
+                <p>
+                    <button mat-raised-button (click)="modificacions()" [disabled]="!f.form.valid">Modificar</button></p>
+            </div>
+        </div>
+
+    </div>
+</div>

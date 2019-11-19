@@ -10,4 +10,7 @@ export class UsuariosService {
   getUsers() {
     return this.http.get('http://localhost/usuarios.php');
   }
+  getUsersf() {
+    return this.http.get('http://localhost/recetas.php');
+  }
 }

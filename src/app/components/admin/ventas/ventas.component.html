@@ -1,1 +1,18 @@
-<p>ventas works!</p>
+<div class="container">
+    <div *ngFor='let prod of productos'>
+        <mat-card class="example-card">
+            <div class="aiuda"><img [src]="prod.URL"></div>
+            <div class="contenido">
+                <mat-card-content>
+                    <h2><a>{{ prod.NOMBRE }}</a></h2>
+                    <h2>{{ "Stock: " }}{{ prod.EXISTENCIAS }}</h2>
+                    <h2>{{ "Costo: $" }}{{ prod.PRECIO}}</h2>
+                    <h2>{{ "Unidad: " }}{{ prod.UNIDAD}}</h2>
+                    <h2>{{ "Info: " }}{{ prod.EXTRA}}</h2>
+                    <h2>{{ "ID: " }}{{ prod.ID}}</h2>
+                </mat-card-content>
+                <button mat-raised-button (click)="openPurchase(prod.ID,prod.PRECIO)">Vender</button>
+            </div>
+        </mat-card>
+    </div>
+</div>

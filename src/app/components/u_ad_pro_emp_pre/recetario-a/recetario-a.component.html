@@ -1,1 +1,24 @@
-<p>recetario-a works!</p>
+<div class="container">
+    <div *ngFor='let user of usuarios'>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar><img [src]="user.IMAGEN"></div>
+                <mat-card-title class="usuario">{{ "RECETA: " }}{{ user.NOMBRE | uppercase }}</mat-card-title>
+            </mat-card-header>
+            <div class="contenido">
+                <mat-card-content>
+                    <h2>{{ "CATEGORIA: " }}{{ user.TIPO}}</h2>
+                    <h2>{{ "DURACION: " }}{{ user.TIEMPO }}</h2>
+                    <h2>{{ "ID DE RECETA: " }}{{ user.ID}}</h2>
+                    <h2>{{ "CANTIDAD ESPERADA: " }}{{ user.PORCION}}</h2>
+                    <h2>{{ "DESCRIPCION: " }}{{ user.DESCRIPCION}}</h2>
+                    <h2>{{ "PREPARACION: " }}{{ user.PREPARACION}}</h2>
+                    <h2>{{ "CANTIDAD: " }}{{ user.CANTIDAD}}</h2>
+                    <h2>{{ "INVENTARIO: " }}{{ user.INVENTARIO}}</h2>
+                </mat-card-content>
+            </div>
+            <mat-card-actions>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

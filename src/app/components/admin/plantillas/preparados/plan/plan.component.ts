@@ -25,7 +25,8 @@ export class PlanComponent implements OnInit {
     planesillo: null,
     plann: null,
     actividad: null,
-    orden: null
+    orden: null,
+    nom: null
   };
   constructor(public dialogRef: MatDialogRef<PlanComponent>,
               // tslint:disable-next-line:no-shadowed-variable
@@ -78,12 +79,14 @@ export class PlanComponent implements OnInit {
     });
     this.recuperarTodos();
   }
-  seleccionarplanp(codigo) {
+  seleccionarplanp(codigo, act) {
     this.art.planesillo = codigo;
+    this.art.nom = act;
     console.log(this.art.planesillo);
     this.var = this.art.planesillo;
     alert(['Ha seleccionado la actividad ' + codigo]);
     this.tarea.selection(codigo).subscribe(result => this.art = result[0]);
+    this.actividades();
   }
   actualizarplanp() {
     console.log(this.var);
@@ -108,11 +111,9 @@ export class PlanComponent implements OnInit {
       if (datos['resultado'] === 'YES PAPA') {
         this.recuperarTodos();
         alert(['Plan Permitido']);
-        this.dialogRef.close('Se generó el plan correctamente');
       } else {
         this.recuperarTodos();
-        alert(['Plan No Permitido debido a que excede las horas laborales del empleado']);
-        this.dialogRef.close('Se generó el plan incorrectamente');
+        alert(['Plan No Permitido debido a que excede las horas laborales del empleado, verifique el plan']);
       }
     });
   }
