@@ -109,6 +109,10 @@ p {
     ;
 }
 
+.mat-option {
+    color: white;
+}
+
 mat-label {
     color: black;
     font-family: 'Indie Flower ', cursive;

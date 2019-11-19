@@ -13,6 +13,7 @@ import { PlanComponent } from './plan/plan.component';
 export class PreparadosComponent implements OnInit {
   public headers = new HttpHeaders();
   articulos = null;
+  users = null;
   id: number;
   nombre: string;
   tipo: string;
@@ -24,17 +25,19 @@ export class PreparadosComponent implements OnInit {
           nombre: null,
           tipo: null,
           asignacion: null,
-          estado: null
+          estado: null,
+          user: null
   };
 
   constructor(private router: Router, protected http: HttpClient,
               private articulosServicio: PreparadosService,
-               public dialog: MatDialog) { }
+              public dialog: MatDialog) { }
 
   ngOnInit() {
     this.recuperarTodos();
+    this.usuarios();
 }
-tarea(codigo){
+tarea(codigo) {
   console.log(codigo);
   this.id = codigo;
   const dialogRef = this.dialog.open(PlanComponent, {
@@ -50,6 +53,9 @@ tarea(codigo){
 recuperarTodos() {
   this.articulosServicio.recuperarTodos().subscribe(result => this.articulos = result);
 }
+usuarios() {
+  this.articulosServicio.usuarios().subscribe(result => this.users = result);
+}
 
 alta() {
   this.articulosServicio.alta(this.art).subscribe(datos => {
@@ -59,7 +65,7 @@ alta() {
       // tslint:disable-next-line:no-string-literal
       alert(datos['mensaje']);
       this.recuperarTodos();
-    }else{
+    } else {
       // tslint:disable-next-line:no-string-literal
       alert(datos['mensaje']);
       this.recuperarTodos();
@@ -79,7 +85,7 @@ baja(codigo) {
 }
 
 modificacion() {
-  this.art.id=this.id;
+  this.art.id = this.id;
   this.articulosServicio.modificacion(this.art).subscribe(datos => {
     // tslint:disable-next-line:no-string-literal
     if (datos['resultado'] === 'OK') {
@@ -92,15 +98,15 @@ modificacion() {
 
 seleccionar(codigo) {
   console.log(codigo);
-  alert(['Usted ha seleccionado el plan '+codigo]);
+  alert(['Usted ha seleccionado el plan ' + codigo]);
   this.articulosServicio.seleccionar(codigo).subscribe(result => this.art = result[0]);
-  this.art.id=codigo;
-  this.id=this.art.id;
+  this.art.id = codigo;
+  this.id = this.art.id;
 }
-administrar(){
+administrar() {
 
 }
-cancelar(codigo){
+cancelar(codigo) {
 
 }
 hayRegistros() {

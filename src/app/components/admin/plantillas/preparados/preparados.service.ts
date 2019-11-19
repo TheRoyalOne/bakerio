@@ -16,6 +16,9 @@ export class PreparadosService {
    recuperarTodos() {
     return this.http.get('http://localhost/recuperartodosplanprep.php');
   }
+  usuarios() {
+   return this.http.get('http://localhost/employees.php');
+ }
   recuperarTodosp(codigo: number) {
     return this.http.get(`http://localhost/recuperartodosplanprepp.php?codigo=${codigo}`);
   }
@@ -50,6 +53,9 @@ export class PreparadosService {
   }
   selection(codigo: number) {
     return this.http.get(`http://localhost/seleccionarplan.php?codigo=${codigo}`);
+  }
+  validacionp(codigo: number) {
+    return this.http.get(`http://localhost/asignacion.php?codigo=${codigo}`);
   }
   updeit(articulo) {
     return this.http.post('http://localhost/modificacionplan.php', JSON.stringify(articulo));

@@ -38,11 +38,7 @@
                                     <mat-label>Asignación </mat-label>
                                     <select matNativeControl id="asignacion" name="asignacion" [(ngModel)]="art.asignacion" #userId="ngModel" #trackId="ngModel" required>
                                             <option value="Diario">Diario</option>
-                                            <option value="Lunes">Lunes</option>
-                                            <option value="Martes">Martes</option>
-                                            <option value="Miercoles">Miercoles</option>
-                                            <option value="Jueves">Jueves</option>
-                                            <option value="Viernes">Viernes</option>
+                                            <option value="Unico">Solo Hoy</option>
                                         </select>
                                 </mat-form-field>
                                 <p class="alert" *ngIf="!trackId.valid && trackId.touched || !trackId.touched">La asignación es de a gusa</p>
