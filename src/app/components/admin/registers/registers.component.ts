@@ -57,6 +57,10 @@ alta() {
       // tslint:disable-next-line:no-string-literal
       alert(datos['mensaje']);
       this.recuperarTodos();
+    }else{
+      // tslint:disable-next-line:no-string-literal
+      alert(datos['mensaje']);
+      this.recuperarTodos();
     }
   });
 }

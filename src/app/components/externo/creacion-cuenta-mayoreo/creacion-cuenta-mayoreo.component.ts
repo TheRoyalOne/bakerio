@@ -54,6 +54,9 @@ alta() {
       // tslint:disable-next-line:no-string-literal
       alert(datos['mensaje']);
       this.router.navigate(['']);
+    }else{
+      // tslint:disable-next-line:no-string-literal
+      alert(datos['mensaje']);
     }
   });
 }

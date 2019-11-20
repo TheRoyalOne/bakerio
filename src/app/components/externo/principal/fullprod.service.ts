@@ -9,6 +9,9 @@ export class FullprodService {
   getProd() {
     return this.http.get('http://localhost/productos.php');
   }
+  getPed() {
+    return this.http.get('http://localhost/envios.php');
+  }
   coment(articulo) {
     return this.http.post('http://localhost/coment.php', JSON.stringify(articulo), { withCredentials: true});
   }

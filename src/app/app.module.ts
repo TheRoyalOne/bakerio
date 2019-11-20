@@ -105,6 +105,8 @@ import { ProductionComponent } from './components/admin/plantillas/production/pr
 import { PlanComponent } from './components/admin/plantillas/preparados/plan/plan.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { HistorialventasComponent } from './components/general/historialventas/historialventas.component';
+import { CompracComponent } from './components/externo/principal/compra/comprac/comprac.component';
+import { RutasComponent } from './components/envio/envios/rutas/rutas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -169,7 +171,9 @@ import { HistorialventasComponent } from './components/general/historialventas/h
     PlantillasComponent,
     ProductionComponent,
     PlanComponent,
-    HistorialventasComponent
+    HistorialventasComponent,
+    CompracComponent,
+    RutasComponent
   ],
   imports: [
     BrowserModule,
@@ -208,7 +212,9 @@ import { HistorialventasComponent } from './components/general/historialventas/h
     CompraComponent,
     ApartadoComponent,
     RespuestaComponent,
-    PlanComponent
+    PlanComponent,
+    CompracComponent,
+    RutasComponent
   ],
   providers: [UserService, LoginService, NotaService, UsuarioService, DataService, RegisterService, RegisteraService, RegistersService,
      UsuariosService, AuthService, UserService, AiudaService, AuthGuard, FullprodService, MatNativeDateModule, MatDatepickerModule,

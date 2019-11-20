@@ -44,21 +44,21 @@
                             <h1>
                                 <mat-form-field class="example-full-width">
                                     <mat-label>ID </mat-label>
-                                    <input matInput placeholder="ID" id="id" name="id" [(ngModel)]="art.id" #userId="ngModel" required pattern="[0-9][0-9]" #trackId="ngModel">
+                                    <input matInput placeholder="ID" id="id" type="number" min="1" name="id" [(ngModel)]="art.id" #userId="ngModel" required #trackId="ngModel">
                                 </mat-form-field>
                                 <p class="alert" *ngIf="!trackId.valid && trackId.touched || !trackId.touched">El id es de a gusa</p>
                             </h1>
                             <h1>
                                 <mat-form-field class="example-full-width">
                                     <mat-label>Nombre </mat-label>
-                                    <input matInput placeholder="Nombre" id="nombre" name="nombre" [(ngModel)]="art.user" required #trackName="ngModel">
+                                    <input matInput placeholder="Nombre" id="nombre" input="text" name="nombre" [(ngModel)]="art.user" required pattern="^[a-zA-Z]+$" #trackName="ngModel">
                                 </mat-form-field>
                                 <p class="alert" *ngIf="!trackName.valid && trackName.touched || !trackName.touched">El nombre es de a gusa</p>
                             </h1>
                             <h1>
                                 <mat-form-field class="example-full-width">
                                     <mat-label>Apellidos </mat-label>
-                                    <input matInput placeholder="Apellido(s)" id="apex" name="apellidos" [(ngModel)]="art.apex" required pattern="^[a-zA-Z]+$" #trackapex="ngModel">
+                                    <input matInput placeholder="Apellido(s)" id="apex" input="text" name="apellidos" [(ngModel)]="art.apex" required #trackapex="ngModel">
                                 </mat-form-field>
                                 <p class="alert" *ngIf="!trackapex.valid && trackapex.touched || !trackapex.touched">El apellido es de a gusa</p>
                             </h1>

@@ -3,20 +3,19 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { MatDatepickerModule, MatDatepickerInputEvent } from '@angular/material/datepicker';
 import {  HttpClient, HttpHeaders } from '@angular/common/http';
-import { FullprodService } from '../fullprod.service';
-import { PrincipalComponent } from '../principal.component';
 import { DatePipe } from '@angular/common';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { FullprodService } from '../../fullprod.service';
 // tslint:disable-next-line:class-name
 export interface data {
   info: string;
 }
 @Component({
-  selector: 'app-compra',
-  templateUrl: './compra.component.html',
-  styleUrls: ['./compra.component.css']
+  selector: 'app-comprac',
+  templateUrl: './comprac.component.html',
+  styleUrls: ['./comprac.component.css']
 })
-export class CompraComponent implements OnInit {
+export class CompracComponent implements OnInit {
   prod: string;
   fecha: string;
   costo: number;
@@ -35,7 +34,7 @@ export class CompraComponent implements OnInit {
     costo: null,
     can: null
   };
-  constructor(public dialogRef: MatDialogRef<CompraComponent>,
+  constructor(public dialogRef: MatDialogRef<CompracComponent>,
               // tslint:disable-next-line:no-shadowed-variable
               @Inject(MAT_DIALOG_DATA)public data: any, private router: Router,
               protected http: HttpClient, private compra: FullprodService,
@@ -53,11 +52,7 @@ export class CompraComponent implements OnInit {
   ngOnInit() {
   }
   purchase(dato, cant, pan) {
-    if(this.art.desc==0) {
       this.total = (cant * dato)
-    }else{
-      this.total = (cant*dato)-(cant * dato)*(this.art.desc/100);
-    }
     console.log(this.total);
     this.art.costo = this.total;
     this.art.obj = pan;

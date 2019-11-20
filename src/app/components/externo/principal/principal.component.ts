@@ -7,6 +7,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { ComentarioComponent } from './comentario/comentario.component';
 import { CompraComponent } from './compra/compra.component';
 import { ApartadoComponent } from './apartado/apartado.component';
+import { CompracComponent } from './compra/comprac/comprac.component';
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
@@ -38,7 +39,7 @@ export class PrincipalComponent implements OnInit {
       console.log(costo);
       this.precio = costo;
       this.producto = codigo;
-      const dialogRef = this.dialog.open(CompraComponent, {
+      const dialogRef = this.dialog.open(CompracComponent, {
         data: {
           precio: this.precio,
           producto: this.producto

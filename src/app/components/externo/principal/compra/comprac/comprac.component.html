@@ -13,9 +13,6 @@
                 <mat-form-field>
                     <input matInput placeholder="Direccion" id="text" type="direccion" name="direccion" [(ngModel)]="art.dir" required #gaga="ngModel">
                 </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="Descuento" id="descuento" type="number" min="0" max="100" name="descuento" [(ngModel)]="art.desc" required #desc="ngModel">
-                </mat-form-field>
                 <p class="alert" *ngIf="!dataId.valid && !fechaID.valid && !desc.valid">El contenido es de a gusa</p>
             </div>
         </form>

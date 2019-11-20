@@ -3,42 +3,39 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { MatDatepickerModule, MatDatepickerInputEvent } from '@angular/material/datepicker';
 import {  HttpClient, HttpHeaders } from '@angular/common/http';
-import { FullprodService } from '../fullprod.service';
-import { PrincipalComponent } from '../principal.component';
 import { DatePipe } from '@angular/common';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { FullprodService } from '../../../externo/principal/fullprod.service';
+
+
 // tslint:disable-next-line:class-name
 export interface data {
-  info: string;
+  contenido: string;
+  fecha: string;
 }
 @Component({
-  selector: 'app-compra',
-  templateUrl: './compra.component.html',
-  styleUrls: ['./compra.component.css']
+  selector: 'app-rutas',
+  templateUrl: './rutas.component.html',
+  styleUrls: ['./rutas.component.css']
 })
-export class CompraComponent implements OnInit {
+export class RutasComponent implements OnInit {
   prod: string;
   fecha: string;
   costo: number;
-  obj: number;
   total: number;
   dia: string;
   semana: string;
   can: number;
-  dir: string;
   art = {
-    desc: null,
-    dir: null,
     prod: null,
     fecha: null,
     obj: null,
     costo: null,
     can: null
   };
-  constructor(public dialogRef: MatDialogRef<CompraComponent>,
+  constructor(public dialogRef: MatDialogRef<RutasComponent>,
               // tslint:disable-next-line:no-shadowed-variable
               @Inject(MAT_DIALOG_DATA)public data: any, private router: Router,
-              protected http: HttpClient, private compra: FullprodService,
+              protected http: HttpClient, private comentario: FullprodService,
               private datePipe: DatePipe) {
                 const tomorrow = new Date();
                 const week = new Date();
@@ -51,24 +48,5 @@ export class CompraComponent implements OnInit {
     }
 
   ngOnInit() {
-  }
-  purchase(dato, cant, pan) {
-    if(this.art.desc==0) {
-      this.total = (cant * dato)
-    }else{
-      this.total = (cant*dato)-(cant * dato)*(this.art.desc/100);
-    }
-    console.log(this.total);
-    this.art.costo = this.total;
-    this.art.obj = pan;
-    this.art.can = cant;
-    this.compra.compra(this.art).subscribe(datos => {
-      // tslint:disable-next-line:no-string-literal
-      if (datos['resultado'] === 'OK') {
-        // tslint:disable-next-line:no-string-literal
-        alert(datos['mensaje']);
-        this.dialogRef.close('Se generó la compra');
-      }
-    });
   }
 }
