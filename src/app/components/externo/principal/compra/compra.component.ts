@@ -53,10 +53,10 @@ export class CompraComponent implements OnInit {
   ngOnInit() {
   }
   purchase(dato, cant, pan) {
-    if(this.art.desc==0) {
-      this.total = (cant * dato)
-    }else{
-      this.total = (cant*dato)-(cant * dato)*(this.art.desc/100);
+    if (this.art.desc === 0) {
+      this.total = (cant * dato);
+    } else {
+      this.total = (cant * dato) - (cant * dato) * (this.art.desc / 100);
     }
     console.log(this.total);
     this.art.costo = this.total;

@@ -7,9 +7,9 @@ export class PlanService {
   public headers = new HttpHeaders();
   constructor(protected http: HttpClient) {}
   getUsers() {
-    return this.http.get('http://localhost/mono.php', { withCredentials: true});
+    return this.http.get('http://baker-io-pem.appspot.com/mono.php', { withCredentials: true});
   }
   terminar(articulo) {
-    return this.http.post('http://localhost/terminar.php', JSON.stringify(articulo));
+    return this.http.post('http://baker-io-pem.appspot.com/terminar.php', JSON.stringify(articulo), { withCredentials: true} );
   }
 }

@@ -23,6 +23,7 @@ loginUser(event: { preventDefault: () => void; target: any; }) {
         this.router.navigate(['user/profile']);
         this.entrada();
         this.asignacion();
+        this.chequeo();
     } else {
       window.alert(data.message);
     }
@@ -45,6 +46,16 @@ asignacion() {
     if (datos['resultado'] === 'OK') {
       // tslint:disable-next-line:no-string-literal
       alert(datos['mensaje']);
+    }
+  });
+}
+chequeo() {
+  this.Auth.check().subscribe(datos => {
+    // tslint:disable-next-line:no-string-literal
+    if (datos['resultado'] === 'OK') {
+      // tslint:disable-next-line:no-string-literal
+      alert(datos['mensaje']);
+    } else {
     }
   });
 }

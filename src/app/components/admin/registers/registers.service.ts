@@ -14,23 +14,23 @@ export class RegistersService {
   this.headers.set('Content-Type', 'Authorization');
    }
    recuperarTodos() {
-    return this.http.get('http://localhost/recuperartodos2.php');
+    return this.http.get('http://baker-io-pem.appspot.com/recuperartodos2.php');
   }
 
   alta(articulo) {
-    return this.http.post('http://localhost/alta2.php', JSON.stringify(articulo));
+    return this.http.post('http://baker-io-pem.appspot.com/alta2.php', JSON.stringify(articulo));
   }
 
   baja(codigo: number) {
-    return this.http.get(`http://localhost/baja2.php?codigo=${codigo}`);
+    return this.http.get(`http://baker-io-pem.appspot.com/baja2.php?codigo=${codigo}`);
   }
   seleccionar(codigo: number) {
-    return this.http.get(`http://localhost/seleccionar2.php?codigo=${codigo}`);
+    return this.http.get(`http://baker-io-pem.appspot.com/seleccionar2.php?codigo=${codigo}`);
   }
   modificacion(articulo) {
-    return this.http.post('http://localhost/modificacion2.php', JSON.stringify(articulo));
+    return this.http.post('http://baker-io-pem.appspot.com/modificacion2.php', JSON.stringify(articulo));
   }
   recuperarTodos2() {
-    return this.http.get('http://localhost/recuperartodos2.php');
+    return this.http.get('http://baker-io-pem.appspot.com/recuperartodos2.php');
   }
 }

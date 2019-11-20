@@ -14,20 +14,20 @@ export class GastosService {
   this.headers.set('Content-Type', 'Authorization');
    }
    recuperarTodos() {
-    return this.http.get('http://localhost/recuperartodosg.php');
+    return this.http.get('http://baker-io-pem.appspot.com/recuperartodosg.php');
   }
 
   alta(articulo) {
-    return this.http.post('http://localhost/altag.php', JSON.stringify(articulo));
+    return this.http.post('http://baker-io-pem.appspot.com/altag.php', JSON.stringify(articulo));
   }
 
   baja(codigo: number) {
-    return this.http.get(`http://localhost/bajag.php?codigo=${codigo}`);
+    return this.http.get(`http://baker-io-pem.appspot.com/bajag.php?codigo=${codigo}`);
   }
   seleccionar(codigo: number) {
-    return this.http.get(`http://localhost/seleccionarg.php?codigo=${codigo}`);
+    return this.http.get(`http://baker-io-pem.appspot.com/seleccionarg.php?codigo=${codigo}`);
   }
   modificacion(articulo) {
-    return this.http.post('http://localhost/modificaciong.php', JSON.stringify(articulo));
+    return this.http.post('http://baker-io-pem.appspot.com/modificaciong.php', JSON.stringify(articulo));
   }
 }

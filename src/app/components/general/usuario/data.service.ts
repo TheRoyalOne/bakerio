@@ -23,12 +23,12 @@ export class DataService {
   constructor(private http: HttpClient) {
   }
   getSomeData() {
-    return this.http.get<myData>('http://localhost/database.php', { withCredentials: true}) ;
+    return this.http.get<myData>('http://baker-io-pem.appspot.com/database.php', { withCredentials: true}) ;
   }
 isLoggedIn(): Observable<isLoggedIn> {
-  return this.http.get<isLoggedIn>('http://localhost/isloggedin.php', { withCredentials: true});
+  return this.http.get<isLoggedIn>('http://baker-io-pem.appspot.com/isloggedin.php', { withCredentials: true});
   }
 logout() {
-    return this.http.get<logoutStatus>('http://localhost/logout.php', { withCredentials: true});
+    return this.http.get<logoutStatus>('http://baker-io-pem.appspot.com/logout.php', { withCredentials: true});
   }
 }

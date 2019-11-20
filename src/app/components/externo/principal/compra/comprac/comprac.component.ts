@@ -52,12 +52,12 @@ export class CompracComponent implements OnInit {
   ngOnInit() {
   }
   purchase(dato, cant, pan) {
-      this.total = (cant * dato)
-    console.log(this.total);
-    this.art.costo = this.total;
-    this.art.obj = pan;
-    this.art.can = cant;
-    this.compra.compra(this.art).subscribe(datos => {
+      this.total = (cant * dato);
+      console.log(this.total);
+      this.art.costo = this.total;
+      this.art.obj = pan;
+      this.art.can = cant;
+      this.compra.compra(this.art).subscribe(datos => {
       // tslint:disable-next-line:no-string-literal
       if (datos['resultado'] === 'OK') {
         // tslint:disable-next-line:no-string-literal

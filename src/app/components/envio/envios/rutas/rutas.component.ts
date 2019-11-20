@@ -25,10 +25,15 @@ export class RutasComponent implements OnInit {
   dia: string;
   semana: string;
   can: number;
+  var: string;
+  public origin: string;
+  public direccion: string;
+  public destination: string = null;
   art = {
     prod: null,
     fecha: null,
     obj: null,
+    direccion: null,
     costo: null,
     can: null
   };
@@ -46,7 +51,22 @@ export class RutasComponent implements OnInit {
                 console.log(this.semana);
                 console.log(this.dia);
     }
-
+    location = {};
+    setPosition(position) {
+       this.location = position.coords;
+       console.log(position.coords);
+       }
   ngOnInit() {
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition(position => {
+         this.location = position.coords;
+         console.log(position.coords);
+       });
+    }
   }
+  getDirection(dir) {
+
+    this.origin =  'Calle Juan Zubaran 2311';
+    this.destination = this.direccion + ',Guadalajara';
+    }
 }

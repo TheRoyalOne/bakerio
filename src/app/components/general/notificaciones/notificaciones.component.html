@@ -1,22 +1,19 @@
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
-<p>notificaciones works!</p>
+<div class="container">
+    <div *ngFor='let user of usuarios'>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title class="usuario">{{ "Notificacion: " }}{{ user.ID}}</mat-card-title>
+            </mat-card-header>
+            <div class="contenido">
+                <mat-card-content>
+                    <h2>{{ "Contenido: " }}{{ user.CONTENIDO}}</h2>
+                    <h2>{{ "Usuario: " }}{{ user.USUARIO }}</h2>
+                    <h2>{{ "Fecha: " }}{{ user.Fecha}}</h2>
+                    <h2>{{ "Producto: " }}{{ user.PRODUCTO}}</h2>
+                    <h2>{{ "Actividad: " }}{{ user.ACTIVIDAD}}</h2>
+                    <h2>{{ "PLAN LABORAL: " }}{{ user.PLAN}}</h2>
+                </mat-card-content>
+            </div>
+        </mat-card>
+    </div>
+</div>

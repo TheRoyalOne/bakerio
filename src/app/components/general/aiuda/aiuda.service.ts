@@ -8,6 +8,6 @@ export class AiudaService {
 
   constructor(protected http: HttpClient) { }
   getHelp() {
-    return this.http.get('http://localhost/notas.php', { withCredentials: true});
+    return this.http.get('http://baker-io-pem.appspot.com/notas.php', { withCredentials: true});
   }
 }

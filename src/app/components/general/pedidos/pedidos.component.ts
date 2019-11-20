@@ -4,13 +4,12 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { FullprodService } from '../../externo/principal/fullprod.service';
-import { RutasComponent } from './rutas/rutas.component';
 @Component({
-  selector: 'app-envios',
-  templateUrl: './envios.component.html',
-  styleUrls: ['./envios.component.css']
+  selector: 'app-pedidos',
+  templateUrl: './pedidos.component.html',
+  styleUrls: ['./pedidos.component.css']
 })
-export class EnviosComponent implements OnInit {
+export class PedidosComponent implements OnInit {
   productos: any[] = [];
   precio: number;
   prec: number;
@@ -25,20 +24,6 @@ export class EnviosComponent implements OnInit {
   };
   constructor(
     protected principe: FullprodService, public dialog: MatDialog) { }
-    openDialog(env, dir): void {
-      this.dire = dir;
-      this.envio = env;
-      const dialogRef = this.dialog.open(RutasComponent, {
-        data: {
-          dire: this.dire,
-          envio: this.envio
-        }
-      });
-      dialogRef.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
-        console.log(result);
-      });
-    }
   ngOnInit() {
     this.principe.getPed()
     .subscribe(

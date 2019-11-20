@@ -42,6 +42,11 @@ export class PlanLaboralComponent implements OnInit {
         // tslint:disable-next-line:no-string-literal
         alert(result['mensaje']);
         this.usuarios = result;
+      } else {
+        this.getplan();
+        // tslint:disable-next-line:no-string-literal
+        alert(result['mensaje']);
+        this.usuarios = result;
       } });
   }
   cancelar() {

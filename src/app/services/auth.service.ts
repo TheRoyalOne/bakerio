@@ -28,18 +28,21 @@ export class AuthService {
   return this.loggedInStatus;
   }
   entrada() {
-    return this.http.get('http://localhost/entrada.php', {headers: this.headers, withCredentials: true});
+    return this.http.get('http://baker-io-pem.appspot.com/entrada.php', {headers: this.headers, withCredentials: true});
   }
   salida() {
-      return this.http.get('http://localhost/salida.php', {headers: this.headers, withCredentials: true});
+      return this.http.get('http://baker-io-pem.appspot.com/salida.php', {headers: this.headers, withCredentials: true});
   }
   getUserDetails(username, password) {
-    return this.http.post<myData>('http://localhost/login.php', {
+    return this.http.post<myData>('http://baker-io-pem.appspot.com/login.php', {
       username,
       password
     }, {headers: this.headers, withCredentials: true});
   }
   asignacion() {
-    return this.http.get('http://localhost/asignacionPlan.php', {withCredentials: true});
+    return this.http.get('http://baker-io-pem.appspot.com/asignacionPlan.php', {withCredentials: true});
+  }
+  check() {
+    return this.http.get('http://baker-io-pem.appspot.com/congelados.php', {withCredentials: true});
   }
 }

@@ -12,20 +12,20 @@ export class RegisterService {
   this.headers.set('Content-Type', 'Authorization');
    }
    recuperarTodos() {
-    return this.http.get('http://localhost/recuperartodosm.php');
+    return this.http.get('http://baker-io-pem.appspot.com/recuperartodosm.php');
   }
 
   alta(articulo) {
-    return this.http.post('http://localhost/altam.php', JSON.stringify(articulo));
+    return this.http.post('http://baker-io-pem.appspot.com/altam.php', JSON.stringify(articulo));
   }
 
   baja(codigo: number) {
-    return this.http.get(`http://localhost/bajam.php?codigo=${codigo}`);
+    return this.http.get(`http://baker-io-pem.appspot.com/bajam.php?codigo=${codigo}`);
   }
   seleccionar(codigo: number) {
-    return this.http.get(`http://localhost/seleccionarm.php?codigo=${codigo}`);
+    return this.http.get(`http://baker-io-pem.appspot.com/seleccionarm.php?codigo=${codigo}`);
   }
   modificacion(articulo) {
-    return this.http.post('http://localhost/modificacionm.php', JSON.stringify(articulo));
+    return this.http.post('http://baker-io-pem.appspot.com/modificacionm.php', JSON.stringify(articulo));
   }
 }

@@ -107,6 +107,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { HistorialventasComponent } from './components/general/historialventas/historialventas.component';
 import { CompracComponent } from './components/externo/principal/compra/comprac/comprac.component';
 import { RutasComponent } from './components/envio/envios/rutas/rutas.component';
+import { PedidosComponent } from './components/general/pedidos/pedidos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -173,7 +174,8 @@ import { RutasComponent } from './components/envio/envios/rutas/rutas.component'
     PlanComponent,
     HistorialventasComponent,
     CompracComponent,
-    RutasComponent
+    RutasComponent,
+    PedidosComponent
   ],
   imports: [
     BrowserModule,
