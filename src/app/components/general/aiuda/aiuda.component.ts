@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AiudaService } from './aiuda.service';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-aiuda',
@@ -9,7 +10,7 @@ import { AiudaService } from './aiuda.service';
 export class AiudaComponent implements OnInit {
   consejos: any[] = [];
   constructor(
-    protected aiudaService: AiudaService) { }
+    protected aiudaService: AiudaService, public Auth: AuthService) { }
 
   ngOnInit() {
     this.aiudaService.getHelp()

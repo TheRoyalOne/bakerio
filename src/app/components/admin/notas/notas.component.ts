@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { RespuestaComponent } from './respuesta/respuesta.component';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
 @Component({
   selector: 'app-notas',
   templateUrl: './notas.component.html',
@@ -19,20 +21,38 @@ export class NotasComponent implements OnInit {
     nota: null
   };
   constructor(
-    protected notaService: NotaService, public dialog: MatDialog) { }
+    protected notaService: NotaService, public dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
-    this.notaService.getNotasfull()
-    .subscribe(
-      (data) => { // Successs
-        // tslint:disable-next-line:no-string-literal
-        this.notas = data['results'];
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+    this.bendecir();
 }
+notillas() {
+  this.notaService.getNotasfull()
+      .subscribe(
+        (data) => { // Successs
+          // tslint:disable-next-line:no-string-literal
+          this.notas = data['results'];
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+    }
+bendecir() {
+  this.notaService.bendecir(this.art).subscribe(datos => {
+    // tslint:disable-next-line:no-string-literal
+    if (datos['resultado'] === 'OK') {
+      // tslint:disable-next-line:no-string-literal
+      alert(datos['mensaje']);
+      this.notillas();
+    } else {
+      this.router.navigate(['user/profile']);
+      // tslint:disable-next-line:no-string-literal
+      alert(datos['mensaje']);
+    }
+  });
+}
+
 obtenerCosa(codigo) {
   console.log(codigo);
   this.nota = codigo;

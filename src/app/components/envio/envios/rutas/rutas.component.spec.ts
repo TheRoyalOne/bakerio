@@ -1,8 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RutasComponent } from '../rutas/rutas.component';
 
-import { RutasComponent } from './rutas.component';
-
-describe('RutasComponent', () => {
+describe('RutaComponent', () => {
   let component: RutasComponent;
   let fixture: ComponentFixture<RutasComponent>;
 

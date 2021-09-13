@@ -5,6 +5,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { FullprodService } from '../../externo/principal/fullprod.service';
 import { RutasComponent } from './rutas/rutas.component';
+import { AuthService } from '../../../services/auth.service';
 @Component({
   selector: 'app-envios',
   templateUrl: './envios.component.html',
@@ -24,7 +25,7 @@ export class EnviosComponent implements OnInit {
     prec: null
   };
   constructor(
-    protected principe: FullprodService, public dialog: MatDialog) { }
+    protected principe: FullprodService, public dialog: MatDialog, public Auth: AuthService) { }
     openDialog(env, dir): void {
       this.dire = dir;
       this.envio = env;

@@ -7,6 +7,7 @@ import { FullprodService } from '../fullprod.service';
 import { PrincipalComponent } from '../principal.component';
 import { DatePipe } from '@angular/common';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { AuthService } from '../../../../services/auth.service';
 // tslint:disable-next-line:class-name
 export interface data {
   info: string;
@@ -35,7 +36,7 @@ export class CompraComponent implements OnInit {
     costo: null,
     can: null
   };
-  constructor(public dialogRef: MatDialogRef<CompraComponent>,
+  constructor(public dialogRef: MatDialogRef<CompraComponent>, public Auth: AuthService,
               // tslint:disable-next-line:no-shadowed-variable
               @Inject(MAT_DIALOG_DATA)public data: any, private router: Router,
               protected http: HttpClient, private compra: FullprodService,

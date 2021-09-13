@@ -15,6 +15,6 @@ export class RegistronService {
    }
 
   alta(articulo) {
-    return this.http.post('http://baker-io-pem.appspot.com/user.php', JSON.stringify(articulo), { withCredentials: true});
+    return this.http.post('http://localhost/user.php', JSON.stringify(articulo), { withCredentials: true});
   }
 }

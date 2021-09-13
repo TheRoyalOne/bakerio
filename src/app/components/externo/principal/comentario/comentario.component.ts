@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { MatDatepickerModule, MatDatepickerInputEvent } from '@angular/material/datepicker';
 import {  HttpClient, HttpHeaders } from '@angular/common/http';
 import { FullprodService } from '../fullprod.service';
+import { AuthService } from '../../../../services/auth.service';
 // tslint:disable-next-line:class-name
 export interface data {
   contenido: string;
@@ -21,7 +22,7 @@ export class ComentarioComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<ComentarioComponent>,
               // tslint:disable-next-line:no-shadowed-variable
               @Inject(MAT_DIALOG_DATA)public data: any, private router: Router,
-              protected http: HttpClient, private comentario: FullprodService) {
+              protected http: HttpClient, private comentario: FullprodService, public Auth: AuthService) {
 
     }
 

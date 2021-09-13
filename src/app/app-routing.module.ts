@@ -56,6 +56,10 @@ import { EnvioComponent } from './components/admin/plantillas/envio/envio.compon
 import { ProductionComponent } from './components/admin/plantillas/production/production.component';
 import { HistorialventasComponent } from './components/general/historialventas/historialventas.component';
 import { PedidosComponent } from './components/general/pedidos/pedidos.component';
+import { InventComponent } from './components/admin/invent/invent.component';
+import { AsistenciaComponent } from './components/general/asistencia/asistencia.component';
+import { InvuserComponent } from './components/general/invuser/invuser.component';
+import { ActividadesComponent } from './components/admin/actividades/actividades.component';
 const routes: Routes = [
 {path: '', component: LoginComponent },
 {path: 'admin/help', component: AyudaComponent,  canActivate: [AuthGuard] }, // Proteger.
@@ -66,6 +70,7 @@ const routes: Routes = [
 {path: 'admin/inputs', component: IngresosComponent,  canActivate: [AuthGuard]  },
 {path: 'admin/preps', component: PreElaboradosComponent,  canActivate: [AuthGuard]  },
 {path: 'admin/notes', component: NotasComponent,  canActivate: [AuthGuard]  }, // Proteger.
+{path: 'admin/cosas', component: ActividadesComponent,  canActivate: [AuthGuard]  }, // Proteger.
 {path: 'admin/losses', component: PerdidasComponent,  canActivate: [AuthGuard]  },
 {path: 'admin/templates', component: PlantillasComponent ,  canActivate: [AuthGuard] }, // Proteger.
 {path: 'admin/templates/prod', component: ProductionComponent ,  canActivate: [AuthGuard] }, // Proteger.
@@ -74,11 +79,12 @@ const routes: Routes = [
 {path: 'admin/slaves', component: UsuariosComponent,  canActivate: [AuthGuard] },
 {path: 'admin/register/mayo', component: RegistroaComponent,  canActivate: [AuthGuard] },
 {path: 'admin/register/slaves', component: RegistersComponent,  canActivate: [AuthGuard] },
-{path: 'admin/sales', component: VentasComponent ,  canActivate: [AuthGuard] },
+{path: 'sales', component: VentasComponent ,  canActivate: [AuthGuard] },
+{path: 'admin/inventory', component: InventComponent ,  canActivate: [AuthGuard] },
 {path: 'envio/shippings', component: EnviosComponent ,  canActivate: [AuthGuard] },
 {path: 'envio/route', component: RutaComponent ,  canActivate: [AuthGuard] },
-{path: 'ext/createmen', component: CreacionCuentaMenudeoComponent },
-{path: 'ext/createmay', component: CreacionCuentaMayoreoComponent },
+{path: 'ext/createmen', component: CreacionCuentaMenudeoComponent},
+{path: 'ext/createmay', component: CreacionCuentaMayoreoComponent},
 {path: 'ext/account', component: CuentaComponent ,  canActivate: [AuthGuard] },
 {path: 'ext/apart', component: HistorialApartadosComponent, canActivate: [AuthGuard]},
 {path: 'ext/purchases', component: HistorialComprasComponent ,  canActivate: [AuthGuard] },
@@ -87,16 +93,17 @@ const routes: Routes = [
 {path: 'ext/products', component: ProductosComponent },
 {path: 'ext/receipt', component: ReciboComponent ,  canActivate: [AuthGuard] },
 {path: 'user/history', component: HistorialComponent ,  canActivate: [AuthGuard] },
+{path: 'inventario', component: InvuserComponent ,  canActivate: [AuthGuard] },
 {path: 'login', component: LoginComponent, pathMatch: 'full'},
 {path: 'user/notes', component: NotasGComponent ,  canActivate: [AuthGuard] },
 {path: '911', component: AiudaComponent},
+{path: 'asistencia', component: AsistenciaComponent},
 {path: 'user/notifications', component: NotificacionesComponent ,  canActivate: [AuthGuard] },
 {path: 'user/historysale', component: HistorialventasComponent,  canActivate: [AuthGuard] },
 {path: 'user/orders', component: PedidosComponent,  canActivate: [AuthGuard] },
 {path: 'admin/register/menudo', component: RegistroComponent},
 {path: 'user/profile', component: UsuarioComponent,  canActivate: [AuthGuard] },
-{path: 'uapep/recetary', component: RecetarioComponent ,  canActivate: [AuthGuard] },
-{path: 'uapep/admin/recetary', component: RecetarioAComponent,  canActivate: [AuthGuard]  },
+{path: 'uapep/recetary', component: RecetarioAComponent,  canActivate: [AuthGuard]  },
 {path: 'uapep/recipe', component: RecetasComponent ,  canActivate: [AuthGuard] },
 {path: 'uapep/admin/recipes', component: RecetasAComponent ,  canActivate: [AuthGuard] },
 {path: 'uav/cashier', component: CajaaComponent,  canActivate: [AuthGuard] },
@@ -109,7 +116,6 @@ const routes: Routes = [
 {path: 'uavee/pending', component: PedidosPendientesComponent,  canActivate: [AuthGuard] },
 {path: 'upev/loss', component: MermaComponent,  canActivate: [AuthGuard] },
 {path: 'uv', component: PlanLaboralComponent,  canActivate: [AuthGuard] },
-{path: 'sales', component: CajasComponent,  canActivate: [AuthGuard] },
 {path: 'logout', component: LogoutComponent,  canActivate: [AuthGuard] },
 {path: '**', component: Page404Component }
 ];

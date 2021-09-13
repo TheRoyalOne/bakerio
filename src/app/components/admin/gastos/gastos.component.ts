@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MatDatepickerModule, MatDatepickerInputEvent } from '@angular/material/datepicker';
 import {  HttpClient, HttpHeaders } from '@angular/common/http';
 import { GastosService } from './gastos.service';
+import { AuthService } from '../../../services/auth.service';
 @Component({
   selector: 'app-gastos',
   templateUrl: './gastos.component.html',
@@ -32,16 +33,32 @@ export class GastosComponent implements OnInit {
           imagen: null,
           nombre: null
   };
+  a = {
+  };
 
   constructor(private router: Router, protected http: HttpClient,
               private articulosServicio: GastosService) { }
   ngOnInit() {
+    this.bendecir();
     this.recuperarTodos();
 }
 recuperarTodos() {
   this.articulosServicio.recuperarTodos().subscribe(result => this.articulos = result);
 }
-
+bendecir() {
+  this.articulosServicio.bendecir(this.a).subscribe(datos => {
+    // tslint:disable-next-line:no-string-literal
+    if (datos['resultado'] === 'OK') {
+      // tslint:disable-next-line:no-string-literal
+      alert(datos['mensaje']);
+      this.recuperarTodos();
+    } else {
+      this.router.navigate(['user/profile']);
+      // tslint:disable-next-line:no-string-literal
+      alert(datos['mensaje']);
+    }
+  });
+}
 alta() {
   this.articulosServicio.alta(this.art).subscribe(datos => {
     // tslint:disable-next-line:no-string-literal

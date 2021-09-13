@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MatDatepickerModule, MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { RegisterService } from './register.service';
 import {  HttpClient, HttpHeaders } from '@angular/common/http';
+import { AuthService } from '../../../services/auth.service';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -42,7 +43,7 @@ export class RegistroComponent implements OnInit {
   };
 
   constructor(private router: Router, private userService: RegisterService, protected http: HttpClient,
-              private articulosServicio: RegisterService) { }
+              private articulosServicio: RegisterService, public Auth: AuthService) { }
 
   ngOnInit() {
     this.recuperarTodos();
@@ -58,7 +59,7 @@ alta() {
       // tslint:disable-next-line:no-string-literal
       alert(datos['mensaje']);
       this.recuperarTodos();
-    }else{
+    } else {
       // tslint:disable-next-line:no-string-literal
       alert(datos['mensaje']);
       this.recuperarTodos();

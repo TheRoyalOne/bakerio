@@ -14,68 +14,80 @@ export class PreparadosService {
   this.headers.set('Content-Type', 'Authorization');
    }
    recuperarTodos() {
-    return this.http.get('http://baker-io-pem.appspot.com/recuperartodosplanprep.php');
+    return this.http.get('http://localhost/recuperartodosplanprep.php');
+  }
+  bendecir(articulo) {
+    return this.http.post('http://localhost/certificacion.php', JSON.stringify(articulo), { withCredentials: true});
   }
   recuperarTodoss() {
-    return this.http.get('http://baker-io-pem.appspot.com/recuperartodosventa.php');
+    return this.http.get('http://localhost/recuperartodosventa.php');
   }
   usuarios() {
-   return this.http.get('http://baker-io-pem.appspot.com/employees.php');
+   return this.http.get('http://localhost/employees.php');
  }
   recuperarTodosp(codigo: number) {
-    return this.http.get(`http://baker-io-pem.appspot.com/recuperartodosplanprepp.php?codigo=${codigo}`);
+    return this.http.get(`http://localhost/recuperartodosplanprepp.php?codigo=${codigo}`);
   }
   tareas() {
-    return this.http.get('http://baker-io-pem.appspot.com/actividades.php');
+    return this.http.get('http://localhost/actividades.php', { withCredentials: true});
   }
   planes() {
-    return this.http.get('http://baker-io-pem.appspot.com/planes.php');
+    return this.http.get('http://localhost/planes.php');
   }
   ordenes() {
-    return this.http.get('http://baker-io-pem.appspot.com/planes.php');
+    return this.http.get('http://localhost/planes.php');
   }
 
   alta(articulo) {
-    return this.http.post('http://baker-io-pem.appspot.com/altaplanprep.php', JSON.stringify(articulo));
+    return this.http.post('http://localhost/altaplanprep.php', JSON.stringify(articulo));
   }
 
   baja(codigo: number) {
-    return this.http.get(`http://baker-io-pem.appspot.com/bajaplanprep.php?codigo=${codigo}`);
+    return this.http.get(`http://localhost/bajaplanprep.php?codigo=${codigo}`);
   }
   bajaventa(codigo: number) {
-    return this.http.get(`http://baker-io-pem.appspot.com/bajaventa.php?codigo=${codigo}`);
+    return this.http.get(`http://localhost/bajaventa.php?codigo=${codigo}`);
   }
   seleccionar(codigo: number) {
-    return this.http.get(`http://baker-io-pem.appspot.com/seleccionarplanprep.php?codigo=${codigo}`);
+    return this.http.get(`http://localhost/seleccionarplanprep.php?codigo=${codigo}`);
   }
   seleccionars(codigo: number) {
-    return this.http.get(`http://baker-io-pem.appspot.com/seleccionventa.php?codigo=${codigo}`);
+    return this.http.get(`http://localhost/seleccionventa.php?codigo=${codigo}`);
   }
   cancelar(codigo: number) {
-    return this.http.get(`http://baker-io-pem.appspot.com/cancelarplan.php?codigo=${codigo}`, { withCredentials: true});
+    return this.http.get(`http://localhost/cancelarplan.php?codigo=${codigo}`, { withCredentials: true});
   }
   modificacion(articulo) {
-    return this.http.post('http://baker-io-pem.appspot.com/modificacionplanprep.php', JSON.stringify(articulo));
+    return this.http.post('http://localhost/modificacionplanprep.php', JSON.stringify(articulo));
   }
   modificacions(articulo) {
-    return this.http.post('http://baker-io-pem.appspot.com/modificacionventa.php', JSON.stringify(articulo));
+    return this.http.post('http://localhost/modificacionventa.php', JSON.stringify(articulo));
   }
   task(articulo) {
-    return this.http.post('http://baker-io-pem.appspot.com/altaplan.php', JSON.stringify(articulo));
+    return this.http.post('http://localhost/altaplan.php', JSON.stringify(articulo));
   }
   deletion(codigo: number) {
-    return this.http.get(`http://baker-io-pem.appspot.com/bajaplan.php?codigo=${codigo}`);
+    return this.http.get(`http://localhost/bajaplan.php?codigo=${codigo}`);
+  }
+  act(codigo: number) {
+    return this.http.get(`http://localhost/canc.php?codigo=${codigo}`);
+  }
+  accion(codigo: number) {
+    return this.http.get(`http://localhost/prolongar.php?codigo=${codigo}`, { withCredentials: true});
   }
   cancelacion(codigo: number) {
-    return this.http.get(`http://baker-io-pem.appspot.com/cancelarplan.php?codigo=${codigo}`, { withCredentials: true});
+    return this.http.get(`http://localhost/cancelarplan.php?codigo=${codigo}`, { withCredentials: true});
+  }
+  esta(codigo: number) {
+    return this.http.get(`http://localhost/estado.php?codigo=${codigo}`, { withCredentials: true});
   }
   selection(codigo: number) {
-    return this.http.get(`http://baker-io-pem.appspot.com/seleccionarplan.php?codigo=${codigo}`);
+    return this.http.get(`http://localhost/seleccionarplan.php?codigo=${codigo}`);
   }
   validacionp(codigo: number) {
-    return this.http.get(`http://baker-io-pem.appspot.com/asignacion.php?codigo=${codigo}`);
+    return this.http.get(`http://localhost/asignacion.php?codigo=${codigo}`);
   }
   updeit(articulo) {
-    return this.http.post('http://baker-io-pem.appspot.com/modificacionplan.php', JSON.stringify(articulo));
+    return this.http.post('http://localhost/modificacionplan.php', JSON.stringify(articulo));
   }
 }

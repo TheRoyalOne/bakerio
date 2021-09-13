@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MatDatepickerModule, MatDatepickerInputEvent } from '@angular/material/datepicker';
 import {  HttpClient, HttpHeaders } from '@angular/common/http';
 import { RegisteraService } from './registera.service';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-registroa',
@@ -58,7 +59,7 @@ alta() {
       // tslint:disable-next-line:no-string-literal
       alert(datos['mensaje']);
       this.recuperarTodos();
-    }else{
+    } else {
       // tslint:disable-next-line:no-string-literal
       alert(datos['mensaje']);
       this.recuperarTodos();

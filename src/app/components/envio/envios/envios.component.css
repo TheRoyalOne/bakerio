@@ -13,8 +13,12 @@ img {
 }
 
 a {
-    font-family: 'Zilla Slab Highlight', cursive;
     font-size: 36px;
+    color: inherit;
+}
+
+h1 {
+    color: darkred;
 }
 
 .mat-button {

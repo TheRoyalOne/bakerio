@@ -1,0 +1,14 @@
+<div class="container">
+    <div *ngFor='let user of usuarios'>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title class="usuario">{{ "Número de Guía: " }}{{ user.ID}}</mat-card-title>
+            </mat-card-header>
+            <div class="contenido">
+                <mat-card-content>
+                    <h2>{{ "Contenido: " }}{{ user.CONTENIDO}}</h2>
+                </mat-card-content>
+            </div>
+        </mat-card>
+    </div>
+</div>

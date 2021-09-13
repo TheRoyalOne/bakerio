@@ -6,6 +6,8 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { FullprodService } from '../../externo/principal/fullprod.service';
 import { CompraComponent } from '../../externo/principal/compra/compra.component';
 import { ComentarioComponent } from '../../externo/principal/comentario/comentario.component';
+import { AuthService } from '../../../services/auth.service';
+import { ApartadoComponent } from '../../externo/principal/apartado/apartado.component';
 @Component({
   selector: 'app-ventas',
   templateUrl: './ventas.component.html',
@@ -23,7 +25,7 @@ export class VentasComponent implements OnInit {
     prec: null
   };
   constructor(
-    protected principe: FullprodService, public dialog: MatDialog) { }
+    protected principe: FullprodService, public dialog: MatDialog, public Auth: AuthService) { }
     openPurchase(codigo, costo): void {
       console.log(codigo);
       console.log(costo);
@@ -39,6 +41,22 @@ export class VentasComponent implements OnInit {
         console.log('The dialog was closed');
         console.log(result);
         this.openDialog();
+      });
+    }
+    openStock(codigo, costo): void {
+      console.log(codigo);
+      console.log(costo);
+      this.prec = costo;
+      this.producto = codigo;
+      const dialogRef = this.dialog.open(ApartadoComponent, {
+        data: {
+          prec: this.prec,
+          producto: this.producto
+        }
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+        console.log(result);
       });
     }
     openDialog(): void {

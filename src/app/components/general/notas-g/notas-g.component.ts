@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NotaService } from './nota.service';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-notas-g',
@@ -9,7 +10,7 @@ import { NotaService } from './nota.service';
 export class NotasGComponent implements OnInit {
   notas: any[] = [];
   constructor(
-    protected notaService: NotaService) { }
+    protected notaService: NotaService, public Auth: AuthService) { }
 
   ngOnInit() {
     this.notaService.getNotas()

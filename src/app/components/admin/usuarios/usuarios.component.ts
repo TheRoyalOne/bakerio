@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from './usuarios.service';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -8,10 +10,13 @@ import { UsuariosService } from './usuarios.service';
 })
 export class UsuariosComponent implements OnInit {
   usuarios: any[] = [];
+  a = {
+  };
   constructor(
-    protected usuariosService: UsuariosService) { }
+    protected usuariosService: UsuariosService, private router: Router, public Auth: AuthService) { }
 
   ngOnInit() {
+    this.bendecir();
     this.usuariosService.getUsers()
     .subscribe(
       (data) => { // Successs
@@ -23,6 +28,19 @@ export class UsuariosComponent implements OnInit {
       }
     );
   }
+bendecir() {
+  this.usuariosService.bendecir(this.a).subscribe(datos => {
+    // tslint:disable-next-line:no-string-literal
+    if (datos['resultado'] === 'OK') {
+      // tslint:disable-next-line:no-string-literal
+      alert(datos['mensaje']);
+    } else {
+      this.router.navigate(['user/profile']);
+      // tslint:disable-next-line:no-string-literal
+      alert(datos['mensaje']);
+    }
+  });
+}
   obtenerCosa(id) {
     console.log(id);
   }

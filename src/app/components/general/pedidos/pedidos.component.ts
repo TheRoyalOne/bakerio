@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { FullprodService } from '../../externo/principal/fullprod.service';
+import { AuthService } from '../../../services/auth.service';
 @Component({
   selector: 'app-pedidos',
   templateUrl: './pedidos.component.html',
@@ -23,7 +24,7 @@ export class PedidosComponent implements OnInit {
     prec: null
   };
   constructor(
-    protected principe: FullprodService, public dialog: MatDialog) { }
+    protected principe: FullprodService, public dialog: MatDialog, public Auth: AuthService) { }
   ngOnInit() {
     this.principe.getPed()
     .subscribe(

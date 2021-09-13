@@ -9,10 +9,22 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   constructor(private Auth: AuthService, private router: Router) { }
-
+a = null;
   ngOnInit() {
 }
-
+bendecir() {
+  this.Auth.bendecir(this.a).subscribe(datos => {
+    // tslint:disable-next-line:no-string-literal
+    if (datos['resultado'] === 'OK') {
+      // tslint:disable-next-line:no-string-literal
+      alert(datos['mensaje']);
+    } else {
+      this.router.navigate(['user/profile']);
+      // tslint:disable-next-line:no-string-literal
+      alert(datos['mensaje']);
+    }
+  });
+}
 loginUser(event: { preventDefault: () => void; target: any; }) {
   event.preventDefault();
   const target = event.target;
@@ -23,7 +35,7 @@ loginUser(event: { preventDefault: () => void; target: any; }) {
         this.router.navigate(['user/profile']);
         this.entrada();
         this.asignacion();
-        this.chequeo();
+        this.cuenta();
     } else {
       window.alert(data.message);
     }
@@ -46,8 +58,14 @@ asignacion() {
     if (datos['resultado'] === 'OK') {
       // tslint:disable-next-line:no-string-literal
       alert(datos['mensaje']);
+      // tslint:disable-next-line:no-string-literal
+      this.Auth.vato = datos['usuario'];
+      // tslint:disable-next-line:no-string-literal
+      console.log(this.Auth.vato );
     }
   });
+}
+cuenta() {
 }
 chequeo() {
   this.Auth.check().subscribe(datos => {

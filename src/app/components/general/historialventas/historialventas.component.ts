@@ -5,6 +5,7 @@ import {  HttpClient, HttpHeaders } from '@angular/common/http';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { PlanComponent } from '../../admin/plantillas/preparados/plan/plan.component';
 import { PreparadosService } from '../../admin/plantillas/preparados/preparados.service';
+import { AuthService } from '../../../services/auth.service';
 @Component({
   selector: 'app-historialventas',
   templateUrl: './historialventas.component.html',
@@ -34,7 +35,7 @@ export class HistorialventasComponent implements OnInit {
 
   constructor(private router: Router, protected http: HttpClient,
               private articulosServicio: PreparadosService,
-              public dialog: MatDialog) { }
+              public dialog: MatDialog, public Auth: AuthService) { }
 
   ngOnInit() {
     this.recuperarTodoss();
@@ -132,8 +133,8 @@ seleccionar(codigo) {
 }
 seleccionars(codigo) {
   console.log(codigo);
-  this.art.ventilla=codigo;
-  this.aiuda=this.art.ventilla;
+  this.art.ventilla = codigo;
+  this.aiuda = this.art.ventilla;
   console.log(this.aiuda);
   alert(['Usted ha seleccionado la venta ' + codigo]);
   this.articulosServicio.seleccionars(codigo).subscribe(result => this.art = result[0]);

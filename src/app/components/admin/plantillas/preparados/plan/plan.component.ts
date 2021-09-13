@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { MatDatepickerModule, MatDatepickerInputEvent } from '@angular/material/datepicker';
 import {  HttpClient, HttpHeaders } from '@angular/common/http';
 import { PreparadosService } from '../preparados.service';
+import { AuthService } from '../../../../../services/auth.service';
 @Component({
   selector: 'app-plan',
   templateUrl: './plan.component.html',
@@ -16,13 +17,16 @@ export class PlanComponent implements OnInit {
   plans = null;
   ord = null;
   planesillo = null;
+  ordens = null;
   actividad = null;
   orden = null;
   var = null;
   var2 = null;
+  varf = null;
   art = {
     id: null,
     planesillo: null,
+    ordens: null,
     plann: null,
     actividad: null,
     orden: null,
@@ -31,7 +35,7 @@ export class PlanComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<PlanComponent>,
               // tslint:disable-next-line:no-shadowed-variable
               @Inject(MAT_DIALOG_DATA)public data: any, private router: Router,
-              protected http: HttpClient, private tarea: PreparadosService) {
+              protected http: HttpClient, private tarea: PreparadosService, public Auth: AuthService) {
 
     }
 
@@ -79,11 +83,26 @@ export class PlanComponent implements OnInit {
     });
     this.recuperarTodos();
   }
-  seleccionarplanp(codigo, act) {
+  prolongar(codigo) {
+    console.log(codigo);
+    this.tarea.accion(codigo).subscribe(datos => {
+      // tslint:disable-next-line:no-string-literal
+      if (datos['resultado'] === 'OK') {
+        // tslint:disable-next-line:no-string-literal
+        alert(datos['mensaje']);
+        this.recuperarTodos();
+      }
+    });
+    this.recuperarTodos();
+  }
+  seleccionarplanp(codigo, act, ord) {
     this.art.planesillo = codigo;
+    this.art.ordens = ord;
     this.art.nom = act;
     console.log(this.art.planesillo);
+    console.log(this.art.ordens);
     this.var = this.art.planesillo;
+    this.varf = this.art.ordens;
     alert(['Ha seleccionado la actividad ' + codigo]);
     this.tarea.selection(codigo).subscribe(result => this.art = result[0]);
     this.actividades();
@@ -91,14 +110,15 @@ export class PlanComponent implements OnInit {
   actualizarplanp() {
     console.log(this.var);
     this.art.planesillo = this.var;
+    this.art.ordens = this.varf;
     console.log(this.art.planesillo);
+    console.log(this.art.ordens);
     this.tarea.updeit(this.art).subscribe(datos => {
       // tslint:disable-next-line:no-string-literal
       if (datos['resultado'] === 'OK') {
         // tslint:disable-next-line:no-string-literal
         this.recuperarTodos();
         alert(['Cambio Realizado']);
-        this.dialogRef.close('Se generó el cambio');
         this.validarp();
       }
     });

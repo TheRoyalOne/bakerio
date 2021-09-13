@@ -8,6 +8,7 @@ import { ComentarioComponent } from './comentario/comentario.component';
 import { CompraComponent } from './compra/compra.component';
 import { ApartadoComponent } from './apartado/apartado.component';
 import { CompracComponent } from './compra/comprac/comprac.component';
+import { AuthService } from '../../../services/auth.service';
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
@@ -18,6 +19,7 @@ export class PrincipalComponent implements OnInit {
   precio: number;
   prec: number;
   producto: number;
+  costo: number;
   art = {
     prod: null,
     fecha: null,
@@ -25,7 +27,7 @@ export class PrincipalComponent implements OnInit {
     prec: null
   };
   constructor(
-    protected principe: FullprodService, public dialog: MatDialog) { }
+    protected principe: FullprodService, public dialog: MatDialog, public Auth: AuthService) { }
     openDialog(): void {
       const dialogRef = this.dialog.open(ComentarioComponent, {
       });
@@ -65,6 +67,10 @@ export class PrincipalComponent implements OnInit {
         console.log('The dialog was closed');
         console.log(result);
       });
+    }
+    paypal(finalamount) {
+    this.costo = finalamount;
+    
     }
   ngOnInit() {
     this.principe.getProd()

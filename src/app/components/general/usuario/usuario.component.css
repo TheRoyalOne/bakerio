@@ -10,11 +10,16 @@ font-family: 'Shadows Into Light', cursive;*/
     background-image: url("/assets/images/card.jpg");
 }
 
+background-image {
+    opacity: 50%;
+}
+
 img {
     border-radius: 50%;
     height: 100%;
     margin-left: 2%;
     width: 110%;
+    opacity: 50%;
 }
 
 .mat-button {

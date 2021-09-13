@@ -8,9 +8,15 @@ export class UsuariosService {
 
   constructor(protected http: HttpClient) {}
   getUsers() {
-    return this.http.get('http://baker-io-pem.appspot.com/usuarios.php');
+    return this.http.get('http://localhost/usuarios.php');
   }
   getUsersf() {
-    return this.http.get('http://baker-io-pem.appspot.com/recetas.php');
+    return this.http.get('http://localhost/recetas.php');
+  }
+  altilla(articulo) {
+    return this.http.post('http://localhost/recetass.php', JSON.stringify(articulo));
+  }
+  bendecir(articulo) {
+    return this.http.post('http://localhost/certificacion.php', JSON.stringify(articulo), { withCredentials: true});
   }
 }

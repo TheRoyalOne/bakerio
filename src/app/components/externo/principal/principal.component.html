@@ -9,13 +9,12 @@
                     <h2>{{ "Costo: $" }}{{ prod.PRECIO}}</h2>
                     <h2>{{ "Unidad: " }}{{ prod.UNIDAD}}</h2>
                     <h2>{{ "Info: " }}{{ prod.EXTRA}}</h2>
-                    <h2>{{ "ID: " }}{{ prod.ID}}</h2>
+                    <h2>{{ "PRODUCTO: " }}{{ prod.ID}}</h2>
                 </mat-card-content>
             </div>
             <mat-card-actions>
             </mat-card-actions>
             <button mat-raised-button (click)="openPurchase(prod.ID,prod.PRECIO)">Comprar</button>
-            <button mat-raised-button (click)="openStock(prod.ID,prod.PRECIO)">Apartar</button>
         </mat-card>
     </div>
     <button mat-button (click)="openDialog()">Agregar un comentario</button>

@@ -5,6 +5,7 @@ import {  HttpClient, HttpHeaders } from '@angular/common/http';
 import { PreparadosService } from './preparados.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { PlanComponent } from './plan/plan.component';
+import { AuthService } from '../../../../services/auth.service';
 @Component({
   selector: 'app-preparados',
   templateUrl: './preparados.component.html',
@@ -29,14 +30,30 @@ export class PreparadosComponent implements OnInit {
           user: null
   };
 
-  constructor(private router: Router, protected http: HttpClient,
+  constructor(private router: Router, protected http: HttpClient, public Auth: AuthService,
               private articulosServicio: PreparadosService,
               public dialog: MatDialog) { }
 
   ngOnInit() {
+    this.bendecir();
     this.recuperarTodos();
     this.usuarios();
 }
+
+bendecir() {
+  this.articulosServicio.bendecir(this.art).subscribe(datos => {
+    // tslint:disable-next-line:no-string-literal
+    if (datos['resultado'] === 'OK') {
+      // tslint:disable-next-line:no-string-literal
+      alert(datos['mensaje']);
+    } else {
+      this.router.navigate(['user/profile']);
+      // tslint:disable-next-line:no-string-literal
+      alert(datos['mensaje']);
+    }
+  });
+}
+
 tarea(codigo) {
   console.log(codigo);
   this.id = codigo;
@@ -98,6 +115,7 @@ modificacion() {
 
 seleccionar(codigo) {
   console.log(codigo);
+  this.esta(codigo);
   alert(['Usted ha seleccionado el plan ' + codigo]);
   this.articulosServicio.seleccionar(codigo).subscribe(result => this.art = result[0]);
   this.art.id = codigo;
@@ -112,6 +130,19 @@ cancelar(codigo) {
     if (datos['resultado'] === 'OK') {
       // tslint:disable-next-line:no-string-literal
       alert(datos['mensaje']);
+      this.recuperarTodos();
+    }
+  });
+  this.recuperarTodos();
+}
+esta(codigo) {
+  this.articulosServicio.esta(codigo).subscribe(datos => {
+    // tslint:disable-next-line:no-string-literal
+    if (datos['resultado'] === 'OK') {
+      // tslint:disable-next-line:no-string-literal
+      alert(datos['mensaje']);
+      // tslint:disable-next-line:no-string-literal
+      this.Auth.plan = datos['mensaje'];
       this.recuperarTodos();
     }
   });

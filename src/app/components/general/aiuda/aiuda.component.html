@@ -1,6 +1,15 @@
-<div class="container" class="noselect">
+<div class="container">
     <div *ngFor='let list of consejos'>
-        <h2>{{"Numero de Consejo: "}}{{ list.ID}}</h2>
-        <h2>{{ list.CONTENIDO | uppercase }}</h2>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title class="usuario">{{ "Numero de Nota: " }}{{ list.ID | uppercase }}</mat-card-title>
+            </mat-card-header>
+            <div class="contenido">
+                <mat-card-content>
+                    <h2>{{ "Contenido: " }}{{ list.CONTENIDO}}</h2>
+                    <h2>{{ "Respuesta del Administrador: " }}{{ list.RESPUESTA }}</h2>
+                </mat-card-content>
+            </div>
+        </mat-card>
     </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HistorialService } from './historial.service';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-historial',
@@ -9,7 +10,7 @@ import { HistorialService } from './historial.service';
 export class HistorialComponent implements OnInit {
   usuarios: any[] = [];
 
-  constructor(private historial: HistorialService) { }
+  constructor(private historial: HistorialService, public Auth: AuthService) { }
 
   ngOnInit() {
     this.historial.historial()

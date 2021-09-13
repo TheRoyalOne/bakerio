@@ -11,6 +11,36 @@ html {
     background: none;
 }
 
+table {
+    background-color: gainsboro;
+    font-size: 15px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+    font-size: 20px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+th,
+td {
+    padding: 8px;
+    font-size: 20px;
+    font-family: 'Permanent Marker', cursive;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
 ::ng-deep .mat-focused .mat-form-field-label {
     /*change color of label*/
     color: purple !important;

@@ -12,7 +12,8 @@ interface myData {
 export class AuthService {
   public headers = new HttpHeaders();
   private loggedInStatus = false;
-
+  public vato;
+  public plan;
   constructor(private http: HttpClient) {
   this.headers.set('Content-Type', 'application/json; charset=utf-8');
   this.headers.set('Content-Type', 'Cookie');
@@ -23,26 +24,32 @@ export class AuthService {
   setLoggedIn(value: boolean) {
     this.loggedInStatus = value;
   }
+  bendecir(articulo) {
+    return this.http.post('http://localhost/certificacionkk.php', JSON.stringify(articulo), { withCredentials: true});
+  }
 
  get isLoggedIn() {
   return this.loggedInStatus;
   }
   entrada() {
-    return this.http.get('http://baker-io-pem.appspot.com/entrada.php', {headers: this.headers, withCredentials: true});
+    return this.http.get('http://localhost/entrada.php', {headers: this.headers, withCredentials: true});
   }
   salida() {
-      return this.http.get('http://baker-io-pem.appspot.com/salida.php', {headers: this.headers, withCredentials: true});
+      return this.http.get('http://localhost/salida.php', {headers: this.headers, withCredentials: true});
   }
   getUserDetails(username, password) {
-    return this.http.post<myData>('http://baker-io-pem.appspot.com/login.php', {
+    return this.http.post<myData>('http://localhost/login.php', {
       username,
       password
     }, {headers: this.headers, withCredentials: true});
   }
   asignacion() {
-    return this.http.get('http://baker-io-pem.appspot.com/asignacionPlan.php', {withCredentials: true});
+    return this.http.get('http://localhost/asignacionPlan.php', {withCredentials: true});
+  }
+  cuenta() {
+    return this.http.get('http://localhost/cuenta.php', {withCredentials: true});
   }
   check() {
-    return this.http.get('http://baker-io-pem.appspot.com/congelados.php', {withCredentials: true});
+    return this.http.get('http://localhost/congelados.php', {withCredentials: true});
   }
 }

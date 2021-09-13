@@ -6,6 +6,7 @@ import {  HttpClient, HttpHeaders } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { FullprodService } from '../../fullprod.service';
+import { AuthService } from '../../../../../services/auth.service';
 // tslint:disable-next-line:class-name
 export interface data {
   info: string;
@@ -34,7 +35,7 @@ export class CompracComponent implements OnInit {
     costo: null,
     can: null
   };
-  constructor(public dialogRef: MatDialogRef<CompracComponent>,
+  constructor(public dialogRef: MatDialogRef<CompracComponent>, public Auth: AuthService,
               // tslint:disable-next-line:no-shadowed-variable
               @Inject(MAT_DIALOG_DATA)public data: any, private router: Router,
               protected http: HttpClient, private compra: FullprodService,

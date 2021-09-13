@@ -38,63 +38,63 @@
                                     <mat-label>ID </mat-label>
                                     <input matInput placeholder="ID" id="id" name="id" type="number" [(ngModel)]="art.id" #userId="ngModel" required #trackId="ngModel">
                                 </mat-form-field>
-                                <p class="alert" *ngIf="!trackId.valid && trackId.touched || !trackId.touched">El id es de a gusa</p>
+                                <p class="alert" *ngIf="!trackId.valid && trackId.touched || !trackId.touched">El id es obligatorio</p>
                             </h1>
                             <h1>
                                 <mat-form-field class="example-full-width">
                                     <mat-label>Nombre </mat-label>
                                     <input matInput placeholder="Nombre" id="nombre" name="nombre" [(ngModel)]="art.nombre" required #trackName="ngModel">
                                 </mat-form-field>
-                                <p class="alert" *ngIf="!trackName.valid && trackName.touched || !trackName.touched">El nombre es de a gusa</p>
+                                <p class="alert" *ngIf="!trackName.valid && trackName.touched || !trackName.touched">El nombre es obligatorio</p>
                             </h1>
                             <h1>
                                 <mat-form-field class="example-full-width">
                                     <mat-label>Descripcion </mat-label>
                                     <input matInput placeholder="Descripcion" id="descripcion" name="descripcion" type="text" [(ngModel)]="art.extra" required #trackExtra="ngModel">
                                 </mat-form-field>
-                                <p class="alert " *ngIf="!trackExtra.valid && trackExtra.touched || !trackExtra.touched ">El extra es de a gusa</p>
+                                <p class="alert " *ngIf="!trackExtra.valid && trackExtra.touched || !trackExtra.touched ">El extra es obligatorio</p>
                             </h1>
                             <h1>
                                 <mat-form-field class="example-full-width">
                                     <mat-label>Costo </mat-label>
-                                    <input matInput placeholder="Costo" id="nombre" name="costo" type="number" [(ngModel)]="art.costo" required pattern="^[1-9]+$" #trackCosto="ngModel">
+                                    <input matInput placeholder="Costo" id="nombre" name="costo" type="number" min="0" [(ngModel)]="art.costo" required pattern="^[1-9]+$" #trackCosto="ngModel">
                                 </mat-form-field>
                                 <p class="alert " *ngIf="!trackCosto.valid && trackCosto.touched || !trackCosto.touched ">El costo debe ser mayor a 0</p>
                             </h1>
                             <h1>
                                 <mat-form-field class="example-full-width ">
                                     <mat-label>Existencias </mat-label>
-                                    <input matInput placeholder="Existencias" id="existencias" type="number" name="existencias" [(ngModel)]="art.existencia" required #trackExistencia="ngModel">
+                                    <input matInput placeholder="Existencias" id="existencias" type="number" min="0" name="existencias" [(ngModel)]="art.existencia" required #trackExistencia="ngModel">
                                 </mat-form-field>
-                                <p class="alert " *ngIf="!trackExistencia.valid && trackExistencia.touched || !trackExistencia.touched ">La existencia es de a gusa</p>
+                                <p class="alert " *ngIf="!trackExistencia.valid && trackExistencia.touched || !trackExistencia.touched ">La existencia es obligatorio</p>
                             </h1>
                             <h1>
                                 <mat-form-field class="example-full-width ">
                                     <mat-label>Minimo </mat-label>
-                                    <input matInput placeholder="Minimo" id="minimo" type="number" name="minimo" [(ngModel)]="art.minimo" required #trackMinimo="ngModel">
+                                    <input matInput placeholder="Minimo" id="minimo" type="number" name="minimo" min="0" [(ngModel)]="art.minimo" required #trackMinimo="ngModel">
                                 </mat-form-field>
-                                <p class="alert " *ngIf="!trackMinimo.valid && trackMinimo.touched || !trackMinimo.touched ">La unidad es de a gusa</p>
+                                <p class="alert " *ngIf="!trackMinimo.valid && trackMinimo.touched || !trackMinimo.touched ">La unidad es obligatorio</p>
                             </h1>
                             <h1>
                                 <mat-form-field class="example-full-width ">
                                     <mat-label>Unidad </mat-label>
                                     <input matInput placeholder="Unidad" id="unidad" name="unidad" [(ngModel)]="art.unidad" required #trackUnidad="ngModel">
                                 </mat-form-field>
-                                <p class="alert " *ngIf="!trackUnidad.valid && trackUnidad.touched || !trackUnidad.touched ">La unidad es de a gusa</p>
+                                <p class="alert " *ngIf="!trackUnidad.valid && trackUnidad.touched || !trackUnidad.touched ">La unidad es obligatorio</p>
                             </h1>
                             <h1>
                                 <mat-form-field class="example-full-width ">
                                     <mat-label>FK_Caducidad </mat-label>
                                     <input matInput placeholder="Caducidad" type="number" id="caducidad" name="caducidad" [(ngModel)]="art.caducidad" required #trackCaducidad="ngModel">
                                 </mat-form-field>
-                                <p class="alert " *ngIf="!trackCaducidad.valid && trackCaducidad.touched || !trackCaducidad.touched ">La Caducidad es de a gusa</p>
+                                <p class="alert " *ngIf="!trackCaducidad.valid && trackCaducidad.touched || !trackCaducidad.touched ">La Caducidad es obligatorio</p>
                             </h1>
                             <h1>
                                 <mat-form-field class="example-full-width ">
                                     <mat-label>Imagen </mat-label>
                                     <input matInput placeholder="Imagen " id="imagen " name="imagen " type="text " [(ngModel)]="art.imagen " required #trackImagen="ngModel">
                                 </mat-form-field>
-                                <p class="alert " *ngIf="!trackImagen.valid && trackImagen.touched || !trackImagen.touched ">La imagen es de a gusa para usuarios de mayoreo</p>
+                                <p class="alert " *ngIf="!trackImagen.valid && trackImagen.touched || !trackImagen.touched ">La imagen es obligatorio para usuarios de mayoreo</p>
                             </h1>Campos llenados correctamente: {{f.valid}}
                             <button (click)="alta() " [disabled]="!f.form.valid " type="submit">Registrar</button>
                         </div>

@@ -14,6 +14,6 @@ export class Registrom2Service {
   this.headers.set('Content-Type', 'Authorization');
    }
   alta(articulo) {
-    return this.http.post('http://baker-io-pem.appspot.com/altam.php', JSON.stringify(articulo));
+    return this.http.post('http://localhost/altam.php', JSON.stringify(articulo));
   }
 }

@@ -16,7 +16,7 @@
                 <mat-form-field>
                     <input matInput placeholder="Descuento" id="descuento" type="number" min="0" max="100" name="descuento" [(ngModel)]="art.desc" required #desc="ngModel">
                 </mat-form-field>
-                <p class="alert" *ngIf="!dataId.valid && !fechaID.valid && !desc.valid">El contenido es de a gusa</p>
+                <p class="alert" *ngIf="!dataId.valid && !fechaID.valid && !desc.valid">El contenido es obligatorio</p>
             </div>
         </form>
     </div>

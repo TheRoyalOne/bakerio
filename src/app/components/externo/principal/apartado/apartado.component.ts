@@ -5,6 +5,7 @@ import { MatDatepickerModule, MatDatepickerInputEvent } from '@angular/material/
 import {  HttpClient, HttpHeaders } from '@angular/common/http';
 import { FullprodService } from '../fullprod.service';
 import { DatePipe } from '@angular/common';
+import { AuthService } from '../../../../services/auth.service';
 
 
 // tslint:disable-next-line:class-name
@@ -36,7 +37,7 @@ export class ApartadoComponent implements OnInit {
               // tslint:disable-next-line:no-shadowed-variable
               @Inject(MAT_DIALOG_DATA)public data: any, private router: Router,
               protected http: HttpClient, private comentario: FullprodService,
-              private datePipe: DatePipe) {
+              private datePipe: DatePipe, public Auth: AuthService) {
                 const tomorrow = new Date();
                 const week = new Date();
                 tomorrow.setDate(tomorrow.getDate() + 1);
@@ -50,7 +51,7 @@ export class ApartadoComponent implements OnInit {
   ngOnInit() {
   }
   alta(dato, cant, pan) {
-    this.total = cant * dato;
+    this.total = (cant * dato);
     console.log(this.total);
     this.art.costo = this.total;
     this.art.obj = pan;

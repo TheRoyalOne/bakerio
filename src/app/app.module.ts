@@ -15,7 +15,7 @@ import { UsuarioComponent } from './components/general/usuario/usuario.component
 import { RegistroComponent } from './components/general/registro/registro.component';
 import { Page404Component } from './components/page404/page404.component';
 import { LoginComponent } from './components/general/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -108,6 +108,11 @@ import { HistorialventasComponent } from './components/general/historialventas/h
 import { CompracComponent } from './components/externo/principal/compra/comprac/comprac.component';
 import { RutasComponent } from './components/envio/envios/rutas/rutas.component';
 import { PedidosComponent } from './components/general/pedidos/pedidos.component';
+import { InventComponent } from './components/admin/invent/invent.component';
+import { AsistenciaComponent } from './components/general/asistencia/asistencia.component';
+import { InvuserComponent } from './components/general/invuser/invuser.component';
+import { ActividadesComponent } from './components/admin/actividades/actividades.component';
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -175,12 +180,17 @@ import { PedidosComponent } from './components/general/pedidos/pedidos.component
     HistorialventasComponent,
     CompracComponent,
     RutasComponent,
-    PedidosComponent
+    PedidosComponent,
+    InventComponent,
+    AsistenciaComponent,
+    InvuserComponent,
+    ActividadesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularFireDatabaseModule,
     AngularFireStorageModule,
     HttpClientModule,
@@ -206,7 +216,8 @@ import { PedidosComponent } from './components/general/pedidos/pedidos.component
     BrowserModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatTableModule
   ],
   entryComponents: [
     MyDialogComponent,

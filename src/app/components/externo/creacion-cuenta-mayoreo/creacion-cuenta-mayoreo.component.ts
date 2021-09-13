@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MatDatepickerModule, MatDatepickerInputEvent } from '@angular/material/datepicker';
 import {  HttpClient, HttpHeaders } from '@angular/common/http';
 import { RegistromayoService } from './registromayo.service';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-creacion-cuenta-mayoreo',
@@ -42,7 +43,7 @@ export class CreacionCuentaMayoreoComponent implements OnInit {
   };
 
   constructor(private router: Router, protected http: HttpClient,
-              private articulosServicio: RegistromayoService) { }
+              private articulosServicio: RegistromayoService, public Auth: AuthService) { }
 
   ngOnInit() {
 }
@@ -54,7 +55,7 @@ alta() {
       // tslint:disable-next-line:no-string-literal
       alert(datos['mensaje']);
       this.router.navigate(['']);
-    }else{
+    } else {
       // tslint:disable-next-line:no-string-literal
       alert(datos['mensaje']);
     }

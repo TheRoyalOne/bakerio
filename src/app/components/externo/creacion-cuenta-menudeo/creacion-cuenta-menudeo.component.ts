@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MatDatepickerModule, MatDatepickerInputEvent } from '@angular/material/datepicker';
 import {  HttpClient, HttpHeaders } from '@angular/common/http';
 import { Registrom2Service } from './registrom2.service';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-creacion-cuenta-menudeo',
@@ -42,7 +43,7 @@ export class CreacionCuentaMenudeoComponent implements OnInit {
   };
 
   constructor(private router: Router, private userService: Registrom2Service, protected http: HttpClient,
-              private articulosServicio: Registrom2Service) { }
+              private articulosServicio: Registrom2Service, public Auth: AuthService) { }
 
   ngOnInit() {
 }
@@ -54,7 +55,7 @@ alta() {
       // tslint:disable-next-line:no-string-literal
       alert(datos['mensaje']);
       this.router.navigate(['']);
-    }else{
+    } else {
       // tslint:disable-next-line:no-string-literal
       alert(datos['mensaje']);
     }

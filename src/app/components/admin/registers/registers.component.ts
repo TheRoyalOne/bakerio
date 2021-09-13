@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MatDatepickerModule, MatDatepickerInputEvent } from '@angular/material/datepicker';
 import {  HttpClient, HttpHeaders } from '@angular/common/http';
 import { RegistersService } from './registers.service';
+import { AuthService } from '../../../services/auth.service';
 @Component({
   selector: 'app-registers',
   templateUrl: './registers.component.html',
@@ -41,7 +42,7 @@ export class RegistersComponent implements OnInit {
   };
 
   constructor(private router: Router, protected http: HttpClient,
-              private articulosServicio: RegistersService) { }
+              private articulosServicio: RegistersService, public Auth: AuthService) { }
 
   ngOnInit() {
     this.recuperarTodos();
@@ -57,7 +58,7 @@ alta() {
       // tslint:disable-next-line:no-string-literal
       alert(datos['mensaje']);
       this.recuperarTodos();
-    }else{
+    } else {
       // tslint:disable-next-line:no-string-literal
       alert(datos['mensaje']);
       this.recuperarTodos();
@@ -90,7 +91,7 @@ modificacion() {
 seleccionar(codigo) {
   console.log(codigo);
   this.articulosServicio.seleccionar(codigo).subscribe(result => this.art = result[0]);
-  this.art.id=codigo;
+  this.art.id = codigo;
 }
 
 hayRegistros() {

@@ -1,6 +1,6 @@
 {
     "hosting": {
-        "public": "dist/bakerio",
+        "public": "./dist/bakerio",
         "ignore": [
             "firebase.json",
             "**/.*",

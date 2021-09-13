@@ -1,7 +1,7 @@
 Inventario Imp
 
 <div *ngFor='let user of users'>
-    <h2>{{ "ID: " }}{{ user.ID }}</h2>
+    <h2>{{ "USUARIO: " }}{{ user.ID }}</h2>
     <h2>{{ "PRODUCTO: " }}{{ user.NOMBRE | uppercase }}</h2>
     <h2>{{ "EXTRA INFO: " }}{{ user.EXTRA | uppercase }}</h2>
     <h2>{{ "PRECIO " }}{{ "$" }}{{ user.PRECIO }}</h2>
@@ -25,7 +25,7 @@ Proveedores
 
 
 <div *ngFor='let prod of prods'>
-    <h2>{{ "ID: " }}{{ prod.ID | uppercase }}</h2>
+    <h2>{{ "NUM. PRODUCTO: " }}{{ prod.ID | uppercase }}</h2>
     <h2>{{ "Nombre: " }}{{ prod.NOMBRE | uppercase }}</h2>
     <h2>{{ "Producto: " }}{{ prod.PRODUCTO| uppercase }}</h2>
 </div>

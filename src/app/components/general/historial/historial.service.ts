@@ -8,9 +8,12 @@ export class HistorialService {
   public headers = new HttpHeaders();
   constructor(protected http: HttpClient) {}
   historial() {
-    return this.http.get('http://baker-io-pem.appspot.com/historialp.php', { withCredentials: true});
+    return this.http.get('http://localhost/historialp.php', { withCredentials: true});
   }
   historialfull() {
-    return this.http.get('http://baker-io-pem.appspot.com/historialfull.php', { withCredentials: true});
+    return this.http.get('http://localhost/historialfull.php', { withCredentials: true});
+  }
+  bendecir(articulo) {
+    return this.http.post('http://localhost/certificacion.php', JSON.stringify(articulo), { withCredentials: true});
   }
 }
