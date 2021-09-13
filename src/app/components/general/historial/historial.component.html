@@ -1,0 +1,21 @@
+<div class="container">
+    <div *ngFor='let user of usuarios'>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar><img [src]="user.FOTO"></div>
+                <mat-card-title class="usuario">{{ "USUARIO: " }}{{ user.NOMBRE}}</mat-card-title>
+            </mat-card-header>
+            <div class="contenido">
+                <mat-card-content>
+                    <h2>{{ "USUARIO: " }}{{ user.ID }}</h2>
+                    <h2>{{ "TURNO: " }}{{ user.TURNO}}</h2>
+                    <h2>{{ "ENTRADA: " }}{{ user.ENTRADA}}</h2>
+                    <h2>{{ "SALIDA: " }}{{ user.SALIDA}}</h2>
+                    <h2>{{ "LLEGADA: " }}{{ user.LLEGADA}}</h2>
+                    <h2>{{ "SALIDA: " }}{{ user.ABANDONADA}}</h2>
+                    <h2>{{ "FECHA: " }}{{ user.FECHA}}</h2>
+                </mat-card-content>
+            </div>
+        </mat-card>
+    </div>
+</div>

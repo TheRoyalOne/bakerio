@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Nuevo Comentario</h1>
+<div mat-dialog-content>
+    <p>Comunicate con nuestro equipo :D</p>
+    <div id="theForm">
+        <form #f="ngForm">
+            <div class="form-group">
+                <mat-form-field>
+                    <input matInput placeholder="Contenido" id="contenido" name="contenido" [(ngModel)]="art.contenido" name="name" required minlength="1" maxlength="200" #dataId="ngModel">
+                </mat-form-field>
+                <p class="alert" *ngIf="!dataId.valid && dataId.touched || !dataId.touched">El contenido es obligatorio</p>
+            </div>
+        </form>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button (click)="alta()" [disabled]="!f.form.valid ">Enviar</button>
+        <button mat-button mat-dialog-close>Cancelar</button>
+    </div>

@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Aclonica|Acme|Architects+Daughter|Cabin|Cinzel|Didact+Gothic|Indie+Flower|Kalam|Lobster|Monoton|Orbitron|Pacifico|Permanent+Marker|Quicksand|Rajdhani|Shadows+Into+Light|Special+Elite|Stoke|VT323|Zilla+Slab+Highlight&display=swap');
+
+/*
+font-family: 'Pacifico', cursive;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Cabin', sans-serif;
+font-family: 'VT323', monospace;
+font-family: 'Shadows Into Light', cursive;
+font-family: 'Lobster', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Acme', sans-serif;
+font-family: 'Stoke', serif;
+font-family: 'Rajdhani', sans-serif;
+font-family: 'Cinzel', serif;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Kalam', cursive;
+font-family: 'Orbitron', sans-serif;
+font-family: 'Didact Gothic', sans-serif;
+font-family: 'Special Elite', cursive;
+font-family: 'Architects Daughter', cursive;
+font-family: 'Monoton', cursive;
+font-family: 'Zilla Slab Highlight', cursive;
+font-family: 'Aclonica', sans-serif;
+*/
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+@media print {
+    html,
+    body {
+        display: none;
+        /* hide whole page */
+    }
+}
+
+router-outlet {
+    margin-left: 50%;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                    supported by Chrome, Opera and Firefox */
+}

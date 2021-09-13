@@ -1,0 +1,24 @@
+<div class="container">
+    <div *ngFor='let user of usuarios'>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar><img [src]="user.FOTO"></div>
+                <mat-card-title class="usuario">{{ "USUARIO: " }}{{ user.NOMBRE}}</mat-card-title>
+            </mat-card-header>
+            <div class="contenido">
+                <mat-card-content>
+                    <h2>{{ "PUESTO DE USUARIO: " }}{{ user.TIPO}}</h2>
+                    <h2>{{ "CORREO: " }}{{ user.CORREO }}</h2>
+                    <h2>{{ "NACIMIENTO: " }}{{ user.NACIMIENTO}}</h2>
+                    <h2>{{ "DOMICILIO: " }}{{ user.DOMICILIO}}</h2>
+                    <h2>{{ "TURNO: " }}{{ user.HORARIO}}</h2>
+                    <h2>{{ "PLAN LABORAL: " }}{{ user.PLAN}}</h2>
+                    <h2>{{ "ENTRADA: " }}{{ user.ENTRADA}}{{ " SALIDA: " }}{{ user.SALIDA}}</h2>
+                </mat-card-content>
+            </div>
+            <mat-card-actions>
+                <button mat-button class="mat-button"><a class="nav-link" routerLink="/user/history"><span>HISTORIAL</span></a></button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

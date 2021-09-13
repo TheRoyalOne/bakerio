@@ -1,0 +1,20 @@
+<div class="container">
+    <div *ngFor='let prod of productos'>
+        <mat-card class="example-card">
+            <div class="contenido">
+                <mat-card-content>
+                    <h2><a>{{ "ID de pedido: " }}{{ prod.ID }}</a></h2>
+                    <h2>{{ "Estado de pedido: " }}{{ prod.ESTADO }}</h2>
+                    <h2>{{ "Fecha de Pedido: " }}{{ prod.FECHACREACION}}</h2>
+                    <h2>{{ "Fecha de entrega: " }}{{ prod.FECHAENTREGA}}</h2>
+                    <h2>{{ "Total: $" }}{{ prod.TOTAL}}</h2>
+                    <h2>{{ "ID de usuario: " }}{{ prod.FKUSUARIO}}</h2>
+                    <h2>{{ "Direccion: " }}{{ prod.DIRECCION}}</h2>
+                </mat-card-content>
+            </div>
+            <mat-card-actions>
+            </mat-card-actions>
+            <h1><a href="envio/route">Direccionamiento</a></h1>
+        </mat-card>
+    </div>
+</div>

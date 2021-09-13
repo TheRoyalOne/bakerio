@@ -1,0 +1,44 @@
+.sidenav-container {
+    height: 100%;
+}
+
+mat-sidenav {
+    background-color: #C43974;
+}
+
+.mat-toolbar {
+    background-color: #c51162;
+}
+
+.sidenav {
+    width: 130px;
+}
+
+.sidenav .mat-toolbar {
+    background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#titulo {
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    font-size: 36px;
+    margin-left: 3%;
+}
+
+a {
+    color: inherit;
+}
+
+#logo {
+    margin-bottom: 12px;
+}
+
+mat-sidenav-container {
+    overflow: hidden;
+}

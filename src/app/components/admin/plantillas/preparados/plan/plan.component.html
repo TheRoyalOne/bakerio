@@ -1,0 +1,54 @@
+<div class="container">
+    <table border="1" *ngIf="hayRegistros(); else sinarticulos">
+        <tr>
+            <td>Num. Act.</td>
+            <td>Plan</td>
+            <td>Actividad</td>
+            <td>Estado</td>
+            <td>Orden</td>
+            <td>Borrar</td>
+            <td>Prolongar</td>
+            <td>Selector</td>
+        </tr>
+        <tr *ngFor="let art of articulos">
+            <td>{{art.ID}}</td>
+            <td>{{art.Nombre}}</td>
+            <td>{{art.Actividad}}</td>
+            <td>{{art.Estado}}</td>
+            <td>{{art.Orden}}</td>
+            <td><button mat-raised-button (click)="bajaplanp(art.ID)">Eliminar</button></td>
+            <td><button mat-raised-button (click)="prolongar(art.Actividad)">Prolongar</button></td>
+            <td><button mat-raised-button (click)="seleccionarplanp(art.ID, art.Actividad, art.Orden)">Seleccionar</button></td>
+        </tr>
+    </table>
+
+    <ng-template #sinarticulos>
+        <p>No hay articulos.</p>
+    </ng-template>
+    <div id="theForm">
+        <form #f="ngForm">
+            <div class="form-group">
+
+                <mat-form-field>
+                    <mat-label>Actividad </mat-label>
+                    <mat-select placeholder="Actividad" id="actividad" name="actividad" matInput [(ngModel)]="art.actividad" required #trackName="ngModel">
+                        <mat-option>Ninguna</mat-option>
+                        <mat-option *ngFor="let option of activ" [value]="option.id">{{option.id}}{{'.- '}}{{option.nombre}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <p class="alert" *ngIf="!trackName.valid && trackName.touched || !trackName.touched">La actividad es obligatorio</p>
+
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Orden </mat-label>
+                    <input matInput placeholder="Orden" id="orden" name="orden" type="number" [(ngModel)]="art.orden" required min="1" #trackorden="ngModel">
+                </mat-form-field>
+                <p class="alert" *ngIf="!trackorden.valid && trackorden.touched || !trackorden.touched">El orden es obligatorio</p>
+
+                <button mat-raised-button (click)="altaplanp()" [disabled]="!f.form.valid">Registrar</button>
+                <button mat-raised-button (click)="actualizarplanp()" [disabled]="!f.form.valid">Actualizar</button>
+
+            </div>
+        </form>
+    </div>
+</div>

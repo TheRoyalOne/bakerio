@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="page">
+        <div>
+            <h1>Administración de Guias</h1>
+            <table border="1" *ngIf="hayRegistros(); else sinarticulos">
+                <tr>
+                    <td>ID</td>
+                    <td>Contenido</td>
+                    <td>Borrar</td>
+                    <td>Selector</td>
+                </tr>
+                <tr *ngFor="let art of articulos">
+                    <td>{{art.id}}</td>
+                    <td>{{art.contenido}}</td>
+                    <td><button (click)="baja(art.id)">Eliminar</button></td>
+                    <td><button (click)="seleccionar(art.id)">Seleccionar</button></td>
+                </tr>
+            </table>
+            <ng-template #sinarticulos>
+                <p>No hay articulos.</p>
+            </ng-template>
+            <div>
+                <div id="theForm">
+                    <form #f="ngForm">
+                        <div class="form-group">
+                            <h1>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>ID </mat-label>
+                                    <input matInput placeholder="ID" id="id" name="id" [(ngModel)]="art.id" #userId="ngModel" type="number" min="1" #trackId="ngModel">
+                                </mat-form-field>
+                                <p class="alert" *ngIf="!trackId.valid && trackId.touched || !trackId.touched">El id es obligatorio</p>
+                            </h1>
+                            <h1>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Contenido </mat-label>
+                                    <input matInput placeholder="Nombre" id="nombre" name="nombre" [(ngModel)]="art.cont" required #trackName="ngModel">
+                                </mat-form-field>
+                                <p class="alert" *ngIf="!trackName.valid && trackName.touched || !trackName.touched">El contenido es obligatorio</p>
+                            </h1>Campos llenados correctamente: {{f.valid}}
+                            <button (click)="alta()" [disabled]="!f.form.valid">Registrar</button>
+                        </div>
+                    </form>
+                </div>
+                <p>
+                    <button (click)="modificacion()" [disabled]="!f.form.valid">Modificar</button></p>
+            </div>
+        </div>
+
+    </div>
+</div>

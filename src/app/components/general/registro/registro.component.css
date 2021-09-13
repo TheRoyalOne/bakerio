@@ -1,0 +1,135 @@
+body {
+    height: 100%;
+}
+
+#frm {
+    margin-top: 60px;
+    background: rgba(76, 175, 80, 0.0);
+    /* Green background with 30% opacity */
+    background: none;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: purple !important;
+}
+
+ ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: purple !important;
+}
+
+ ::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: purple !important;
+    ;
+}
+
+ ::ng-deep .mat-form-field-label {
+    /*change color of label*/
+    color: purple !important;
+}
+
+mat-datepicker-toggle {
+    color: purple !important;
+}
+
+.ng-invalid.ng-touched:not(form) {
+    border: 1px solid red;
+}
+
+#theList {
+    margin-right: 50%;
+}
+
+ul {
+    margin-left: 10%;
+}
+
+.example-events {
+    width: 400px;
+    height: 200px;
+    border: 1px solid #555;
+    overflow: auto;
+}
+
+div {
+    margin-top: 50px;
+}
+
+.container {
+    margin-left: 150px;
+}
+
+.example-events {
+    width: 400px;
+    height: 200px;
+    border: 1px solid #555;
+    overflow: auto;
+}
+
+img {
+    margin-left: 470px;
+    margin-top: 30px;
+}
+
+mat-form-field {
+    font-family: 'Indie Flower ', cursive;
+    color: black;
+}
+
+input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1;
+    /* Firefox */
+}
+
+mat-label {
+    font-family: 'Stoke', serif;
+    font-size: 20px;
+    color: black;
+}
+
+#frm {
+    font-family: 'Stoke', serif;
+    font-size: 20px;
+}
+
+h1 {
+    color: black;
+    font-size: 20px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+h1 {
+    color: black;
+    font-size: 20px;
+    font-family: 'Indie Flower ', cursive;
+}
+
+mat-label {
+    color: black;
+    font-family: 'Indie Flower ', cursive;
+}
+
+p {
+    color: black;
+    font-family: 'Indie Flower ', cursive;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: purple !important;
+}
+
+ ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: purple !important;
+}
+
+ ::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: purple !important;
+    ;
+}

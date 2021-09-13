@@ -1,0 +1,132 @@
+<div class="container">
+    <div class="page">
+        <div>
+            <h1>Administración de Empleados</h1>
+            <table border="1" *ngIf="hayRegistros(); else sinarticulos">
+                <tr>
+                    <td>ID</td>
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                    <td>Nivel</td>
+                    <td>FechadeNacimiento</td>
+                    <td>Domicilio</td>
+                    <td>Contrasena</td>
+                    <td>Telefono</td>
+                    <td>Celular</td>
+                    <td>Horario</td>
+                    <td>foto</td>
+                    <td>Borrar</td>
+                    <td>Selector</td>
+                </tr>
+                <tr *ngFor="let art of articulos">
+                    <td>{{art.ID}}</td>
+                    <td>{{art.Nombre}}</td>
+                    <td>{{art.Apellido}}</td>
+                    <td>{{art.Nivel}}</td>
+                    <td>{{art.FechadeNacimiento}}</td>
+                    <td>{{art.Domicilio}}</td>
+                    <td>{{art.Contrasena}}</td>
+                    <td>{{art.Telefono}}</td>
+                    <td>{{art.Celular}}</td>
+                    <td>{{art.FK_Horario}}</td>
+                    <td>{{art.foto}}</td>
+                    <td><button (click)="baja(art.ID)">Eliminar</button></td>
+                    <td><button (click)="seleccionar(art.ID)">Seleccionar</button></td>
+                </tr>
+            </table>
+            <ng-template #sinarticulos>
+                <p>No hay articulos.</p>
+            </ng-template>
+            <div>
+                <div id="theForm">
+                    <form #f="ngForm">
+                        <div class="form-group">
+                            <h1>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>ID </mat-label>
+                                    <input matInput placeholder="ID" id="id" type="number" min="1" name="id" [(ngModel)]="art.id" #userId="ngModel" required #trackId="ngModel">
+                                </mat-form-field>
+                                <p class="alert" *ngIf="!trackId.valid && trackId.touched || !trackId.touched">El id es obligatorio</p>
+                            </h1>
+                            <h1>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Nombre </mat-label>
+                                    <input matInput placeholder="Nombre" id="nombre" input="text" name="nombre" [(ngModel)]="art.user" required pattern="^[a-zA-Z]+$" #trackName="ngModel">
+                                </mat-form-field>
+                                <p class="alert" *ngIf="!trackName.valid && trackName.touched || !trackName.touched">El nombre es obligatorio</p>
+                            </h1>
+                            <h1>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Apellidos </mat-label>
+                                    <input matInput placeholder="Apellido(s)" id="apex" input="text" name="apellidos" [(ngModel)]="art.apex" required #trackapex="ngModel">
+                                </mat-form-field>
+                                <p class="alert" *ngIf="!trackapex.valid && trackapex.touched || !trackapex.touched">El apellido es obligatorio</p>
+                            </h1>
+                            <h1>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Fecha de Nacimiento </mat-label>
+                                    <input matInput placeholder="Mes:Día:Año" id="nacimiento" seleccion="nacimiento" name="nacimiento" type="date" [(ngModel)]="art.nacimiento" #tracknacimiento="ngModel">
+                                </mat-form-field>
+                                <p class="alert" *ngIf="!tracknacimiento.valid && tracknacimiento.touched || !tracknacimiento.touched">La fecha de nacimiento es obligatorio</p>
+                            </h1>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Domicilio </mat-label>
+                                <input matInput placeholder="Domicilio" id="domicilio" name="domicilio" [(ngModel)]="art.domicilio" required #trackdomicilio="ngModel">
+                            </mat-form-field>
+                            <p class="alert" *ngIf="!trackdomicilio.valid && trackdomicilio.touched || !trackdomicilio.touched">El domicilio es obligatorio</p>
+                            <h1>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Nivel </mat-label>
+                                    <input matInput placeholder="Nivel" id="level" name="nivel" [(ngModel)]="art.level" required pattern="[1-4]" #tracknivel="ngModel">
+                                </mat-form-field>
+                                <p>1.-Producción 2.-Preparados 3.-Envíos 4.-Caja</p>
+                                <p class="alert" *ngIf="!tracknivel.valid && tracknivel.touched || !tracknivel.touched">El nivel es obligatorio</p>
+                            </h1>
+                            <p>
+                                <h1>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Contrasena </mat-label>
+                                        <input matInput placeholder="Contrasena" id="password" name="password" type="password" [(ngModel)]="art.password" required #trackpassword="ngModel">
+                                    </mat-form-field>
+                                    <p class="alert" *ngIf="!trackpassword.valid && trackpassword.touched || !trackpassword.touched">La contrasena es obligatorio</p>
+                                </h1>
+                                <h1>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Celular </mat-label>
+                                        <input matInput placeholder="Celular" id="celular" name="celular" type="number" [(ngModel)]="art.celular" required #trackcel="ngModel">
+                                    </mat-form-field>
+                                    <p class="alert" *ngIf="!trackcel.valid && trackcel.touched || !trackcel.touched">El celular es obligatorio</p>
+                                </h1>
+                                <h1>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Turno </mat-label>
+                                        <input matInput placeholder="Horario" id="horario" name="horario" [(ngModel)]="art.horario" required pattern="[1-3]" #trackhorario="ngModel">
+                                    </mat-form-field>
+                                    <p>1.-Matutino 2.-Vespertino 3.-Doble</p>
+                                    <p class="alert" *ngIf="!trackhorario.valid && trackhorario.touched || !trackhorario.touched">El horario es obligatorio</p>
+                                </h1>
+                                <h1>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Telefono </mat-label>
+                                        <input matInput placeholder="Telefono" id="telefono" name="telefono" type="number" [(ngModel)]="art.telefono" required #tracktelefono="ngModel">
+                                    </mat-form-field>
+                                    <p class="alert" *ngIf="!tracktelefono.valid && tracktelefono.touched || !tracktelefono.touched">El telefono es de agusa</p>
+                                </h1>
+                                <h1>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Imagen </mat-label>
+                                        <input matInput placeholder="Imagen" id="foto" name="imagen" [(ngModel)]="art.foto" type="text" required #trackfoto="ngModel">
+                                    </mat-form-field>
+                                    <p class="alert" *ngIf="!trackfoto.valid && trackfoto.touched || !trackfoto.touched">La foto es obligatorio</p>
+                                </h1>Campos llenados correctamente: {{f.valid}}
+                                <button (click)="alta()" [disabled]="!f.form.valid">Registrar</button>
+                        </div>
+                    </form>
+                </div>
+                <p>
+                    <button (click)="modificacion()" [disabled]="!f.form.valid">Modificar</button></p>
+            </div>
+        </div>
+
+    </div>
+</div>

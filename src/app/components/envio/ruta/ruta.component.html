@@ -1,0 +1,20 @@
+<agm-map [latitude]="location.latitude" [longitude]="location.longitude">
+    <agm-marker [latitude]="location.latitude" [longitude]="location.longitude"></agm-marker>
+    <agm-direction [origin]="origin" [destination]="destination"></agm-direction>
+    <label for="destino">Destino</label>
+</agm-map>
+<div class="clearfix"></div>
+<div class="alinear">
+    <h3>INGRESE DESTINO</h3>
+    <h5>*Especificar nombre de la calle, no. de la misma*</h5>
+    <h5>**Ejemplo: Calle Juan Zubaran 2311**</h5>
+    <mat-form-field>
+        <mat-label>Direccion </mat-label>
+        <mat-select placeholder="Direccion" id="dir" name="dir" matInput [(ngModel)]="direccion">
+            <mat-option>Ninguna</mat-option>
+            <mat-option *ngFor="let option of activ" [value]="option.direccion">{{option.id}}{{'.- '}}{{option.direccion}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button type="button" id="bo" (click)="getDirection()">Buscar</button>
+    <button type="button" (click)="terminar()">Terminar</button>
+</div>

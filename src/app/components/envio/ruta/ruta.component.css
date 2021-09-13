@@ -1,0 +1,15 @@
+agm-map {
+    display: block;
+    margin: 0px auto;
+    float: right;
+    width: 90%;
+    height: 800px;
+}
+
+.alinear {
+    margin-left: 10%;
+}
+
+.clearfix {
+    overflow: auto;
+}

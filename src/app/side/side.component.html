@@ -1,0 +1,53 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+        <mat-toolbar>Opciones</mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item *ngIf="Auth.vato==='cero' || Auth.vato==='externo'">-.Usuario Externo.-</a>
+            <a mat-list-item href="911" *ngIf="Auth.vato==='uno'|| Auth.vato==='dos' ||Auth.vato==='tres'||Auth.vato==='cero' ||Auth.vato==='cuatro'|| Auth.vato==='externo'">Notas Personales</a>
+            <a mat-list-item href="user/profile" *ngIf="Auth.vato==='uno'|| Auth.vato==='dos' ||Auth.vato==='tres'||Auth.vato==='cuatro'||Auth.vato==='cero' || Auth.vato==='externo'">Perfil</a>
+            <a mat-list-item href="asistencia" *ngIf="Auth.vato==='uno'|| Auth.vato==='dos' ||Auth.vato==='tres'||Auth.vato==='cero' ||Auth.vato==='cuatro'">Guías</a>
+            <a mat-list-item href="inventario" *ngIf="Auth.vato==='uno'|| Auth.vato==='dos' ||Auth.vato==='tres'||Auth.vato==='cero' ||Auth.vato==='cuatro'">Inventario</a>
+            <a mat-list-item href="ext/createmen">Registrarse Menudeo</a>
+            <a mat-list-item href="ext/createmay">Registrarse Mayorero</a>
+            <a mat-list-item href="ext/principal" *ngIf="Auth.vato==='cero' || Auth.vato==='externo'">Productos</a>
+            <a mat-list-item href="user/historysale" *ngIf="Auth.vato==='cero' || Auth.vato==='externo'">Historial Compras/Apartdos</a>
+            <button mat-button (click)="openDialog()" *ngIf="Auth.vato==='uno'|| Auth.vato==='dos' ||Auth.vato==='tres'||Auth.vato==='cuatro'">Agregar una nota</button>
+            <a mat-list-item *ngIf="Auth.vato==='tres'||Auth.vato==='cero'">-.Envio.-</a>
+            <a mat-list-item href="envio/shippings" *ngIf="Auth.vato==='cero' || Auth.vato==='tres'">Envios Pendientes</a>
+            <a mat-list-item *ngIf="Auth.vato==='cuatro'||Auth.vato==='cero'">-.Caja.-</a>
+            <a mat-list-item href="sales" *ngIf="Auth.vato==='cuatro'||Auth.vato==='cero'">Ventas</a>
+            <a mat-list-item *ngIf="Auth.vato==='uno'|| Auth.vato==='dos'||Auth.vato==='cero'">-.Empleado.-</a>
+            <a mat-list-item href="uv" *ngIf="Auth.vato==='uno'|| Auth.vato==='dos' ||Auth.vato==='tres'||Auth.vato==='cero'">Plan Laboral</a>
+            <a mat-list-item href="user/history" *ngIf="Auth.vato==='uno'|| Auth.vato==='dos' ||Auth.vato==='tres'||Auth.vato==='cuatro'||Auth.vato==='cero'">Historial</a>
+            <a mat-list-item href="sales" *ngIf="Auth.vato==='cero'">Ventas</a>
+            <a mat-list-item href="uapep/recetary" *ngIf="Auth.vato==='uno'|| Auth.vato==='dos'||Auth.vato==='cero'">Recetario</a>
+            <a mat-list-item href="upev/loss" *ngIf="Auth.vato==='uno'|| Auth.vato==='dos' ||Auth.vato==='tres'||Auth.vato==='cero' || Auth.vato==='cuatro'">Mermas</a>
+            <a mat-list-item *ngIf="Auth.vato==='cero'">-.Administrador.-</a>
+            <a mat-list-item href="admin/spends" *ngIf="Auth.vato==='cero'">Gastos Fijos</a>
+            <a mat-list-item href="admin/cosas" *ngIf="Auth.vato==='cero'">Actividades</a>
+            <a mat-list-item href="uapep/recetary" *ngIf="Auth.vato==='cero'">Recetario Admin</a>
+            <a mat-list-item href="admin/register/slaves" *ngIf="Auth.vato==='cero'">Registrar Empleados</a>
+            <a mat-list-item href="admin/register/menudo" *ngIf="Auth.vato==='cero'">Registrar Menudeo</a>
+            <a mat-list-item href="admin/register/mayo" *ngIf="Auth.vato==='cero'">Registrar Mayoreo</a>
+            <a mat-list-item href="admin/help" *ngIf="Auth.vato==='cero'">Guias</a>
+            <a mat-list-item href="admin/inventory" *ngIf="Auth.vato==='cero'">Inventario</a>
+            <a mat-list-item href="admin/history" *ngIf="Auth.vato==='cero'">Historial de usuarios</a>
+            <a mat-list-item href="admin/notes" *ngIf="Auth.vato==='cero'">Notas</a>
+            <a mat-list-item href="" *ngIf="Auth.vato==='cero'">Pérdidas</a>
+            <a mat-list-item href="admin/templates/prep" *ngIf="Auth.vato==='cero'">Plantillas</a>
+            <a mat-list-item href="admin/slaves" *ngIf="Auth.vato==='cero'">Usuarios</a>
+            <a mat-list-item href="user/notifications" *ngIf="Auth.vato==='cero'">Notificaciones</a>
+            <a mat-list-item href="logout" *ngIf="Auth.vato==='uno'|| Auth.vato==='dos' ||Auth.vato==='tres'||Auth.vato==='cuatro'||Auth.vato==='cero' || Auth.vato==='externo'">Cerrar sesion</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon"><img class="logo" src="/assets/icons/menu.png" width="44" height="44" alt="logo" align="center"></mat-icon>
+      </button>
+            <div id="titulo">
+                <span> <a href="logout">  Bakerio</a> </span></div>
+        </mat-toolbar>
+        <!-- Add Content Here -->
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,22 @@
+<div class="container">
+    <div *ngFor='let user of usuarios;let i=index'>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title class="usuario">{{ "Actividad: " }}{{ user.Nombre}}</mat-card-title>
+            </mat-card-header>
+            <div class="contenido">
+                <mat-card-content>
+                    <h2>{{ "Numero de Plan: " }}{{ user.Plan}}</h2>
+                    <h2>{{ "Duracion de Actividad: " }}{{ user.Duracion }}{{" minutos"}}</h2>
+                    <h2>{{ "Registro de Actividad: " }}{{ user.Id}}</h2>
+                    <h2>{{ "Recurso: " }}{{ user.inv}}</h2>
+                    <h2>{{ "Cantidad de Recursos utilizados: " }}{{ user.cantidad}}{{' '}}{{user.unidad}}</h2>
+                    <h2>{{ "Orden de Actividad: " }}{{ user.orden}}</h2>
+                </mat-card-content>
+            </div>
+            <mat-card-actions>
+                <button *ngIf="i==0" mat-raised-button (click)="terminar(user.Id,user.cantidad,user.inv,i)">Terminar</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

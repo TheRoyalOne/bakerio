@@ -1,0 +1,19 @@
+.nav-item {
+    font-family: 'Lobster', cursive;
+    font-size: 24px;
+}
+
+#dato {
+    color: black;
+}
+
+#don {
+    font-family: 'Lobster', cursive;
+    font-size: 24px;
+    color: black;
+}
+
+.navig {
+    margin-left: 50%;
+    margin-right: 0%;
+}

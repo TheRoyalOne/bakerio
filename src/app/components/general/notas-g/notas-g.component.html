@@ -1,0 +1,19 @@
+<div class="container">
+    <div *ngFor='let list of notas'>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar><img [src]="list.FOTO"></div>
+                <mat-card-title class="usuario">{{"NOTA"}}</mat-card-title>
+            </mat-card-header>
+            <div class="contenido">
+                <mat-card-content>
+                    <h2>{{ "Numero de nota: " }}{{ list.ID}}</h2>
+                    <h2>{{ "Contenido: " }}{{ list.CONTENIDO }}</h2>
+                    <h2>{{ "Respuesta: " }}{{ list.RESPUESTA }}</h2>
+                    <h2>{{ "Fecha: " }}{{ list.FECHA}}</h2>
+                    <h2>{{"Usuario: "}}{{ list.NOMBRE}}{{" "}}{{ list.APELLIDO}}</h2>
+                </mat-card-content>
+            </div>
+        </mat-card>
+    </div>
+</div>

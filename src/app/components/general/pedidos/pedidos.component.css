@@ -1,0 +1,93 @@
+.example-card {
+    margin-top: 10%;
+    margin-right: 20%;
+    margin-left: 20%;
+    background-image: url("/assets/images/card.jpg");
+}
+
+img {
+    width: 40%;
+    height: 40%;
+    margin-left: 08%;
+    margin-right: 08%;
+}
+
+a {
+    font-family: 'Zilla Slab Highlight', cursive;
+    font-size: 36px;
+}
+
+.mat-button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: none;
+    border: none;
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Quicksand', sans-serif;
+    padding: 20px;
+    font-weight: bolder;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+h2 {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.mat-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.mat-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    font-size: 20;
+    font-weight: 150;
+    transition: 0.5s;
+}
+
+.mat-button:hover span {
+    padding-right: 25px;
+}
+
+.mat-button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+a {
+    color: inherit;
+}
+
+h2 {
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 3%;
+    color: black;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.usuario {
+    font-family: 'Cinzel', serif;
+    color: black;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+button {
+    margin-left: 10px;
+}

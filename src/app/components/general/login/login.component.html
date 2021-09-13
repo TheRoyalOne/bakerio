@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div id="dato">
+        <img class="logo" src="/assets/images/Logo1.png" alt="logo" align="center">
+        <div id="dato">
+            <label for="dato">Inicio de Sesión</label>
+        </div>
+    </div>
+</div>
+<div id="frm">
+    <form (submit)="loginUser($event)">
+        <div id="usuario" class="container">
+            <h1>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Usuario </mat-label>
+                    <input matInput placeholder="Usuario" id="user" name="usuario">
+                </mat-form-field>
+            </h1>
+            <h1>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Contrasena </mat-label>
+                    <input matInput placeholder="Contrasena" id="pass" type="password" name="password">
+                </mat-form-field>
+            </h1>
+        </div>
+        <button type="submit" class="boton btn-sm btn-boton">Ingresar</button>
+    </form>
+</div>
